@@ -1,0 +1,1018 @@
+/********** Windows: Icons **********/
+body.mod-windows:not(.redmond-off) {
+  *:has(> svg):not(.collapse-icon)::before,
+  .search-input-container::before {
+    font-family: var(--font-interface-theme);
+    line-height: var(--icon-size);
+    text-align: center;
+    font-size: var(--icon-size);
+    width: var(--icon-size);
+    height: calc(var(--icon-size) - 2px);
+    font-weight: 400 !important;
+  }
+
+  *:has(> .sidebar-left) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ea68";
+    }
+  }
+  *:has(> .lucide-folder-closed) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e841";
+    }
+  }
+  *:has(> .lucide-search) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ee9d";
+    }
+  }
+  *:has(> .lucide-calendar-check) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e2ee";
+    }
+  }
+  *:has(> .lucide-x) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e63f";
+    }
+  }
+  *:has(> .lucide-plus) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e00d";
+    }
+  }
+  *:has(> .lucide-chevron-down) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e42a";
+    }
+  }
+  *:has(> .sidebar-right) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ec2f";
+    }
+  }
+  *:has(> .lucide-edit-3) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e797";
+    }
+  }
+  *:has(> .lucide-book-open) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e224";
+    }
+  }
+  *:has(> .lucide-arrow-left) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e0ff";
+    }
+  }
+  *:has(> .lucide-arrow-right) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e127";
+    }
+  }
+  *:has(> .lucide-more-vertical) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eb6c";
+    }
+  }
+  *:has(> .lucide-separator-vertical) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\efb7";
+    }
+  }
+  *:has(> .lucide-separator-horizontal) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\efb5";
+    }
+  }
+  *:has(> .lucide-picture-in-picture-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f40b";
+    }
+  }
+  *:has(> .lucide-folder-tree) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e847";
+    }
+  }
+  *:has(> .lucide-plus-circle) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e00f";
+    }
+  }
+  *:has(> .lucide-file-down) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e659 ";
+    }
+  }
+  *:has(> .lucide-file-search) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e701 ";
+    }
+  }
+  *:has(> .lucide-copy) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e567 ";
+    }
+  }
+  *:has(> .lucide-arrow-up-right) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ebe6 ";
+    }
+  }
+  *:has(> .lucide-folder-open) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e693 ";
+    }
+  }
+  *:has(> svg > .lucide-file-cog) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e707";
+    }
+  }
+  *:has(> .lucide-trash-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e5f1";
+    }
+  }
+  *:has(> .lucide-calendar-clock) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f2b9";
+    }
+  }
+  *:has(> .help) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eddb";
+    }
+  }
+  *:has(> .lucide-settings) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eed1";
+    }
+  }
+  *:has(> .lucide-layers) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ef85";
+    }
+  }
+  *:has(> .lucide-file) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e655";
+    }
+  }
+  *:has(> .open-vault) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f301";
+    }
+  }
+  *:has(> .lucide-sliders-horizontal) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e801";
+    }
+  }
+  *:has(> .uppercase-lowercase-a) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f190";
+    }
+  }
+  *:has(> input[type="search"]) {
+    &::before {
+      content: "\ee9d";
+      background-color: transparent;
+      -webkit-mask-image: none;
+      font-family: "Fluent System Icons";
+    }
+  }
+  *:has(> .lucide-edit) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e689";
+    }
+  }
+  *:has(> .lucide-layout-dashboard) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e1ff";
+    }
+  }
+  *:has(> .lucide-folder-search) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e865";
+    }
+  }
+  *:has(> .lucide-file-plus) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e657";
+    }
+  }
+  *:has(> .lucide-files) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e679";
+    }
+  }
+  *:has(> .lucide-ruler) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ee59";
+    }
+  }
+  *:has(> .lucide-refresh-cw) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e0ad";
+    }
+  }
+  *:has(> .lucide-delete) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e1b3";
+    }
+  }
+  *:has(> .lucide-rotate-ccw) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e125";
+    }
+  }
+  *:has(> .lucide-download-cloud) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e474";
+    }
+  }
+  *:has(> .lucide-folder-plus) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e843";
+    }
+  }
+  *:has(> .lucide-sort-asc) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e139";
+    }
+  }
+  *:has(> .lucide-chevrons-up-down) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e434";
+    }
+  }
+  *:has(> .lucide-chevrons-down-up) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e42c";
+    }
+  }
+  *:has(> .lucide-list) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f166";
+    }
+  }
+  *:has(> .lucide-git-fork) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e549";
+    }
+  }
+  *:has(> .lucide-wand-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f385";
+    }
+  }
+  *:has(> .lucide-link),
+  *:has(> .links-coming-in) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ea78";
+    }
+  }
+  *:has(> .links-going-out) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e6b9";
+    }
+  }
+  *:has(> .lucide-bookmark) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e23a";
+    }
+    &.mod-filled::before {
+      content: "\e239";
+    }
+  }
+  *:has(> .lucide-git-merge) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eb3c";
+    }
+  }
+  *:has(> .lucide-monitor) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\edc3";
+    }
+  }
+  *:has(> .lucide-send) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e8d1";
+    }
+  }
+  *:has(> .lucide-bookmark-plus) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e23c";
+    }
+  }
+  *:has(> .lucide-alert-triangle) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f387";
+    }
+  }
+  *:has(> .lucide-code-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e4e8";
+    }
+  }
+  *:has(> .lucide-tags) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f0f6";
+    }
+  }
+  *:has(> .lucide-calendar) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e2ee";
+    }
+  }
+  *:has(> .lucide-text) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f150";
+    }
+  }
+  *:has(> .lucide-check-square) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e412";
+    }
+  }
+  *:has(> .lucide-forward) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e0ed";
+    }
+  }
+  *:has(> .lucide-clipboard-check) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e470";
+    }
+  }
+  *:has(> .lucide-menu) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ea88";
+    }
+  }
+  *:has(> .lucide-arrow-left-to-line) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f130";
+    }
+  }
+  *:has(> .lucide-arrow-right-to-line) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f132";
+    }
+  }
+  *:has(> .lucide-archive) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e077";
+    }
+  }
+  *:has(> .lucide-file-text) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e71d";
+    }
+  }
+  *:has(> .lucide-view) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e071";
+    }
+  }
+  *:has(> .lucide-trello) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e8f9";
+    }
+  }
+  *:has(> .lucide-table) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f07f";
+    }
+  }
+  *:has(> .lucide-server) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ee55";
+    }
+  }
+  *:has(> .lucide-file-plus-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e657";
+    }
+  }
+  *:has(> .lucide-arrow-up) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e18d";
+    }
+  }
+  *:has(> .lucide-arrow-down) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e0c1";
+    }
+  }
+  *:has(> .lucide-square-kanban) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e8f9";
+    }
+  }
+  *:has(> .lucide-list-start) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e04b";
+    }
+  }
+  *:has(> .lucide-list-end) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e035";
+    }
+  }
+  *:has(> .lucide-external-link) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ea7a";
+    }
+  }
+  *:has(> .lucide-paintbrush) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ec02";
+    }
+  }
+  *:has(> .lucide-pilcrow) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e113";
+    }
+  }
+  *:has(> .lucide-list-plus) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f055";
+    }
+  }
+  *:has(> .lucide-scissors) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e5a1";
+    }
+  }
+  *:has(> .lucide-clipboard-type) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e4a2";
+    }
+  }
+  *:has(> .lucide-box-select) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eeaf";
+    }
+  }
+  *:has(> .lucide-arrow-up-az) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f269";
+    }
+  }
+  *:has(> .lucide-arrow-down-az) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f267";
+    }
+  }
+  *:has(> .lucide-binary) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ebe0";
+    }
+  }
+  *:has(> .spreadsheet) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e70f";
+    }
+  }
+  *:has(> .lucide-terminal) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f3ef";
+    }
+  }
+  *:has(> .lucide-mic) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ee11";
+    }
+  }
+  *:has(> .dice) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f2d9";
+    }
+  }
+  *:has(> .sheets-in-box) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e011";
+    }
+  }
+  *:has(> .lucide-layout) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ea21";
+    }
+  }
+  *:has(> .lucide-pin) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ed53";
+    }
+  }
+  *:has(> .lucide-history) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e95a";
+    }
+  }
+  *:has(> .refresh-cw-off) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ed7d";
+    }
+  }
+  *:has(> .lucide-sticky-note) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f281";
+    }
+  }
+  *:has(> .lucide-file-image) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e97c";
+    }
+  }
+  *:has(> .lucide-maximize) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e89d";
+    }
+  }
+  *:has(> .lucide-minus) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ea5e";
+    }
+  }
+  *:has(> .lucide-undo-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e18b";
+    }
+  }
+  *:has(> .lucide-redo-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e117";
+    }
+  }
+  *:has(> .lucide-grid) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e8f7";
+    }
+  }
+  *:has(> .snap-to-object) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eeb3";
+    }
+  }
+  *:has(> .lucide-lock) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eab6";
+    }
+  }
+  *:has(> .lucide-bold) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f162";
+    }
+  }
+  *:has(> .lucide-italic) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f22f";
+    }
+  }
+  *:has(> .lucide-strikethrough) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f26b";
+    }
+  }
+  *:has(> .lucide-highlighter) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e953";
+    }
+  }
+  *:has(> .lucide-sigma) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\eb26";
+    }
+  }
+  *:has(> .lucide-eraser) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e7cd";
+    }
+  }
+  *:has(> .lucide-list-ordered) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f237";
+    }
+  }
+  *:has(> .lucide-heading-1) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f1f9";
+    }
+  }
+  *:has(> .lucide-heading-2) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f1ff";
+    }
+  }
+  *:has(> .lucide-heading-3) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f205";
+    }
+  }
+  *:has(> .lucide-heading-4) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ebd2";
+    }
+  }
+  *:has(> .lucide-heading-5) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ebd4";
+    }
+  }
+  *:has(> .lucide-heading-6) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ebd6";
+    }
+  }
+  *:has(> .lucide-quote) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\f265";
+    }
+  }
+  *:has(> .lucide-code) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\e4ea";
+    }
+  }
+  *:has(> .lucide-sigma-square) {
+    svg {
+      display: none;
+    }
+    &::before {
+      content: "\ebe4";
+    }
+  }
+}
