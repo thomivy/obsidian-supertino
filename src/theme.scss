@@ -643,6 +643,8 @@ body.is-mobile {
     }
     .search-result-file-matches {
       box-shadow: none;
+      border: 1px solid var(--background-modifier-border);
+      margin: 0;
     }
     .search-result-file-match {
       padding: var(--size-4-4);
