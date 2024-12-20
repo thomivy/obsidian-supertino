@@ -20,7 +20,7 @@ settings:
     -
         id: force-macos
         title: Use macOS style on Windows
-        description: Disable Windows specific styling. (Requires reload)
+        description: Turn off Windows specific styling. (Requires reload)
         type: class-toggle
     -
         id: hide-nav-header-off
@@ -34,7 +34,7 @@ settings:
     -
         id: alt-font-off
         title: Disable Apple Notes font style
-        description: Disable alternative lowercase 'a' font style.
+        description: Turn off alternative lowercase 'a' font style.
         type: class-toggle
     -
         id: active-line-off
@@ -2548,7 +2548,7 @@ body.is-mobile {
   }
 }
 
-/********** Core Extension: Canvas **********/
+/********** Core Plugin: Canvas **********/
 
 .canvas-wrapper {
   --shadow-stationary: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
@@ -2601,7 +2601,7 @@ body.is-mobile {
   opacity: 0;
 }
 
-/********** Core Extension: Graph **********/
+/********** Core Plugin: Graph **********/
 
 .graph-controls.is-close {
   backdrop-filter: blur(50px);
@@ -2620,7 +2620,7 @@ body.is-mobile {
   margin: 0 !important;
 }
 
-/********** Community Extension: Style Settings **********/
+/********** Community Plugin: Style Settings **********/
 
 .style-settings-container {
   padding: 0;
@@ -2631,7 +2631,7 @@ body.is-mobile {
   margin: 0 !important;
 }
 
-/********** Community Extension: Linter **********/
+/********** Community Plugin: Linter **********/
 
 .linter-setting-title {
   align-items: center;
@@ -2702,7 +2702,7 @@ body.is-mobile {
   }
 }
 
-/********** Community Extension: Kanban **********/
+/********** Community Plugin: Kanban **********/
 
 .kanban-plugin {
   background-color: transparent;
@@ -2712,7 +2712,7 @@ body.is-mobile {
   }
 }
 
-/********** Community Extension: Tasks **********/
+/********** Community Plugin: Tasks **********/
 
 .modal:has(.tasks-modal) {
   --dialog-width: fit-content;
@@ -2740,7 +2740,7 @@ body.is-mobile {
   }
 }
 
-/********** Community Extension: Calendar **********/
+/********** Community Plugin: Calendar **********/
 
 #calendar-container {
   padding: 0;
