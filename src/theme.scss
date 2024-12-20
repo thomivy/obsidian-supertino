@@ -1274,8 +1274,16 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
 .metadata-container {
   --icon-size: 16px;
   transform: none;
+
+  .metadata-properties-heading {
+    padding: 16px 16px 4px;
+    color: var(--text-muted);
+  }
+
+  .metadata-properties {
   border-radius: var(--radius-s);
   background-color: var(--background-secondary);
+  }
 
   .metadata-property-key {
     align-items: center;
