@@ -1281,8 +1281,8 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
   }
 
   .metadata-properties {
-  border-radius: var(--radius-s);
-  background-color: var(--background-secondary);
+    border-radius: var(--radius-s);
+    background-color: var(--background-secondary);
   }
 
   .metadata-property-key {
@@ -2068,29 +2068,32 @@ body.is-tablet {
 }
 
 /********** Desktop: Status Bar **********/
-body:not(.center-status-off) {
-  .status-bar {
-    right: 50%;
-    bottom: 12px;
-    transform: translateX(50%);
-    opacity: 0.5;
-    transition: var(--anim-duration-fast);
-    border: 1px solid transparent;
-    border-radius: var(--radius-xl);
-    background-color: transparent;
-    padding: 4px;
-    color: var(--text-muted);
-  }
+body:not(.center-status-off) .status-bar {
+  right: 50%;
+  bottom: 12px;
+  transform: translateX(50%);
+}
 
-  .status-bar:hover {
-    opacity: 1;
-    border: 1px solid var(--background-modifier-border);
-    background-color: var(--background-primary);
-  }
+.status-bar {
+  right: 8px;
+  bottom: 8px;
+  opacity: 0.5;
+  transition: var(--anim-duration-fast);
+  border: 1px solid transparent;
+  border-radius: var(--radius-xl);
+  background-color: transparent;
+  padding: 4px;
+  color: var(--text-muted);
+}
 
-  .status-bar * {
-    white-space: nowrap;
-  }
+.status-bar:hover {
+  opacity: 1;
+  border: 1px solid var(--background-modifier-border);
+  background-color: var(--background-primary);
+}
+
+.status-bar * {
+  white-space: nowrap;
 }
 
 /********** Desktop: Tooltip **********/
