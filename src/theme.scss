@@ -81,7 +81,7 @@ body {
   --code-string: var(--color-cyan);
   --code-tag: var(--color-red);
   --code-value: var(--color-purple);
-  --dialog-width: fit-content;
+  --dialog-width: 320px;
   --divider-color-hover: var(--text-normal);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
@@ -95,6 +95,7 @@ body {
   --h6-size: 0.85em;
   --icon-opacity: 1;
   --input-height: 24px;
+  --input-radius: var(--radius-m);
   --input-shadow: 0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05) !important;
   --link-decoration: none;
   --link-external-decoration: none;
@@ -386,12 +387,12 @@ body:not(.is-mobile) {
   button {
     padding: 4px 8px;
   }
-  button[class*="mod-"] {
+  button[class*="mod-"]:not(.mod-destructive) {
     box-shadow: 0px 1px 2.5px 0px hsla(var(--color-accent-hsl), 0.24), 0px 0px 0px 0.5px hsla(var(--color-accent-hsl), 0.12) !important;
     position: relative;
     overflow: hidden;
 
-    &:not(.mod-cancel)::before {
+    &:not(.mod-cancel):not(.mod-destructive)::before {
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0) 100%);
       content: "";
       position: absolute;
@@ -1363,10 +1364,6 @@ body:not(.is-mobile) {
       text-align: center;
     }
 
-    &:not(.mod-dim) {
-      box-shadow: none;
-    }
-
     .modal-header {
       margin: 8px 0;
     }
@@ -2123,6 +2120,7 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
   --font-text-theme: "Fluent System Icons", "Segoe UI Variable", "Segoe UI", "Microsoft Jhenghei", "Microsoft Yahei", "Yu Gothic UI", "Malgun Gothic", sans-serif;
   --font-interface-theme: "Fluent System Icons", "Segoe UI Variable", "Segoe UI", "Microsoft Jhenghei", "Microsoft Yahei", "Yu Gothic UI", "Malgun Gothic", sans-serif;
   --input-height: 32px;
+  --dialog-width: 448px;
   --radius-l: 8px;
   --radius-m: 4px;
   --radius-s: 4px;
@@ -2179,7 +2177,8 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
   .dropdown {
     min-height: var(--input-height);
     min-width: 120px;
-    border: 1px solid var(--background-modifier-border);
+    border: none;
+    outline: 1px solid var(--background-modifier-border);
   }
 
   button:not(.view-header button),
@@ -2356,6 +2355,34 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
   /********** Modal **********/
   .modal {
     backdrop-filter: blur(240px);
+  }
+
+  .modal:not(.mod-settings):not(.mod-community-modal) {
+    padding: 0;
+
+    .modal-title,
+    .modal-content,
+    h1,
+    h2,
+    h3,
+    p {
+      text-align: left;
+    }
+
+    .modal-title {
+      padding: 24px 24px 4px;
+    }
+
+    .modal-content {
+      padding: 4px 24px 24px;
+    }
+
+    .modal-button-container {
+      margin: 0;
+      padding: 24px;
+      background-color: var(--divider-color);
+      border-top: 1px solid var(--background-modifier-border);
+    }
   }
 
   /********** Prompt **********/
