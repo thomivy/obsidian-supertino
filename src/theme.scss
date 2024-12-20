@@ -2765,3 +2765,43 @@ body.is-mobile {
     --color-dot: var(--text-on-accent);
   }
 }
+
+/********** Community Plugin: Ink **********/
+
+.ink_writing-embed,
+.ddc_ink_drawing-embed {
+  padding: 0;
+
+  .ink_write_primary-menu-bar {
+    padding: 8px 12px;
+  }
+
+  .ddc_ink_writing-editor,
+  .ddc_ink_writing-preview,
+  .ddc_ink_drawing-editor,
+  .ddc_ink_drawing-preview,
+  .tl-canvas {
+    border-radius: var(--radius-s);
+  }
+
+  .ddc_ink_visible-frame {
+    border: 1px solid var(--background-modifier-border) !important;
+  }
+
+  .ddc_ink_visible-background,
+  .tl-canvas {
+    background-color: var(--background-primary-alt);
+    border: 1px solid var(--background-modifier-border);
+  }
+
+  button {
+    border-radius: var(--input-radius);
+    box-shadow: none !important;
+    padding: 8px;
+    height: 2.5em !important;
+
+    &:not(:disabled) {
+      background-color: transparent;
+    }
+  }
+}
