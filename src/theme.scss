@@ -567,6 +567,11 @@ body:not(.is-mobile) {
   .tree-item-children {
     border-inline-start: none;
   }
+
+  /* Text positioning */
+  .tree-item-self:not(.mod-collapsible):has(.tree-item-icon) {
+    gap: 4px;
+  }
 }
 
 body.is-mobile {
@@ -789,9 +794,10 @@ body:not(.is-mobile) {
   .workspace-tab-header-new-tab .clickable-icon:hover {
     border-radius: var(--clickable-icon-radius) 0 0 var(--clickable-icon-radius) !important;
   }
-  &:has(.workspace-tab-header-new-tab .clickable-icon:hover) .workspace-tab-header-tab-list .clickable-icon {
-    opacity: 1;
+  .workspace-tab-header-new-tab:has(.clickable-icon:hover) ~ .workspace-tab-header-tab-list .clickable-icon {
     border-radius: 0 var(--clickable-icon-radius) var(--clickable-icon-radius) 0 !important;
+    opacity: var(--icon-opacity-hover);
+    color: var(--icon-color-hover);
     background-color: var(--background-modifier-hover);
   }
 
@@ -820,6 +826,13 @@ body:not(.is-phone) {
   /* Editor Panel */
   .workspace .mod-root {
     .workspace-tabs:not(.mod-stacked) {
+      overflow: visible;
+
+      &.mod-active,
+      hr {
+        z-index: var(--layer-sidedock);
+      }
+
       .workspace-tab-header-container {
         justify-content: center;
         align-items: center;
@@ -879,6 +892,11 @@ body:not(.is-phone) {
         padding: 0;
         height: 100%;
       }
+    }
+
+    .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
+      padding-left: 60px !important;
+      padding-right: 60px !important;
     }
   }
 }
@@ -949,8 +967,8 @@ body.mod-linux:not(.is-mobile) {
       right: calc(8px + var(--frame-right-space));
     }
     .mod-root .workspace-tabs .workspace-tab-header-container {
-      padding-right: calc(100px + var(--frame-right-space)) !important;
-      padding-left: calc(100px + var(--frame-right-space)) !important;
+      padding-right: calc(100px + var(--frame-right-space));
+      padding-left: calc(100px + var(--frame-right-space));
     }
     .workspace-tab-header-new-tab {
       right: calc(64px + var(--frame-right-space));
@@ -1194,7 +1212,6 @@ body:not(.is-phone) {
 
 body:not(.is-mobile) {
   &.theme-dark .mod-root .workspace-tab-container {
-    margin-bottom: 8px;
     box-shadow: rgba(244, 244, 244, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
     border-radius: var(--radius-l);
   }
@@ -1645,7 +1662,6 @@ body:not(.is-phone) {
   }
 
   .prompt {
-    z-index: 10000;
     outline: var(--prompt-border-width) solid var(--prompt-border-color);
     border: none;
     background-color: var(--workspace-background-translucent);
