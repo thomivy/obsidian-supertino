@@ -252,6 +252,23 @@ body {
   }
 }
 
+/********** Cupertino Companion: Pseudo Mica **********/
+
+body.hello-cupertino {
+  &::before {
+    content: "";
+    position: fixed;
+    background-size: cover;
+    background-position: center;
+    transform-origin: top left;
+    z-index: -1;
+  }
+  &:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[aria-label="New tab"]),
+  &:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[aria-label="No file"]) {
+    --workspace-background-translucent: rgb(from var(--background-primary) r g b / 50%) !important;
+  }
+}
+
 /********** Animation **********/
 
 @keyframes fadeInUp {
@@ -2175,22 +2192,6 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
 
     *:not(.mod-root) {
       --divider-color: rgba(0, 0, 0, 0.2) !important;
-    }
-  }
-
-  /********** Pseudo Mica (Requires Cupertino Companion) **********/
-  &.hello-cupertino {
-    &::before {
-      content: "";
-      position: fixed;
-      background-size: cover;
-      background-position: center;
-      transform-origin: top left;
-      z-index: -1;
-    }
-    &:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[aria-label="New tab"]),
-    &:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[aria-label="No file"]) {
-      --workspace-background-translucent: rgb(from var(--background-primary) r g b / 50%) !important;
     }
   }
 
