@@ -928,6 +928,9 @@ body.mod-macos:not(.is-mobile) {
   &.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
     right: 8px;
   }
+  .mod-top-left-space .workspace-tab-header-container-inner {
+    margin: 0 0 0 40px;
+  }
 
   .workspace:not(.is-left-sidedock-open) {
     .mod-root .workspace-tabs .workspace-tab-header-container {
@@ -977,6 +980,9 @@ body.mod-linux:not(.is-mobile) {
     .sidebar-toggle-button.mod-left {
       left: 8px;
     }
+  }
+  &:not(.show-ribbon) .mod-top-left-space .workspace-tab-header-container-inner {
+    margin: 0 0 0 40px;
   }
 
   .workspace:not(.is-right-sidedock-open) {
