@@ -917,11 +917,29 @@ body:not(.is-phone) {
 }
 
 body.mod-macos:not(.is-mobile) {
-  &.is-hidden-frameless:not(.is-fullscreen) .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-    padding-left: var(--frame-left-space);
+  &.is-hidden-frameless:not(.is-popout-window):not(.is-fullscreen) {
+    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+      padding-left: var(--frame-left-space);
+    }
+
+    .sidebar-toggle-button.mod-left {
+      left: var(--frame-left-space);
+    }
   }
-  &.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-left {
-    left: var(--frame-left-space);
+  &.is-hidden-frameless.is-fullscreen:not(.is-popout-window):not(.is-left-sidedock-open) {
+    .sidebar-toggle-button.mod-left {
+      left: 8px;
+    }
+
+    &.show-ribbon {
+      .sidebar-toggle-button.mod-left {
+        left: -48px;
+        z-index: 10;
+      }
+      .mod-top-left-space .workspace-tab-header-container-inner {
+        margin: 0;
+      }
+    }
   }
   &.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
     right: 8px;
@@ -948,7 +966,7 @@ body.mod-macos:not(.is-mobile) {
       right: 64px;
     }
     .workspace-tab-header-tab-list {
-      right: 64px;
+      right: 48px;
     }
   }
 
