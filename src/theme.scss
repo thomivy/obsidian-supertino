@@ -387,6 +387,7 @@ body:not(.is-mobile) {
     font-weight: normal;
     min-height: var(--input-height);
     line-height: unset;
+    white-space: normal;
   }
 
   input[type="text"]:not(.metadata-container *):not(.prompt *),
@@ -800,9 +801,6 @@ body:not(.is-mobile) {
   .mod-left-split .workspace-tab-header-container-inner,
   .mod-right-split .workspace-tab-header-container-inner {
     margin: 0;
-  }
-  &:not(.show-ribbon) .mod-top-left-space .workspace-tab-header-container-inner {
-    margin: 0 0 0 40px;
   }
   .mod-top-right-space .workspace-tab-header-container-inner {
     margin: 0;
