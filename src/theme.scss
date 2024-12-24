@@ -1100,6 +1100,7 @@ body.is-tablet {
   --bold-color: var(--text-accent);
 }
 
+.mod-fade::before,
 .mod-fade::after {
   display: none;
 }
