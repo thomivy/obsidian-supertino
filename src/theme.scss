@@ -1318,7 +1318,7 @@ body.is-phone {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 
-  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)) {
+  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)):not(:has(.canvas-wrapper)) {
     margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 }
@@ -2682,6 +2682,12 @@ body.is-mobile {
   top: 20px;
   z-index: -1;
   opacity: 0;
+}
+
+body.is-phone {
+  .canvas-controls {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+  }
 }
 
 /********** Core Plugin: Graph **********/
