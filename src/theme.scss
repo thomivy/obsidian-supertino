@@ -252,9 +252,9 @@ body {
   }
 }
 
-/********** Cupertino Companion: Pseudo Mica **********/
+/********** Cupertino Helper: Pseudo Mica **********/
 
-body.hello-cupertino {
+body.cupertino-helper {
   &::before {
     content: "";
     position: fixed;

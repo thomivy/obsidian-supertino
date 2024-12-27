@@ -2,7 +2,7 @@
 
 Cupertino is a theme that brings native experience to Obsidian.
 
-<img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="img/hero.png">
+<img alt="Screenshot of Cupertino theme for Obsidian running on macOS and iOS." src="img/hero.png">
 
 ## Features
 
@@ -11,13 +11,13 @@ Cupertino is a theme that brings native experience to Obsidian.
 - Minimal interface — auto-hidden tabs & options, new mobile editor header, auto focus mode
 - Windows mode — optimized for Windows with Fluent UI and pseudo-Mica effect (requires plugin)
 
-<img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="img/windows.png">
+<img alt="Screenshot of Cupertino theme for Obsidian running on Windows." src="img/windows.png">
 
 ## Plugins
 
 All features are enable by default, [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is **_not_** required. Only install if you wish to turn off some features you don't like.
 
-You can optionally install [Cupertino Companion](https://github.com/aaaaalexis/obsidian-cupertino-companion/) to:
+You can optionally install [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/) to:
 
 - Fix misaligned window control buttons on macOS
 - Add pseudo-Mica (wallpaper as background) on Windows
