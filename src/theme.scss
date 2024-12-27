@@ -113,8 +113,8 @@ body {
   --radius-xl: 12px;
   --ribbon-background-collapsed: transparent;
   --ribbon-background: transparent;
-  --ribbon-padding: 4px 8px;
-  --ribbon-width: 56px;
+  --ribbon-padding: 4px 0 0 8px;
+  --ribbon-width: 48px;
   --slider-track-height: 4px;
   --slider-track-background: var(--background-modifier-border-hover);
   --tab-background-active: var(--background-primary-alt);
@@ -513,6 +513,23 @@ body:not(.is-mobile) {
   .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
   .workspace-split.mod-sidedock .workspace-leaf-content > .view-content {
     padding: 4px 16px;
+  }
+
+  &.show-ribbon {
+    .workspace-ribbon .sidebar-toggle-button {
+      justify-content: flex-end;
+    }
+    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+      padding-left: 0;
+    }
+    .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
+    .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
+    .nav-header {
+      padding-left: 8px;
+    }
+    .search-row {
+      margin-left: 8px;
+    }
   }
 
   .view-content > .node-insert-event {
