@@ -934,15 +934,13 @@ body:not(.is-phone) {
 }
 
 body.mod-macos:not(.is-mobile) {
-  &.is-hidden-frameless:not(.is-popout-window):not(.is-fullscreen) {
-    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
-      padding-left: var(--frame-left-space);
-    }
-
-    .sidebar-toggle-button.mod-left {
-      left: var(--frame-left-space);
-    }
+  .mod-top-left-space .workspace-tab-header-container-inner {
+    margin: 0 0 0 40px;
   }
+  &.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
+    right: 8px;
+  }
+
   &.is-hidden-frameless.is-fullscreen:not(.is-popout-window):not(.is-left-sidedock-open) {
     .sidebar-toggle-button.mod-left {
       left: 8px;
@@ -958,15 +956,17 @@ body.mod-macos:not(.is-mobile) {
       }
     }
   }
-  &.is-hidden-frameless:not(.is-popout-window) .sidebar-toggle-button.mod-right {
-    right: 8px;
-  }
-  .mod-top-left-space .workspace-tab-header-container-inner {
-    margin: 0 0 0 40px;
-  }
 
-  .workspace:not(.is-left-sidedock-open) {
-    .mod-root .workspace-tabs .workspace-tab-header-container {
+  &.is-hidden-frameless:not(.is-popout-window):not(.is-fullscreen) {
+    .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
+      padding-left: var(--frame-left-space);
+    }
+
+    .sidebar-toggle-button.mod-left {
+      left: var(--frame-left-space);
+    }
+
+    .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-left: calc(var(--frame-left-space) + 44px);
       padding-right: calc(var(--frame-left-space) + 44px);
     }
