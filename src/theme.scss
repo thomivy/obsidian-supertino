@@ -1313,7 +1313,7 @@ body:not(.is-mobile) {
   }
 
   /* Alt font style */
-  body:not(.alt-font-off) .mod-root .view-content * {
+  &:not(.alt-font-off) .mod-root .view-content * {
     font-feature-settings: "ss07" 1;
   }
 }
