@@ -2,25 +2,36 @@
 
 Cupertino is a theme that brings native experience to Obsidian.
 
-<img alt="Screenshot of Cupertino theme for Obsidian running on macOS and iOS." src="img/hero.png">
+![Screenshot of Cupertino theme for Obsidian running on macOS and iOS.](img/hero.png)
 
 ## Features
 
-- Designed for Apple devices and Windows — native look and feel with redesigned modals, menu, Spotlight search, and more
-- Comfortable spacing — widen spacing across all panels, files, components, for better usability
-- Minimal interface — auto-hidden tabs & options, new mobile editor header, auto focus mode
-- Windows mode — optimized for Windows with Fluent UI and pseudo-Mica effect (requires plugin)
+- **Native experience** — Native look and feel with redesigned modals, menu, search, and more
+- **Optimized for mobile** — Completely redesigned mobile experience
+- **Comfortable spacing** — Widen spacing across all panels, files, components for better usability
+- **Minimal interface** — Auto-hidden tabs & options, new mobile editor header, auto focus mode
+- **Windows Mode** — Fluent Design UI for native feeling on Windows
+    ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
 
-<img alt="Screenshot of Cupertino theme for Obsidian running on Windows." src="img/windows.png">
+> [!NOTE]
+> Windows Mode is enabled by default. You can disable it in [Style Settings](https://github.com/mgmeyers/obsidian-style-settings).
 
 ## Plugins
 
-All features are enable by default, [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) is **_not_** required. Only install if you wish to turn off some features you don't like.
+All features are enable by default, following plugins can be installed to modify your installation. they are **_not_** required.
 
-You can optionally install [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/) to:
+### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
+- Disable auto hiding elements
+- Disable active line indicator
+- Disable centered status bar
+- Disable full width table
+- Disable frontmatter foldable heading
+- Enable accented window
+- Force macOS style on Windows
 
-- Fix misaligned window control buttons on macOS
+### [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/)
 - Add pseudo-Mica (wallpaper as background) on Windows
+- Fix misaligned window control buttons on macOS
 
 ## Philosophy
 
