@@ -1638,7 +1638,7 @@ body.is-mobile {
     max-height: 80vh;
   }
   .menu-scroll:has(.mod-checked) .menu-item.tappable:not(:has(.mod-checked)) .menu-item-title {
-    margin-left: 32px;
+    margin-left: calc(var(--icon-size) + 8px);
   }
   .menu-item-icon {
     width: var(--icon-size);
