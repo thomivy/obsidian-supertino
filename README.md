@@ -6,15 +6,15 @@ Cupertino is a theme that brings native experience to Obsidian.
 
 ## Features
 
-- **Native experience** — Native look and feel with redesigned modals, menu, search, and more
-- **Optimized for mobile** — Completely redesigned mobile experience
-- **Comfortable spacing** — Widen spacing across all panels, files, components for better usability
-- **Minimal interface** — Auto-hidden tabs & options, new mobile editor header, auto focus mode
+- **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
+    ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases built-in auto focus mode.](img/native.png)
+- **Optimized for mobile** — Redesigned modals, menu, editor, search, and more, with comfortable spacing for usability.
+    ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights "Quick Mode Switcher" within the editor. The third displays a redesigned search interface.](img/mobile.png)
 - **Windows Mode** — Fluent Design UI for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
     ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
 
 > [!NOTE]
-> Make sure to enable "Translucent window" in Obsidian Apperance settings.
+> Make sure to enable "Translucent window" in Obsidian Appearance settings.
   
 ## Plugins
 
@@ -37,9 +37,9 @@ All features are enable by default, following plugins can be installed to modify
 
 I’ve spent way too much time on customizing Obsidian, thousands of themes with millions of customizations, I believe a lot people do it too. It’s anti-productivity at this point, we need something that just works and is pleasant to use.
 
-1. You _could_, but you do not _have_ to install any plugin to use Cupertino. — Use plugins to disable features instead of enable. Cupertino works out of the box.
-2. The less customizations the better — Cupertino will never have customization. More customization make you waste more time on fiddling.
-3. Minimalize visual noise, content is the key. — Obsidian's presence is minimized by blending into system style, so you can focus on what you're typing.
+1. **Less plguins.** — Plugins are only used for disabling features and fixing issues instead of adding. Cupertino works perfectly out of the box.
+2. **Less customizations** — Cupertino will never have customization. More customization make you waste more time on fiddling.
+3. **Less visual noise** — Content is the key. Cupertino makes Obsidian blend in system style, so you can focus on what you're typing.
 
 Cupertino is designed as I use Obsidian, while I'm trying to focus on being consistent, inconsistency happens. If you spot any, feel free to submit issues.
 
