@@ -2017,19 +2017,17 @@ body.is-mobile {
 body.is-phone {
   &.theme-dark .modal.mod-settings,
   &.theme-dark .modal.mod-community-modal {
-    .modal-header {
-      background-color: var(--background-primary);
-    }
+    .modal-header,
     .vertical-tab-header,
     .vertical-tab-content,
     .modal-sidebar,
     .community-modal-details {
       background-color: var(--background-primary);
     }
-  }
 
-  .community-modal-details {
-    background-color: var(--background-secondary);
+    .community-item {
+      background-color: var(--interactive-normal);
+    }
   }
 
   .modal.mod-settings,
@@ -2037,7 +2035,8 @@ body.is-phone {
     --divider-color: var(--background-primary);
     background-color: transparent;
 
-    .modal-header {
+    .modal-header,
+    .modal-sidebar {
       border: none !important;
       background-color: var(--background-secondary);
     }
@@ -2081,6 +2080,10 @@ body.is-phone {
     .community-item {
       border-radius: var(--input-radius);
       border: none;
+    }
+
+    .community-modal-details {
+      background-color: var(--background-secondary);
     }
   }
 
