@@ -2028,9 +2028,14 @@ body.is-phone {
     }
   }
 
+  .community-modal-details {
+    background-color: var(--background-secondary);
+  }
+
   .modal.mod-settings,
   .modal.mod-community-modal {
     --divider-color: var(--background-primary);
+    background-color: transparent;
 
     .modal-header {
       border: none !important;
@@ -2058,14 +2063,23 @@ body.is-phone {
       text-transform: uppercase;
     }
 
-    .vertical-tab-header-group-items,
-    .community-modal-search-results {
+    .vertical-tab-header-group-items {
       border-radius: var(--input-radius);
       background-color: var(--interactive-normal);
       overflow: hidden;
     }
 
     .community-modal-search-results-wrapper {
+      padding: 0 16px;
+      border: none;
+    }
+
+    .community-modal-search-results {
+      gap: 8px;
+    }
+
+    .community-item {
+      border-radius: var(--input-radius);
       border: none;
     }
   }
