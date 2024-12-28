@@ -10,12 +10,12 @@ Cupertino is a theme that brings native experience to Obsidian.
 - **Optimized for mobile** — Completely redesigned mobile experience
 - **Comfortable spacing** — Widen spacing across all panels, files, components for better usability
 - **Minimal interface** — Auto-hidden tabs & options, new mobile editor header, auto focus mode
-- **Windows Mode** — Fluent Design UI for native feeling on Windows
+- **Windows Mode** — Fluent Design UI for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
     ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
 
 > [!NOTE]
-> Windows Mode is enabled by default. You can disable it in [Style Settings](https://github.com/mgmeyers/obsidian-style-settings).
-
+> Make sure to enable "Translucent window" in Obsidian Apperance settings.
+  
 ## Plugins
 
 All features are enable by default, following plugins can be installed to modify your installation. they are **_not_** required.
@@ -24,12 +24,12 @@ All features are enable by default, following plugins can be installed to modify
 - Disable auto hiding elements
 - Disable active line indicator
 - Disable centered status bar
-- Disable full width table
 - Disable frontmatter foldable heading
+- Disable full width table
+- Disable Windows Mode
 - Enable accented window
-- Force macOS style on Windows
 
-### [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/)
+### [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Desktop)
 - Add pseudo-Mica (wallpaper as background) on Windows
 - Fix misaligned window control buttons on macOS
 
