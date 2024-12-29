@@ -1330,7 +1330,6 @@ body:not(.is-phone) {
 body:not(.is-mobile) {
   &.theme-dark .mod-root .workspace-tab-container {
     box-shadow: rgba(244, 244, 244, 0.12) 0px 0px 0px 1px, rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
-    border-radius: var(--radius-l);
   }
 
   .mod-root .workspace-tab-container {
@@ -1341,9 +1340,11 @@ body:not(.is-mobile) {
 
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
     margin-left: 8px;
+    border-radius: var(--radius-m);
   }
   .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tab-container {
     margin-right: 8px;
+    border-radius: var(--radius-m);
   }
 
   /* Auto Focus Mode */
