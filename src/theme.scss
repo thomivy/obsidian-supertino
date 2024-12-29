@@ -1803,7 +1803,7 @@ body:not(.is-phone) {
   .prompt {
     outline: var(--prompt-border-width) solid var(--prompt-border-color);
     border: none;
-    background-color: transparent;
+    background-color: var(--workspace-background-translucent);
     backdrop-filter: blur(50px);
   }
 
