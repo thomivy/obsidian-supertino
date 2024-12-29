@@ -2316,7 +2316,6 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
   select,
   .dropdown {
     min-height: var(--input-height);
-    min-width: 120px;
     border: none;
     outline: 1px solid var(--background-modifier-border);
   }
@@ -2495,6 +2494,16 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
   /********** Modal **********/
   .modal {
     backdrop-filter: blur(240px);
+
+    textarea,
+    input[type="text"]:not(.metadata-container *):not(.prompt *),
+    input[type="number"],
+    input[type="search"],
+    button:not(.clickable-icon),
+    select,
+    .dropdown {
+      min-width: 120px;
+    }
   }
 
   .modal:not(.mod-settings):not(.mod-community-modal) {
@@ -3189,4 +3198,10 @@ body.is-phone {
       color: white;
     }
   }
+}
+
+/********** Community Plugin: Trash Explorer **********/
+
+.trash-item .buttons {
+  gap: 8px !important;
 }
