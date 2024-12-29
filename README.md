@@ -58,6 +58,8 @@ You can follow Cupertino's development or my future work on my [Twitter](https:/
 
 ## Credits
 
+
+- **@mgmeyers** — [California Coast Obsidian Theme](https://github.com/mgmeyers/obsidian-california-coast-theme)
 - **@colineckert** — [Things 2 (Quick Mode Switcher)](https://github.com/colineckert/obsidian-things)
 - **@krios2146** — [Obsidian GitHub Theme (Codeblock Styling)](https://github.com/krios2146/obsidian-theme-github)
 - **@FireIsGood** — [Table Rounded Corner](https://forum.obsidian.md/t/60551)
