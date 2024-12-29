@@ -127,7 +127,7 @@ body {
   --tab-radius-active: var(--radius-s);
   --tab-radius: var(--radius-s);
   --tab-width: 100%;
-  --table-background: var(--background-primary-alt);
+  --table-background: var(--background-secondary);
   --tag-padding-x: 12px;
   --tag-padding-y: 8px;
   --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
@@ -1261,7 +1261,7 @@ p:has(a.tag) {
 .cm-html-embed th,
 .markdown-rendered th,
 .markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
-  padding: 8px 8px;
+  padding: 8px;
 }
 
 body:not(.full-table-off) table,
@@ -3205,4 +3205,25 @@ body.is-phone {
 
 .trash-item .buttons {
   gap: 8px !important;
+}
+
+/********** Community Plugin: Dataview **********/
+.dataview.table-view-table {
+  position: relative;
+}
+.dataview.table-view-table::before {
+  border: var(--table-border-width) solid var(--table-border-color);
+  border-collapse: separate;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  content: "";
+  position: absolute;
+  border-radius: var(--radius-s);
+  z-index: 1;
+  inset: 0;
+}
+
+.table-view-th {
+  border-bottom: var(--table-border-width) solid var(--table-border-color) !important;
+  font-size: unset !important;
 }
