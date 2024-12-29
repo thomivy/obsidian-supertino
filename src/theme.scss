@@ -1771,7 +1771,7 @@ body:not(.is-phone) {
   .prompt {
     outline: var(--prompt-border-width) solid var(--prompt-border-color);
     border: none;
-    background-color: var(--workspace-background-translucent);
+    background-color: transparent;
     backdrop-filter: blur(50px);
   }
 
@@ -1784,6 +1784,10 @@ body:not(.is-phone) {
   .prompt-instructions {
     border-color: var(--background-modifier-border);
     color: var(--text-faint);
+  }
+
+  .prompt .suggestion-item {
+    padding: 8px 16px;
   }
 }
 
@@ -3110,3 +3114,79 @@ body.is-phone {
   }
 }
 
+/********** Community Plugin: Omnisearch **********/
+
+.omnisearch-result > div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.omnisearch-result__icon {
+  display: none;
+}
+.omnisearch-result__title {
+  align-items: baseline;
+  width: 100%;
+}
+.omnisearch-result__extension {
+  flex-grow: 1;
+}
+.omnisearch-result__body {
+  margin: 0;
+  width: 100%;
+}
+.omnisearch-highlight {
+  text-decoration: none;
+}
+
+body.is-phone {
+  &.theme-dark .omnisearch-input-field {
+    background: linear-gradient(180deg, rgba(43, 43, 43, 0) 0%, rgba(43, 43, 43, 1) 80%);
+  }
+  &:has(.omnisearch-modal.prompt) .app-container {
+    filter: none;
+  }
+
+  .omnisearch-modal {
+    --text-muted: rgba(var(--mono-rgb-0), 0.5);
+    backdrop-filter: blur(20px) brightness(0.5);
+    height: 85%;
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
+
+    .prompt-results {
+      padding-top: 12px;
+      color: white;
+    }
+
+    .omnisearch-input-field {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      padding: 8px;
+      background: linear-gradient(180deg, rgba(209, 211, 218, 0) 0%, rgba(209, 211, 218, 1) 100%);
+
+      input.prompt-input {
+        margin: 0;
+        padding-right: 120px;
+      }
+    }
+
+    .omnisearch-input-container__buttons {
+      width: unset;
+      position: absolute;
+      right: 8px;
+      padding: 0;
+      bottom: 8px;
+
+      button {
+        background-color: transparent !important;
+      }
+    }
+
+    .omnisearch-highlight {
+      color: white;
+    }
+  }
+}
