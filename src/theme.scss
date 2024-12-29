@@ -1094,6 +1094,10 @@ body.is-tablet {
     background-color: transparent;
   }
 
+  &.center-tabs-off .sidebar-toggle-button.mod-left {
+    position: relative !important;
+  }
+
   .sidebar-toggle-button.mod-left {
     left: 8px;
     padding-left: 0;
