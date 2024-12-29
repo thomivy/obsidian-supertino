@@ -24,6 +24,7 @@ All features are enable by default, following plugins can be installed to modify
 - Disable auto hiding elements
 - Disable active line indicator
 - Disable centered status bar
+- Disable centered tabs
 - Disable frontmatter foldable heading
 - Disable full width table
 - Disable Windows Mode
@@ -42,6 +43,10 @@ I’ve spent way too much time on customizing Obsidian, thousands of themes with
 3. **Less visual noise** — Content is the key. Cupertino makes Obsidian blend in system style, so you can focus on what you're typing.
 
 Cupertino is designed as I use Obsidian, while I'm trying to focus on being consistent, inconsistency happens. If you spot any, feel free to submit issues.
+
+## Performance
+
+Cupertino is very resource heavy due to the amount of blur and calculation used. Performance issue is known and will not be fixed nor addressed further. Unless Obsidian optimizes the app, I can't do anything about it.
 
 ## Support
 
