@@ -1069,6 +1069,24 @@ body.mod-linux:not(.is-mobile) {
       right: 48px;
     }
   }
+
+  &.center-tabs-off {
+    .workspace:not(.is-left-sidedock-open) {
+      .mod-root .workspace-tabs .workspace-tab-header-container {
+        padding-left: 52px;
+      }
+    }
+    .workspace:not(.is-right-sidedock-open) {
+      .mod-root .workspace-tabs .workspace-tab-header-container {
+        padding-right: var(--frame-right-space) !important;
+      }
+    }
+    .workspace.is-left-sidedock-open {
+      .mod-root .workspace-tabs .workspace-tab-header-container {
+        padding-left: 8px;
+      }
+    }
+  }
 }
 
 body.is-tablet {
