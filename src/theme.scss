@@ -2251,7 +2251,7 @@ body:not(.center-status-off) .status-bar {
 .status-bar {
   right: 8px;
   bottom: 8px;
-  opacity: 0.5;
+  opacity: 0.1;
   transition: var(--anim-duration-fast);
   border: 1px solid transparent;
   border-radius: var(--radius-xl);
