@@ -1849,6 +1849,7 @@ body.is-phone {
     border: none;
     background: linear-gradient(180deg, rgba(209, 211, 218, 0) 0%, rgba(209, 211, 218, 1) 100%);
     width: 100%;
+    z-index: var(--layer-cover);
   }
 
   .prompt-input[type="text"] {
@@ -3207,6 +3208,7 @@ body.is-phone {
       bottom: 0;
       padding: 8px;
       background: linear-gradient(180deg, rgba(209, 211, 218, 0) 0%, rgba(209, 211, 218, 1) 100%);
+      z-index: var(--layer-cover);
 
       input.prompt-input {
         margin: 0;
