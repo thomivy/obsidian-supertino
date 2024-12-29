@@ -41,6 +41,11 @@ settings:
         description: Turn off alternative lowercase 'a' font style.
         type: class-toggle
     -
+        id: alt-heading-off
+        title: Disable alternative heading style
+        description: Turn off all caps and opacity adjustment for H4, H5 and H6.
+        type: class-toggle
+    -
         id: active-line-off
         title: Disable active editing line highlight
         type: class-toggle
@@ -1202,25 +1207,27 @@ body:not(.active-line-off) .cm-active::before {
   margin-bottom: 24px;
 }
 
-h4,
-.markdown-rendered h4 {
-  opacity: 0.8;
-  letter-spacing: normal;
-}
+body:not(.alt-heading-off) {
+  h4,
+  .markdown-rendered h4 {
+    opacity: 0.8;
+    letter-spacing: normal;
+  }
 
-h5,
-.markdown-rendered h5 {
-  text-transform: uppercase;
-  opacity: 0.5;
-  letter-spacing: normal;
-}
+  h5,
+  .markdown-rendered h5 {
+    text-transform: uppercase;
+    opacity: 0.5;
+    letter-spacing: normal;
+  }
 
-h6,
-.markdown-rendered h6 {
-  text-transform: uppercase;
-  font-weight: 300;
-  opacity: 0.8;
-  letter-spacing: normal;
+  h6,
+  .markdown-rendered h6 {
+    text-transform: uppercase;
+    font-weight: 300;
+    opacity: 0.8;
+    letter-spacing: normal;
+  }
 }
 
 .markdown-rendered code,
