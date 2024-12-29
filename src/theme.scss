@@ -3246,14 +3246,13 @@ body.is-phone {
 }
 .dataview.table-view-table::before {
   border: var(--table-border-width) solid var(--table-border-color);
-  border-collapse: separate;
   width: calc(100% - 2px);
   height: calc(100% - 2px);
   content: "";
   position: absolute;
   border-radius: var(--radius-s);
-  z-index: 1;
   inset: 0;
+  pointer-events: none;
 }
 
 .table-view-th {
