@@ -23,6 +23,10 @@ settings:
         description: Turn off Windows specific styling. (Requires reload)
         type: class-toggle
     -
+        id: center-tabs-off
+        title: Disable centered tabs
+        type: class-toggle
+    -
         id: hide-nav-header-off
         title: Disable auto hiding panel actions
         type: class-toggle
@@ -777,20 +781,6 @@ body:not(.is-mobile) {
     }
   }
 
-  .workspace-split.mod-root .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-left)) {
-    padding-left: 0;
-  }
-  .workspace-split.mod-root .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-right)) {
-    padding-right: 0;
-
-    .workspace-tab-header-new-tab {
-      right: 24px !important;
-    }
-    .workspace-tab-header-tab-list {
-      right: 8px !important;
-    }
-  }
-
   .sidebar-toggle-button .clickable-icon {
     margin: auto 0;
   }
@@ -820,16 +810,6 @@ body:not(.is-mobile) {
   }
   .mod-top-right-space .workspace-tab-header-container-inner {
     margin: 0;
-  }
-
-  .workspace-tab-header-new-tab .clickable-icon:hover {
-    border-radius: var(--clickable-icon-radius) 0 0 var(--clickable-icon-radius) !important;
-  }
-  .workspace-tab-header-new-tab:has(.clickable-icon:hover) ~ .workspace-tab-header-tab-list .clickable-icon {
-    border-radius: 0 var(--clickable-icon-radius) var(--clickable-icon-radius) 0 !important;
-    opacity: var(--icon-opacity-hover);
-    color: var(--icon-color-hover);
-    background-color: var(--background-modifier-hover);
   }
 
   .workspace-split.mod-root.mod-vertical .workspace-leaf-resize-handle,
@@ -865,8 +845,9 @@ body:not(.is-phone) {
       }
 
       .workspace-tab-header-container {
-        justify-content: center;
         align-items: center;
+        gap: 4px;
+        padding-right: 8px !important;
       }
       .workspace-tab-header-container-inner {
         align-items: center;
@@ -877,9 +858,6 @@ body:not(.is-phone) {
         overflow: scroll;
       }
 
-      .workspace-tab-header-spacer {
-        display: none;
-      }
       .workspace-tab-header {
         flex: unset;
         background-color: var(--background-modifier-hover);
@@ -917,17 +895,60 @@ body:not(.is-phone) {
 
       .workspace-tab-header-new-tab,
       .workspace-tab-header-tab-list {
-        position: absolute;
         margin-inline-start: 0;
         margin-inline-end: 0;
-        padding: 0;
+        padding: 0 !important;
         height: 100%;
+      }
+    }
+  }
+
+  &.center-tabs-off .workspace .mod-root {
+    .sidebar-toggle-button.mod-right {
+      position: relative;
+      right: 0 !important;
+    }
+  }
+
+  &:not(.center-tabs-off) .workspace .mod-root {
+    .workspace-tab-header-container {
+      justify-content: center;
+      gap: 0;
+    }
+    .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-left)) {
+      padding-left: 0;
+    }
+    .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-right)) {
+      padding-right: 0;
+
+      .workspace-tab-header-new-tab {
+        right: 24px !important;
+      }
+      .workspace-tab-header-tab-list {
+        right: 8px !important;
       }
     }
 
     .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
       padding-left: 60px !important;
       padding-right: 60px !important;
+    }
+
+    .workspace-tab-header-spacer {
+      display: none;
+    }
+    .workspace-tab-header-new-tab,
+    .workspace-tab-header-tab-list {
+      position: absolute;
+    }
+    .workspace-tab-header-new-tab .clickable-icon:hover {
+      border-radius: var(--clickable-icon-radius) 0 0 var(--clickable-icon-radius) !important;
+    }
+    .workspace-tab-header-new-tab:has(.clickable-icon:hover) ~ .workspace-tab-header-tab-list .clickable-icon {
+      border-radius: 0 var(--clickable-icon-radius) var(--clickable-icon-radius) 0 !important;
+      opacity: var(--icon-opacity-hover);
+      color: var(--icon-color-hover);
+      background-color: var(--background-modifier-hover);
     }
   }
 }
@@ -971,7 +992,7 @@ body.mod-macos:not(.is-mobile) {
     }
   }
 
-  .workspace:not(.is-right-sidedock-open) {
+  &:not(.center-tabs-off) .workspace:not(.is-right-sidedock-open) {
     &.is-left-sidedock-open {
       .mod-root .workspace-tabs .workspace-tab-header-container {
         padding-left: 100px;
@@ -986,7 +1007,7 @@ body.mod-macos:not(.is-mobile) {
     }
   }
 
-  .workspace.is-right-sidedock-open {
+  &:not(.center-tabs-off) .workspace.is-right-sidedock-open {
     &.is-left-sidedock-open {
       .mod-root .workspace-tabs .workspace-tab-header-container {
         padding-left: 60px;
