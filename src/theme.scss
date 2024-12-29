@@ -604,6 +604,7 @@ body:not(.is-mobile) {
   /* Hide indent line */
   .tree-item-children {
     border-inline-start: none;
+    margin-bottom: 0;
   }
 
   /* Text positioning */
