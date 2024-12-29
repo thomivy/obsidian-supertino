@@ -1016,8 +1016,8 @@ body.mod-macos:not(.is-mobile) {
   &:not(.center-tabs-off) .workspace:not(.is-right-sidedock-open) {
     &.is-left-sidedock-open {
       .mod-root .workspace-tabs .workspace-tab-header-container {
-        padding-left: 100px;
-        padding-right: 100px;
+        padding-left: 100px !important;
+        padding-right: 100px !important;
       }
     }
     .workspace-tab-header-new-tab {
@@ -1031,8 +1031,8 @@ body.mod-macos:not(.is-mobile) {
   &:not(.center-tabs-off) .workspace.is-right-sidedock-open {
     &.is-left-sidedock-open {
       .mod-root .workspace-tabs .workspace-tab-header-container {
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 60px !important;
+        padding-right: 60px !important;
       }
     }
     .workspace-tab-header-new-tab {
