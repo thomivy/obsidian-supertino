@@ -3261,6 +3261,18 @@ body.is-phone {
 }
 
 /********** Community Plugin: Tldraw **********/
+body:has(.tl-theme__light) {
+  --color-background: hsl(210, 20%, 98%);
+  --color-low: hsl(204, 16%, 94%);
+  --color-text: hsl(0, 0%, 0%);
+}
+
+body:has(.tl-theme__dark) {
+  --color-background: hsl(240, 5%, 6.5%);
+  --color-low: hsl(260, 4.5%, 10.5%);
+  --color-text: hsl(210, 17%, 98%);
+}
+
 body:has(.tldraw-view-content) .status-bar {
   display: none;
 }
@@ -3274,13 +3286,15 @@ body:not(.is-mobile) {
 body.is-phone {
   .workspace-leaf-content:has(.tldraw-view-content) .view-actions button:nth-last-child(2) {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 1px) !important;
+    backdrop-filter: none !important;
     right: 0 !important;
     bottom: unset !important;
-    color: rgb(29, 29, 29) !important;
-    background: hsl(204, 16%, 94%) !important;
+    color: var(--color-text) !important;
+    background: var(--color-low) !important;
     width: 40px !important;
     height: 40px !important;
     padding: 8px !important;
+    border: none !important;
     border-radius: 0 0 0 11px !important;
 
     svg.svg-icon {
