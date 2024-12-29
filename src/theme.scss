@@ -3260,3 +3260,52 @@ body.is-phone {
   border-bottom: var(--table-border-width) solid var(--table-border-color) !important;
   font-size: unset !important;
 }
+
+/********** Community Plugin: Tldraw **********/
+body:has(.tldraw-view-content) .status-bar {
+  display: none;
+}
+
+body:not(.is-mobile) {
+  .tldraw-view-content {
+    padding-bottom: 0 !important;
+  }
+}
+
+body.is-phone {
+  .workspace-leaf-content:has(.tldraw-view-content) .view-actions button:nth-last-child(2) {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 1px) !important;
+    right: 0 !important;
+    bottom: unset !important;
+    color: rgb(29, 29, 29) !important;
+    background: hsl(204, 16%, 94%) !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 8px !important;
+    border-radius: 0 0 0 11px !important;
+
+    svg.svg-icon {
+      fill: none;
+    }
+  }
+
+  .tldraw-view-content {
+    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 1px) !important;
+    padding-bottom: 79px !important;
+  }
+}
+
+.tldraw-view-content {
+  button {
+    box-shadow: none !important;
+    height: 40px !important;
+  }
+
+  button:not(.clickable-icon).mobile-tap {
+    background-color: hsl(0, 0%, 0%, 5.5%);
+  }
+
+  .tlui-button__menu {
+    padding: 0 16px;
+  }
+}
