@@ -9,6 +9,28 @@ settings:
         type: info-text
         markdown: true
     -
+        id: alt-heading-off
+        title: Disable alternative heading style
+        description: Turn off all caps and opacity adjustment for H4, H5 and H6.
+        type: class-toggle
+    -
+        id: active-line-off
+        title: Disable active editing line highlight
+        type: class-toggle
+    -
+        id: full-table-off
+        title: Disable full width table
+        type: class-toggle
+    -
+        id: hide-frontmatter-off
+        title: Show frontmatter foldable heading
+        type: class-toggle
+    -
+        id: desktop-header
+        title: Desktop & Tablet
+        type: heading
+        level: 1
+    -
         id: accented-frame-opacity
         title: Accented window
         description: Higher value reduces overall interface contrast.
@@ -23,43 +45,21 @@ settings:
         description: Turn off Windows specific styling. (Requires reload)
         type: class-toggle
     -
-        id: center-tabs-off
-        title: Disable centered tabs
+        id: alt-font-off
+        title: Disable Apple Notes font style
+        description: Turn off alternative lowercase 'a' font style. (Desktop)
         type: class-toggle
     -
         id: hide-nav-header-off
         title: Disable auto hiding panel actions
         type: class-toggle
     -
-        id: editor-header
-        title: Editor
-        type: heading
-        level: 1
-    -
-        id: alt-font-off
-        title: Disable Apple Notes font style
-        description: Turn off alternative lowercase 'a' font style.
-        type: class-toggle
-    -
-        id: alt-heading-off
-        title: Disable alternative heading style
-        description: Turn off all caps and opacity adjustment for H4, H5 and H6.
-        type: class-toggle
-    -
-        id: active-line-off
-        title: Disable active editing line highlight
-        type: class-toggle
-    -
         id: center-status-off
         title: Disable centered status bar
         type: class-toggle
     -
-        id: full-table-off
-        title: Disable full width table
-        type: class-toggle
-    -
-        id: hide-frontmatter-off
-        title: Show frontmatter foldable heading
+        id: center-tabs-off
+        title: Disable centered tabs
         type: class-toggle
 */
 
