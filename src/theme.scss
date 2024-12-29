@@ -387,7 +387,6 @@ body:not(.is-mobile) {
     font-weight: normal;
     min-height: var(--input-height);
     line-height: unset;
-    white-space: normal;
   }
 
   input[type="text"]:not(.metadata-container *):not(.prompt *),
