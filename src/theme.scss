@@ -106,6 +106,7 @@ body {
   --h4-size: 1em;
   --h5-size: 0.875em;
   --h6-size: 0.85em;
+  --hr-color: var(--background-modifier-hover);
   --icon-opacity: 1;
   --input-height: 24px;
   --input-radius: var(--radius-m);
@@ -1293,7 +1294,7 @@ body:not(.active-line-off) .cm-active::before {
 
 .inline-title {
   margin-bottom: 24px;
-  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: var(--hr-thickness) solid var(--hr-color);
   padding-bottom: 16px;
 }
 
