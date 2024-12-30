@@ -98,8 +98,8 @@ body {
   --divider-color-hover: var(--text-normal);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
-  --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Pingfang TC";
-  --font-interface-theme: "SF Symbols", -apple-system, BlinkMacSystemFont, "SF Pro Text", "Pingfang TC";
+  --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --h1-size: 1.5em;
   --h2-size: 1.375em;
   --h3-size: 1.25em;
@@ -2406,8 +2406,8 @@ body:not(.center-status-off) .status-bar {
 /********** Desktop: Windows specific styling **********/
 
 body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
-  --font-text-theme: "Fluent System Icons", "Segoe UI Variable", "Segoe UI", "Microsoft Jhenghei", "Microsoft Yahei", "Yu Gothic UI", "Malgun Gothic", sans-serif;
-  --font-interface-theme: "Fluent System Icons", "Segoe UI Variable", "Segoe UI", "Microsoft Jhenghei", "Microsoft Yahei", "Yu Gothic UI", "Malgun Gothic", sans-serif;
+  --font-text-theme: "Segoe UI Variable", "Segoe UI", sans-serif;
+  --font-interface-theme: "Segoe UI Variable", "Segoe UI", sans-serif;
   --input-height: 32px;
   --dialog-width: 448px;
   --radius-l: 8px;
