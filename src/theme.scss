@@ -1016,16 +1016,16 @@ body.mod-macos:not(.is-mobile) {
     }
 
     .mod-root .workspace-tabs .workspace-tab-header-container {
-      padding-right: calc(var(--frame-left-space) + 44px) !important;
-      padding-left: calc(var(--frame-left-space) + 44px) !important;
+      padding-right: calc(var(--frame-left-space) + 44px);
+      padding-left: calc(var(--frame-left-space) + 44px);
     }
   }
 
-  &:not(.center-tabs-off) .workspace:not(.is-right-sidedock-open) {
+  .workspace:not(.is-right-sidedock-open) {
     &.is-left-sidedock-open {
       .mod-root .workspace-tabs .workspace-tab-header-container {
-        padding-right: 100px !important;
-        padding-left: 100px !important;
+        padding-right: 100px;
+        padding-left: 100px;
       }
     }
     .workspace-tab-header-new-tab {
@@ -1036,11 +1036,11 @@ body.mod-macos:not(.is-mobile) {
     }
   }
 
-  &:not(.center-tabs-off) .workspace.is-right-sidedock-open {
+  .workspace.is-right-sidedock-open {
     &.is-left-sidedock-open {
       .mod-root .workspace-tabs .workspace-tab-header-container {
-        padding-right: 60px !important;
-        padding-left: 60px !important;
+        padding-right: 60px;
+        padding-left: 60px;
       }
     }
     .workspace-tab-header-new-tab {
@@ -1048,6 +1048,21 @@ body.mod-macos:not(.is-mobile) {
     }
     .workspace-tab-header-tab-list {
       right: 8px;
+    }
+  }
+
+  &.center-tabs-off {
+    .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
+      justify-content: flex-start;
+    }
+    .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs .workspace-tab-header-container {
+      padding-right: 96px;
+    }
+    .workspace.is-right-sidedock-open .mod-root .workspace-tabs .workspace-tab-header-container {
+      padding-right: 60px;
+    }
+    .workspace.is-left-sidedock-open .mod-root .workspace-tabs .workspace-tab-header-container {
+      padding-left: 8px;
     }
   }
 }
