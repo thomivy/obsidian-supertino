@@ -26,6 +26,10 @@ settings:
         title: Show frontmatter foldable heading
         type: class-toggle
     -
+        id: compact-mode
+        title: Compact view
+        type: class-toggle
+    -
         id: desktop-header
         title: Desktop & Tablet
         type: heading
@@ -262,6 +266,20 @@ body {
 
   &:not(.is-focused) {
     --workspace-background-translucent: var(--background-secondary);
+  }
+
+  &.compact-mode {
+    --nav-item-padding: 6px 8px 6px 24px;
+
+    &.is-mobile {
+      --nav-item-padding: 12px 16px;
+      .nav-files-container .tree-item-icon.collapse-icon {
+        right: 16px;
+      }
+      .suggestion-item {
+        padding: 8px 16px !important;
+      }
+    }
   }
 }
 
