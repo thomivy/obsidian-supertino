@@ -44,7 +44,7 @@ settings:
         max: 100
         step: 5
     -
-        id: force-macos
+        id: windows-mode-off
         title: Use macOS style on Windows
         description: Turn off Windows specific styling. (Requires reload)
         type: class-toggle
@@ -257,6 +257,7 @@ body {
     --border-width: 1px;
     --divider-width: 1px;
     --mobile-sidebar-max-width: 100%;
+    --tab-outline-width: 1px;
     --tab-outline-width: 1px;
   }
 
@@ -851,6 +852,16 @@ body:not(.is-mobile) {
     margin: 0;
   }
 
+  .workspace-tab-header-new-tab .clickable-icon:hover {
+    border-radius: var(--clickable-icon-radius) 0 0 var(--clickable-icon-radius) !important;
+  }
+  .workspace-tab-header-new-tab:has(.clickable-icon:hover) ~ .workspace-tab-header-tab-list .clickable-icon {
+    border-radius: 0 var(--clickable-icon-radius) var(--clickable-icon-radius) 0 !important;
+    opacity: var(--icon-opacity-hover);
+    color: var(--icon-color-hover);
+    background-color: var(--background-modifier-hover);
+  }
+
   .workspace-split.mod-root.mod-vertical .workspace-leaf-resize-handle,
   .workspace-split.mod-root.mod-horizontal .workspace-leaf-resize-handle {
     border-color: transparent !important;
@@ -862,16 +873,16 @@ body:not(.is-phone) {
     height: 40px;
   }
 
-    .sidebar-toggle-button.mod-left,
-    .sidebar-toggle-button.mod-right,
-    .workspace-tab-header-new-tab,
-    .workspace-tab-header-tab-list {
+  .sidebar-toggle-button.mod-left,
+  .sidebar-toggle-button.mod-right,
+  .workspace-tab-header-new-tab,
+  .workspace-tab-header-tab-list {
     position: absolute !important;
-    }
+  }
 
-    .workspace-tab-header-spacer {
-      display: none;
-    }
+  .workspace-tab-header-spacer {
+    display: none;
+  }
 
   .sidebar-toggle-button.mod-left {
     position: absolute !important;
@@ -946,7 +957,6 @@ body:not(.is-phone) {
       .workspace-tab-header-tab-list {
         margin-inline-start: 0;
         margin-inline-end: 0;
-        padding: 0 !important;
         height: 100%;
       }
     }
@@ -1056,7 +1066,7 @@ body.mod-windows:not(.is-mobile) {
     margin: 0 0 0 40px;
   }
 
-  &:not(.center-tabs-off) .workspace:not(.is-right-sidedock-open) {
+  .workspace:not(.is-right-sidedock-open) {
     .sidebar-toggle-button.mod-right {
       right: calc(8px + var(--frame-right-space));
     }
@@ -1072,7 +1082,7 @@ body.mod-windows:not(.is-mobile) {
     }
   }
 
-  &:not(.center-tabs-off) .workspace.is-right-sidedock-open {
+  .workspace.is-right-sidedock-open {
     .sidebar-toggle-button.mod-right {
       right: 8px;
     }
@@ -1089,15 +1099,12 @@ body.mod-windows:not(.is-mobile) {
   }
 
   &.center-tabs-off {
-    .workspace:not(.is-left-sidedock-open) {
-      .mod-root .workspace-tabs .workspace-tab-header-container {
-        padding-left: 52px;
-      }
+    .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
+      padding-left: 52px;
+      justify-content: flex-start;
     }
-    .workspace.is-left-sidedock-open {
-      .mod-root .workspace-tabs .workspace-tab-header-container {
-        padding-left: 8px;
-      }
+    .workspace.is-left-sidedock-open .mod-root .workspace-tabs .workspace-tab-header-container {
+      padding-left: 8px;
     }
   }
 }
@@ -1363,7 +1370,7 @@ body:not(.is-mobile) {
     .workspace-tab-container {
       margin: 0;
       box-shadow: none;
-      border: none;
+      border: 0px solid transparent;
       border-radius: 0;
     }
     .workspace-tab-header-container:not(:hover),
@@ -2056,7 +2063,7 @@ body:not(.is-phone) {
 }
 
 body:not(.mod-windows):not(.is-mobile),
-body.force-macos {
+body.windows-mode-off {
   .modal:not(.mod-community-modal) {
     .setting-item-heading {
       border: none;
@@ -2312,7 +2319,7 @@ body:not(.center-status-off) .status-bar {
 
 /********** Desktop: Windows specific styling **********/
 
-body.mod-windows:not(.force-macos):not(.is-mobile) {
+body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --font-text-theme: "Fluent System Icons", "Segoe UI Variable", "Segoe UI", "Microsoft Jhenghei", "Microsoft Yahei", "Yu Gothic UI", "Malgun Gothic", sans-serif;
   --font-interface-theme: "Fluent System Icons", "Segoe UI Variable", "Segoe UI", "Microsoft Jhenghei", "Microsoft Yahei", "Yu Gothic UI", "Malgun Gothic", sans-serif;
   --input-height: 32px;
