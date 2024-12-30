@@ -376,6 +376,10 @@ body:not(.is-mobile) {
   }
 }
 
+.titlebar {
+  background-color: transparent !important;
+}
+
 /********** Input Components **********/
 
 .clickable-icon {
@@ -411,7 +415,7 @@ body:not(.is-mobile) {
 
 body:not(.is-mobile) {
   textarea,
-  input[type="text"]:not(.metadata-container *):not(.prompt *),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"],
   input[type="search"],
   button:not(.clickable-icon),
@@ -425,7 +429,7 @@ body:not(.is-mobile) {
     line-height: unset;
   }
 
-  input[type="text"]:not(.metadata-container *):not(.prompt *),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"] {
     box-shadow: none;
     border: 1px solid var(--background-modifier-border);
@@ -473,9 +477,9 @@ body.is-mobile {
 
 body.is-phone {
   textarea,
-  input[type="text"]:not(.metadata-container *):not(.prompt *),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"],
-  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) *):not(.view-content *),
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button),
   select,
   .dropdown {
     justify-content: flex-start;
@@ -486,7 +490,7 @@ body.is-phone {
     text-align-last: unset;
   }
 
-  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) *):not(.view-content *),
+  button:not(.clickable-icon):not(.modal:not(.mod-settings):not(.mod-community-modal) button):not(.view-content button),
   select,
   .dropdown {
     color: var(--text-accent);
@@ -499,9 +503,9 @@ body.is-phone {
 
 body.is-tablet {
   textarea,
-  input[type="text"]:not(.metadata-container *):not(.prompt *),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"],
-  button:not(.clickable-icon):not(.modal:not(.mod-settings) *):not(.view-content *) {
+  button:not(.clickable-icon):not(.modal:not(.mod-settings) button):not(.view-content button) {
     padding: 4px 20px;
   }
 }
@@ -576,7 +580,7 @@ body:not(.is-mobile) {
   }
 
   /* Unfocused window opacity */
-  &:not(.is-focused) .mod-sidedock > * {
+  &:not(.is-focused) .mod-sidedock > div {
     opacity: 0.5;
   }
 
@@ -650,7 +654,7 @@ body.is-mobile {
     .workspace-drawer {
       background-color: var(--background-primary);
 
-      .view-content > *:not(.nav-header) {
+      .view-content > div:not(.nav-header) {
         background: var(--background-secondary);
       }
 
@@ -703,7 +707,7 @@ body.is-mobile {
       padding: 12px 16px 32px;
       overflow: auto;
     }
-    .view-content > *:not(.nav-header) {
+    .view-content > div:not(.nav-header) {
       border-radius: var(--input-radius);
       background: var(--background-primary);
 
@@ -711,7 +715,7 @@ body.is-mobile {
         padding: 8px 16px !important;
       }
     }
-    .view-content:has(.nav-header) > *:not(.nav-header) {
+    .view-content:has(.nav-header) > div:not(.nav-header) {
       margin-bottom: 80px;
       overflow: visible;
     }
@@ -1187,7 +1191,7 @@ body:not(.is-mobile):not(.is-hidden-frameless) {
     }
     .workspace.is-left-sidedock-open .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-left: 8px !important;
-  }
+    }
   }
 }
 
@@ -2154,14 +2158,14 @@ body.windows-mode-off {
       padding: 12px 16px;
     }
     .setting-item-heading + .setting-item,
-    *:not(.setting-item) + .setting-item,
+    div:not(.setting-item) + .setting-item,
     .setting-item:first-child:not(.setting-item-heading) {
       border-top: 1px solid var(--background-modifier-border);
       border-top-right-radius: var(--radius-s) !important;
       border-top-left-radius: var(--radius-s) !important;
     }
     .setting-item:has(+ .setting-item-heading),
-    .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+    .setting-item:has(+ div:not(.setting-item)):not(.setting-item-heading),
     .setting-item:last-child {
       border-bottom: 1px solid var(--background-modifier-border);
       border-bottom-right-radius: var(--radius-s) !important;
@@ -2308,9 +2312,9 @@ body.is-phone {
 body.is-tablet {
   .modal:not(.mod-community-modal) {
     textarea,
-    input[type="text"]:not(.metadata-container *):not(.prompt *),
+    input[type="text"]:not(.metadata-container input):not(.prompt input),
     input[type="number"],
-    input[type="search"]:not(.search-input-container > *),
+    input[type="search"]:not(.search-input-container > input),
     button:not(.clickable-icon),
     select,
     .dropdown {
@@ -2324,12 +2328,12 @@ body.is-tablet {
       border-left: none;
     }
     .setting-item-heading + .setting-item,
-    *:not(.setting-item) + .setting-item,
+    div:not(.setting-item) + .setting-item,
     .setting-item:first-child:not(.setting-item-heading) {
       border-top: none;
     }
     .setting-item:has(+ .setting-item-heading),
-    .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
+    .setting-item:has(+ div:not(.setting-item)):not(.setting-item-heading),
     .setting-item:last-child {
       border-bottom: none;
     }
@@ -2361,7 +2365,7 @@ body:not(.center-status-off) .status-bar {
   background-color: var(--background-primary);
 }
 
-.status-bar * {
+.status-bar span {
   white-space: nowrap;
 }
 
@@ -2426,7 +2430,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     --input-shadow: 0 0.5px 0 0 rgba(255, 255, 255, 0.1) inset !important;
     --interactive-normal: var(--background-secondary-alt);
 
-    *:not(.mod-root) {
+    div:not(.mod-root) {
       --divider-color: rgba(0, 0, 0, 0.2) !important;
     }
   }
@@ -2434,7 +2438,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   /********** Components **********/
 
   textarea,
-  input[type="text"]:not(.metadata-container *):not(.prompt *),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"],
   input[type="search"],
   button:not(.clickable-icon),
@@ -2464,7 +2468,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     }
   }
 
-  input[type="text"]:not(.metadata-container *):not(.prompt *),
+  input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"] {
     padding-left: 16px;
 
@@ -2621,7 +2625,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     backdrop-filter: blur(240px);
 
     textarea,
-    input[type="text"]:not(.metadata-container *):not(.prompt *),
+    input[type="text"]:not(.metadata-container input):not(.prompt input),
     input[type="number"],
     input[type="search"],
     button:not(.clickable-icon),
