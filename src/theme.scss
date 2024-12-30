@@ -2358,7 +2358,7 @@ body:not(.center-status-off) .status-bar {
   border: 1px solid transparent;
   border-radius: var(--radius-xl);
   background-color: transparent;
-  padding: 4px;
+  padding: 4px !important;
   color: var(--text-muted);
 }
 
