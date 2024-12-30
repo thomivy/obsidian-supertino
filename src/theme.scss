@@ -1506,6 +1506,10 @@ body.is-mobile {
 }
 
 body:not(.is-mobile) {
+  .modal-container:has(.prompt):not(:last-child) {
+    opacity: 0;
+  }
+
   .modal.mod-community-modal {
     box-shadow: none;
   }
