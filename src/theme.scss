@@ -1005,7 +1005,7 @@ body.mod-macos:not(.is-mobile) {
     margin: 0 0 0 40px;
   }
   .sidebar-toggle-button.mod-right {
-    right: 8px;
+    right: 8px !important;
   }
 
   &.is-fullscreen:not(.is-left-sidedock-open) {
