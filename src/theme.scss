@@ -959,7 +959,7 @@ body:not(.is-phone) {
         opacity: 0.5;
         inset-inline-end: 8px;
       }
-      .workspace-tab-header-status-container {
+      .workspace-tab-header-status-container.mod-pinned {
         position: absolute;
         right: 8px;
       }
