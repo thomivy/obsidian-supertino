@@ -127,8 +127,8 @@ body {
   --radius-xl: 12px;
   --ribbon-background-collapsed: transparent;
   --ribbon-background: transparent;
-  --ribbon-padding: 4px 0 0 8px;
-  --ribbon-width: 48px;
+  --ribbon-padding: 4px 8px;
+  --ribbon-width: 56px;
   --slider-track-height: 4px;
   --slider-track-background: var(--background-modifier-border-hover);
   --tab-background-active: var(--background-primary-alt);
@@ -411,7 +411,7 @@ body:not(.is-mobile) {
 }
 
 .search-input-container:before {
-  top: unset;
+  top: unset !important;
 }
 
 body:not(.is-mobile) {
@@ -562,13 +562,13 @@ body:not(.is-mobile) {
     .workspace-tabs.mod-top-left-space .workspace-tab-header-container {
       padding-left: 0;
     }
-    .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
-    .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
-    .nav-header {
-      padding-left: 8px;
+    .workspace-split.mod-left-split .workspace-leaf-content > .node-insert-event,
+    .workspace-split.mod-left-split .workspace-leaf-content > .view-content,
+    .workspace-split.mod-left-split .nav-header {
+      padding-left: 4px;
     }
     .search-row {
-      margin-left: 8px;
+      margin-left: 4px;
     }
   }
 
