@@ -262,6 +262,10 @@ body {
 
   &.is-tablet {
     --dropdown-padding: 4px 40px 4px 20px;
+
+    .app-container {
+      padding-top: var(--safe-area-inset-top);
+    }
   }
 
   &:not(.is-focused) {
@@ -369,10 +373,6 @@ body:not(.is-mobile) {
     --vault-profile-color: var(--text-muted);
     --icon-color: var(--text-muted);
   }
-}
-
-body.is-tablet {
-  top: var(--safe-area-inset-top);
 }
 
 /********** Input Components **********/
@@ -858,18 +858,21 @@ body:not(.is-mobile) {
 }
 
 body:not(.is-phone) {
-  &:not(.center-tabs-off) {
+  .view-header {
+    height: 40px;
+  }
+
     .sidebar-toggle-button.mod-left,
     .sidebar-toggle-button.mod-right,
     .workspace-tab-header-new-tab,
     .workspace-tab-header-tab-list {
-      position: absolute;
+    position: absolute !important;
     }
 
     .workspace-tab-header-spacer {
       display: none;
     }
-  }
+
   .sidebar-toggle-button.mod-left {
     position: absolute !important;
     top: 0;
@@ -885,10 +888,6 @@ body:not(.is-phone) {
 
   /* Editor Panel */
   .workspace .mod-root {
-    .view-header {
-      height: 40px;
-    }
-
     .workspace-tabs:not(.mod-stacked) {
       overflow: visible;
 
@@ -914,7 +913,6 @@ body:not(.is-phone) {
         flex: unset;
         background-color: var(--background-modifier-hover);
         padding: 0;
-        min-width: 100px;
         height: 100%;
 
         &.is-active {
@@ -966,22 +964,10 @@ body:not(.is-phone) {
     }
     .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-right)) {
       padding-right: 0;
-
-      .workspace-tab-header-new-tab {
-        right: 24px !important;
-      }
-      .workspace-tab-header-tab-list {
-        right: 8px !important;
-      }
     }
 
     .workspace-tab-header {
       width: fit-content;
-    }
-
-    .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
-      padding-right: 60px !important;
-      padding-left: 60px !important;
     }
   }
 }
@@ -1116,31 +1102,32 @@ body.mod-windows:not(.is-mobile) {
   }
 }
 
-body.is-tablet {
+body.is-tablet.is-hidden-frameless:not(.is-popout-window) {
   &.is-frameless.is-hidden-frameless .titlebar {
     background-color: transparent;
   }
 
-  &.center-tabs-off .sidebar-toggle-button.mod-left {
-    position: relative !important;
-    left: 0;
+  .workspace-tabs .clickable-icon {
+    width: 36px;
+    height: 36px;
   }
 
+  .sidebar-toggle-button {
+    padding: 6px 0 !important;
+  }
   .sidebar-toggle-button.mod-left {
     left: 8px;
     padding-left: 0;
   }
-
   .sidebar-toggle-button.mod-right {
-    right: 8px;
+    right: 8px !important;
   }
-
   .workspace.is-right-sidedock-open .sidebar-toggle-button.mod-right {
     right: 8px;
   }
 
   .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
-    padding: 6px;
+    padding: 6px 130px;
   }
 
   .workspace-tab-header-new-tab {
@@ -1156,6 +1143,22 @@ body.is-tablet {
 
   .workspace:has(.workspace-drawer.mod-right.is-pinned) .workspace-tab-header-tab-list {
     right: 8px;
+  }
+
+  .workspace .mod-root .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
+    padding-right: 88px;
+    padding-left: 88px;
+  }
+
+  &.center-tabs-off {
+    .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
+      padding-left: 50px;
+      justify-content: flex-start;
+    }
+
+    .workspace .mod-root .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
+      padding-left: 8px;
+    }
   }
 }
 
@@ -2600,6 +2603,9 @@ body.mod-windows:not(.force-macos):not(.is-mobile) {
 body.is-mobile {
   .view-actions {
     padding: 0;
+  }
+  .view-header-title-container {
+    height: 100%;
   }
 }
 
