@@ -961,6 +961,10 @@ body:not(.is-phone) {
         opacity: 0.5;
         inset-inline-end: 8px;
       }
+      .workspace-tab-header-status-container {
+        position: absolute;
+        right: 8px;
+      }
 
       .workspace-tab-header-new-tab,
       .workspace-tab-header-tab-list {
