@@ -2146,7 +2146,7 @@ body:not(.is-phone) {
 }
 
 body:not(.mod-windows):not(.is-mobile),
-body.windows-mode-off {
+body.windows-mode-off:not(.is-mobile) {
   .modal:not(.mod-community-modal) {
     .setting-item-heading {
       border: none;
