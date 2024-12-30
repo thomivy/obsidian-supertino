@@ -869,6 +869,10 @@ body:not(.is-mobile) {
 }
 
 body:not(.is-phone) {
+  &.center-tabs-off .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
+    justify-content: flex-start;
+  }
+
   .view-header {
     height: 40px;
   }
@@ -899,6 +903,8 @@ body:not(.is-phone) {
 
   /* Editor Panel */
   .workspace .mod-root {
+    --tab-width: 100%;
+
     .workspace-tabs:not(.mod-stacked) {
       overflow: visible;
 
@@ -908,6 +914,7 @@ body:not(.is-phone) {
       }
 
       .workspace-tab-header-container {
+        justify-content: center;
         align-items: center;
         gap: 4px;
       }
@@ -925,6 +932,7 @@ body:not(.is-phone) {
         background-color: var(--background-modifier-hover);
         padding: 0;
         height: 100%;
+        width: fit-content;
 
         &.is-active {
           box-shadow: none;
@@ -960,24 +968,29 @@ body:not(.is-phone) {
         height: 100%;
       }
     }
-  }
+    &:has(.mod-top-left-space:not(.mod-top-right-space)) .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container {
+      justify-content: flex-start;
+      padding-left: 48px !important;
 
-  .workspace .mod-root {
-    --tab-width: 100%;
-
-    .workspace-tab-header-container {
-      justify-content: center;
-      gap: 0;
-    }
-    .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-left)) {
-      padding-left: 0;
-    }
-    .workspace-tab-header-container:not(:has(.sidebar-toggle-button.mod-right)) {
-      padding-right: 0;
-    }
-
-    .workspace-tab-header {
-      width: fit-content;
+      &:has(.sidebar-toggle-button.mod-left):not(:has(.sidebar-toggle-button.mod-right)) {
+        padding-left: 48px !important;
+        padding-right: 68px !important;
+      }
+      &:has(.sidebar-toggle-button.mod-right):not(:has(.sidebar-toggle-button.mod-left)) {
+        padding-left: 8px !important;
+      }
+      &:not(:has(.sidebar-toggle-button.mod-right)) {
+        .workspace-tab-header-new-tab {
+          right: 32px;
+        }
+        .workspace-tab-header-tab-list {
+          right: 16px;
+        }
+      }
+      &:not(:has(.sidebar-toggle-button)) {
+        padding-left: 8px !important;
+        padding-right: 68px !important;
+      }
     }
   }
 }
@@ -1052,9 +1065,6 @@ body.mod-macos:not(.is-mobile) {
   }
 
   &.center-tabs-off {
-    .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
-      justify-content: flex-start;
-    }
     .workspace:not(.is-right-sidedock-open) .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-right: 96px;
     }
@@ -1116,7 +1126,6 @@ body.mod-windows:not(.is-mobile) {
   &.center-tabs-off {
     .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-left: 52px;
-      justify-content: flex-start;
     }
     .workspace.is-left-sidedock-open .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-left: 8px;
@@ -1175,7 +1184,6 @@ body.is-tablet.is-hidden-frameless:not(.is-popout-window) {
   &.center-tabs-off {
     .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-left: 50px;
-      justify-content: flex-start;
     }
 
     .workspace .mod-root .workspace-tabs:not(:has(.sidebar-toggle-button)) .workspace-tab-header-container {
