@@ -428,6 +428,7 @@ body:not(.is-mobile) {
     min-height: var(--input-height);
     font-weight: normal;
     line-height: unset;
+    letter-spacing: -0.015em;
   }
 
   input[type="text"]:not(.metadata-container input):not(.prompt input),
@@ -443,23 +444,11 @@ body:not(.is-mobile) {
   }
 
   button {
-    padding: 4px 8px;
-  }
-  button[class*="mod-"]:not(.mod-destructive) {
-    position: relative;
-    box-shadow: 0px 1px 2.5px 0px hsla(var(--color-accent-hsl), 0.24), 0px 0px 0px 0.5px hsla(var(--color-accent-hsl), 0.12) !important;
-    overflow: hidden;
-
-    &:not(.mod-cancel):not(.mod-destructive)::before {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.17) 0%, rgba(255, 255, 255, 0) 100%);
-      content: "";
-    }
+    padding: 4px 10px;
   }
   select,
   .dropdown {
-    padding: 4px 32px 4px 8px;
+    padding: 4px 32px 4px 10px;
   }
 }
 
@@ -581,8 +570,13 @@ body:not(.is-mobile) {
   }
 
   /* Unfocused window opacity */
-  &:not(.is-focused) .mod-sidedock > div {
-    opacity: 0.5;
+  &:not(.is-focused),
+  &:has(.modal-container) {
+    .workspace-ribbon,
+    .mod-sidedock > div,
+    .mod-root .workspace-tab-header-container {
+      opacity: 0.5;
+    }
   }
 
   .view-content .nav-header {
@@ -1597,8 +1591,37 @@ body.is-mobile {
 }
 
 body:not(.is-mobile) {
-  .modal-container:has(.prompt):not(:last-child) {
-    opacity: 0;
+  &.mod-macos {
+    .modal-container {
+      .modal-title {
+        font-size: var(--font-ui-medium);
+        font-weight: 700;
+      }
+
+      .modal-content,
+      .mod-checkbox {
+        font-size: var(--font-ui-small);
+      }
+      .modal-bg {
+        background-color: transparent;
+      }
+    }
+  }
+
+  .modal button {
+    position: relative;
+
+    .mod-cta {
+      box-shadow: 0px 1px 2.5px 0px hsla(var(--color-accent-hsl), 0.24), 0px 0px 0px 0.5px hsla(var(--color-accent-hsl), 0.12) !important;
+      overflow: hidden;
+    }
+
+    &:not(.mod-cancel):not(.mod-secondary)::before {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+      content: "";
+    }
   }
 
   .modal.mod-community-modal {
@@ -1608,6 +1631,10 @@ body:not(.is-mobile) {
   .modal:not(.mod-settings):not(.mod-community-modal) {
     backdrop-filter: blur(50px);
     animation: var(--anim-duration-fast) fadeInDown;
+
+    .modal-close-button {
+      display: none;
+    }
 
     .modal-title,
     h1,
@@ -1631,6 +1658,13 @@ body:not(.is-mobile) {
       button {
         flex-grow: 1;
         width: 0;
+        line-height: var(--line-height-normal);
+        box-shadow: none !important;
+
+        &:not(.mod-destructive):not(.mod-warning):not(.mod-cta),
+        &.mod-secondary {
+          background-color: var(--background-modifier-border-hover);
+        }
       }
 
       .mod-checkbox {
@@ -1758,7 +1792,8 @@ body:not(.is-mobile) .suggestion-container {
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
 
-    .menu-item-icon {
+    .menu-item-icon,
+    .suggestion-flair {
       color: var(--text-on-accent);
     }
   }
@@ -1837,7 +1872,7 @@ body.is-mobile {
       border-bottom: 1px solid var(--background-modifier-border-hover);
       border-radius: 0;
       background-color: transparent;
-      padding: 16px;
+      padding: 8px 16px;
       min-height: var(--input-height);
     }
     .suggestion-item:last-child {
@@ -1895,6 +1930,10 @@ body.is-tablet {
 /********** Prompt **********/
 
 body:not(.is-phone) {
+  .modal-container:has(.prompt):not(:last-child) {
+    opacity: 0;
+  }
+
   .modal-container:has(.prompt) .modal-bg {
     background-color: transparent;
   }
@@ -2463,7 +2502,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     padding: 6px 32px 6px 16px;
   }
 
-  button[class*="mod-"] {
+  button[class*="mod-"]:not(.view-action) {
     box-shadow: var(--input-shadow) !important;
 
     &::before {
@@ -2663,6 +2702,11 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       border-top: 1px solid var(--background-modifier-border);
       background-color: var(--divider-color);
       padding: 24px;
+
+      button:not(.mod-destructive):not(.mod-warning):not(.mod-cta),
+      button.mod-secondary {
+        background-color: var(--interactive-normal);
+      }
     }
   }
 
