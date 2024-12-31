@@ -771,8 +771,7 @@ body.is-mobile {
 }
 
 body.is-tablet {
-  .side-dock-ribbon,
-  .side-dock-actions {
+  .side-dock-ribbon {
     padding: 0;
   }
 }
@@ -1192,7 +1191,7 @@ body:not(.is-mobile):not(.is-hidden-frameless) {
   }
 }
 
-body.is-tablet.is-hidden-frameless {
+body.is-tablet {
   .workspace-tabs .clickable-icon {
     width: 36px;
     height: 36px;
