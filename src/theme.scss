@@ -829,6 +829,11 @@ body.is-tablet {
 
 /********** Tabs **********/
 
+.view-header {
+  border: none;
+  flex-shrink: 0;
+}
+
 body:not(.is-mobile) {
   .workspace-tab-header-container {
     padding: 8px;
@@ -873,8 +878,6 @@ body:not(.is-mobile) {
 
   .view-header {
     height: var(--view-header-height);
-    border: none;
-    flex-shrink: 0;
   }
 
   .mod-sidedock .workspace-tab-header-container-inner {
@@ -1304,10 +1307,14 @@ body.is-tablet {
 }
 
 /********** Editor **********/
-.mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+body:not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
   border: 1px solid var(--text-accent) !important;
   background-color: var(--interactive-accent) !important;
   color: var(--text-on-accent) !important;
+}
+
+body.quick-mode-switch-off .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
+  --icon-color: var(--text-normal);
 }
 
 .markdown-reading-view,
@@ -3084,6 +3091,8 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 body.is-mobile {
   .view-actions {
     padding: 0;
+    width: 40px;
+    height: 40px;
   }
   .view-header-title-container {
     height: var(--view-header-height);
@@ -3109,16 +3118,16 @@ body.is-mobile {
 body.is-phone {
   &:not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
     position: fixed;
-    right: 16px;
-    bottom: 16px;
+    right: 12px;
+    bottom: 12px;
     backdrop-filter: blur(50px);
     border: 1px solid var(--background-modifier-border);
     border-radius: 100%;
     background-color: var(--modal-background);
-    padding: 16px;
-    width: 56px;
-    height: 56px;
-    color: var(--text-normal);
+    padding: 14px;
+    width: 48px;
+    height: 48px;
+    color: var(--text-muted);
     transition: var(--anim-duration-fast);
   }
 
