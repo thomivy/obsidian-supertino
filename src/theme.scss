@@ -2007,13 +2007,13 @@ body.is-tablet {
 
 /********** Prompt **********/
 
+.modal-container:has(.prompt) .modal-bg {
+  background-color: transparent !important;
+}
+
 body:not(.is-phone) {
   .modal-container:has(.prompt):not(:last-child) {
     opacity: 0;
-  }
-
-  .modal-container:has(.prompt) .modal-bg {
-    background-color: transparent;
   }
 
   .prompt {
@@ -2049,6 +2049,11 @@ body.is-phone {
   &:has(.prompt) .app-container {
     filter: blur(20px) brightness(0.5);
   }
+
+  &:has(.prompt) .view-actions button:nth-last-child(2) {
+    opacity: 0;
+  }
+
   .prompt {
     top: unset;
     bottom: 0;
@@ -2899,6 +2904,7 @@ body.is-phone {
       width: 56px;
       height: 56px;
       color: var(--text-normal);
+      transition: var(--anim-duration-fast);
     }
 
     &:has(.view-header-breadcrumb) .view-header-title-container {
