@@ -163,6 +163,7 @@ body {
   --toggle-thumb-height: 13px;
   --toggle-thumb-width: 13px;
   --toggle-width: 26px;
+  --view-header-height: 40px;
   --workspace-background-translucent: rgb(from var(--background-primary) r g b / 75%);
 
   /* Light Theme */
@@ -871,7 +872,9 @@ body:not(.is-mobile) {
   }
 
   .view-header {
-    height: 40px;
+    height: var(--view-header-height);
+    border: none;
+    flex-shrink: 0;
   }
 
   .mod-sidedock .workspace-tab-header-container-inner {
@@ -1947,12 +1950,9 @@ body.is-mobile {
   .modal .modal-header {
     border: none !important;
   }
-}
 
-body.is-phone {
   .modal {
     box-shadow: none !important;
-    padding-bottom: var(--safe-area-inset-bottom);
 
     .modal-content {
       overflow: visible;
@@ -2027,6 +2027,23 @@ body.is-phone {
         color: var(--text-error);
       }
     }
+  }
+}
+
+body.is-phone {
+  .modal {
+    padding-bottom: var(--safe-area-inset-bottom);
+  }
+}
+
+body.is-tablet {
+  .modal:not([class*="mod-"]:not(.mod-file-rename)) {
+    width: 35%;
+  }
+
+  .modal-title {
+    text-align: center;
+    font-size: var(--font-ui-medium);
   }
 }
 
@@ -2383,9 +2400,9 @@ body:has(.empty-state-action:first-child:not(:hover)):has(.workspace-tab-header.
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
   margin: 0;
-  padding-top: var(--header-height);
+  padding-top: var(--view-header-height);
   width: 100%;
   max-width: var(--file-line-width);
   height: 100%;
@@ -2422,6 +2439,7 @@ body:has(.empty-state-action:first-child:not(:hover)):has(.workspace-tab-header.
   border-radius: var(--radius-l);
   background-color: var(--background-modifier-hover);
   padding: 4px 16px;
+  margin-bottom: 16px;
   width: 100%;
   color: var(--text-normal);
   text-align: left;
@@ -2458,18 +2476,21 @@ body.is-mobile {
     background-color: var(--background-secondary) !important;
     padding: 4px 16px;
   }
+  .empty-state-action:nth-child(n + 3) {
+    margin: 4px 0;
+  }
 }
 
 body.is-tablet {
   .empty-state-action-list {
     margin-top: 0;
   }
-  .empty-state-container::before {
-    margin-bottom: 128px;
+  .empty-state-container {
+    padding: var(--file-margins);
   }
   .empty-state-action:first-child {
-    margin-top: 0.25em;
-    padding-top: var(--view-header-height);
+    margin-top: 10px;
+    padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 16px);
   }
 }
 
@@ -3166,6 +3187,11 @@ body.is-tablet {
 
   .workspace .mod-root .workspace-leaf .view-header {
     padding-top: calc(var(--safe-area-inset-top) + var(--header-height));
+  }
+
+  .view-header-nav-buttons,
+  .view-actions {
+    gap: 4px;
   }
 }
 
