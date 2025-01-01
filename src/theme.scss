@@ -830,8 +830,8 @@ body.is-tablet {
 /********** Tabs **********/
 
 .view-header {
-  border: none;
   flex-shrink: 0;
+  border: none;
 }
 
 body:not(.is-mobile) {
@@ -1254,10 +1254,10 @@ body.is-tablet {
   }
 
   .sidebar-toggle-button {
-    padding: 6px 0 !important;
-    background-color: transparent !important;
     top: unset !important;
     bottom: 0;
+    background-color: transparent !important;
+    padding: 6px 0 !important;
   }
   .sidebar-toggle-button.mod-left {
     left: 16px;
@@ -1483,9 +1483,9 @@ tr {
 }
 
 .markdown-embed {
-  padding: 16px;
   border-radius: var(--radius-m);
   background-color: var(--background-secondary);
+  padding: 16px;
 }
 
 body:not(.is-phone) {
@@ -1699,8 +1699,8 @@ input[type="checkbox"]:checked {
 input[data-task="/"]:checked,
 li[data-task="/"] > input:checked,
 li[data-task="/"] > p > input:checked {
-  background: linear-gradient(to right, var(--interactive-accent) 50%, transparent 50%);
   border: 2px solid var(--interactive-accent);
+  background: linear-gradient(to right, var(--interactive-accent) 50%, transparent 50%);
   &::after {
     display: none !important;
   }
@@ -1889,8 +1889,8 @@ body:not(.is-mobile) {
     &[class*="mod-"]:not(.mod-cancel):not(.mod-secondary)::before {
       position: absolute;
       inset: 0;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
       border-radius: var(--button-radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
       content: "";
     }
   }
@@ -2049,8 +2049,8 @@ body.is-tablet {
   }
 
   .modal-title {
-    text-align: center;
     font-size: var(--font-ui-medium);
+    text-align: center;
   }
 }
 
@@ -2442,11 +2442,11 @@ body:has(.empty-state-action:first-child:not(:hover)):has(.workspace-tab-header.
   align-items: center;
   gap: 8px;
   cursor: text;
+  margin-bottom: 16px;
   border: var(--input-border-width) solid var(--background-modifier-border);
   border-radius: var(--radius-l);
   background-color: var(--background-modifier-hover);
   padding: 4px 16px;
-  margin-bottom: 16px;
   width: 100%;
   color: var(--text-normal);
   text-align: left;
@@ -3121,6 +3121,7 @@ body.is-phone {
     right: 12px;
     bottom: 12px;
     backdrop-filter: blur(50px);
+    transition: var(--anim-duration-fast);
     border: 1px solid var(--background-modifier-border);
     border-radius: 100%;
     background-color: var(--modal-background);
@@ -3128,7 +3129,6 @@ body.is-phone {
     width: 48px;
     height: 48px;
     color: var(--text-muted);
-    transition: var(--anim-duration-fast);
   }
 
   .workspace .mod-root .workspace-leaf .view-header {
@@ -3189,8 +3189,8 @@ body.is-tablet {
   }
 
   .workspace-tab-header-container {
-    padding-top: var(--safe-area-inset-top) !important;
     z-index: 100;
+    padding-top: var(--safe-area-inset-top) !important;
     height: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
   }
 
