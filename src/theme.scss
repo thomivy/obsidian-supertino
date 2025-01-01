@@ -122,7 +122,6 @@ body {
   --icon-opacity: 1;
   --input-height: 24px;
   --input-radius: var(--radius-m);
-  --input-shadow: 0px 0.5px 2.5px 0px rgba(0, 0, 0, 0.3), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.05) !important;
   --link-decoration: none;
   --link-external-decoration: none;
   --list-spacing: 0.2em;
@@ -1874,6 +1873,7 @@ body:not(.is-mobile) {
       position: absolute;
       inset: 0;
       background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+      border-radius: var(--button-radius);
       content: "";
     }
   }
