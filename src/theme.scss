@@ -260,6 +260,8 @@ body {
     --tab-switcher-background: transparent;
     --tab-switcher-menubar-background: transparent;
     --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
+    --view-header-height: 48px;
+
     padding: 0;
 
     &.theme-dark {
@@ -872,6 +874,10 @@ body:not(.is-mobile) {
     margin: auto 0;
   }
 
+  .view-header {
+    height: 40px;
+  }
+
   .mod-sidedock .workspace-tab-header-container-inner {
     gap: 0;
     transition: var(--anim-duration-fast);
@@ -918,10 +924,6 @@ body:not(.is-mobile) {
 body:not(.is-phone) {
   &.center-tabs-off .workspace .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container {
     justify-content: flex-start;
-  }
-
-  .view-header {
-    height: 40px;
   }
 
   .sidebar-toggle-button.mod-left,
@@ -3056,7 +3058,7 @@ body.is-mobile {
     padding: 0;
   }
   .view-header-title-container {
-    height: auto;
+    height: var(--view-header-height);
   }
 }
 
