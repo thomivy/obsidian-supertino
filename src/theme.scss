@@ -240,7 +240,6 @@ body {
     --icon-m-stroke-width: 1.5px;
     --icon-l-stroke-width: 1.5px;
     --icon-xl-stroke-width: 1px;
-    --input-height: 48px;
     --input-radius: 10px;
     --interactive-normal: var(--background-primary);
     --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
@@ -259,7 +258,7 @@ body {
     --tab-switcher-background: transparent;
     --tab-switcher-menubar-background: transparent;
     --toolbar-option-width: calc(16px + var(--mobile-toolbar-height));
-    --view-header-height: 48px;
+    --view-header-height: 40px;
 
     padding: 0;
 
@@ -271,6 +270,7 @@ body {
   &.is-phone {
     --border-width: 1px;
     --divider-width: 1px;
+    --input-height: 48px;
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
     --tab-outline-width: 1px;
@@ -278,11 +278,8 @@ body {
 
   &.is-tablet {
     --dropdown-padding: 4px 40px 4px 20px;
+    --input-height: 40px;
     --prompt-input-height: 56px;
-
-    .app-container {
-      padding-top: var(--safe-area-inset-top);
-    }
   }
 
   &:not(.is-focused) {
@@ -1252,6 +1249,9 @@ body.is-tablet {
 
   .sidebar-toggle-button {
     padding: 6px 0 !important;
+    background-color: transparent !important;
+    top: unset !important;
+    bottom: 0;
   }
   .sidebar-toggle-button.mod-left {
     left: 16px;
@@ -1262,16 +1262,18 @@ body.is-tablet {
   }
 
   .workspace .mod-root .workspace-tabs .workspace-tab-header-container {
-    padding: 6px 136px !important;
+    padding: calc(var(--safe-area-inset-top) + 6px) 136px 6px 136px !important;
   }
 
   .workspace-tab-header-new-tab {
     right: 96px;
     padding: 0;
+    height: fit-content !important;
   }
   .workspace-tab-header-tab-list {
     right: 56px;
     padding: 0;
+    height: fit-content !important;
   }
 
   .workspace:has(.workspace-drawer.mod-right.is-pinned) .workspace-tab-header-new-tab {
@@ -1540,17 +1542,6 @@ body:not(.is-mobile) {
   }
 }
 
-body.is-phone {
-  div:not(.markdown-embed-content) > .markdown-preview-view:first-child,
-  div:not(.markdown-embed-content) > .cm-sizer:first-child {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-  }
-
-  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)):not(:has(.canvas-wrapper)) {
-    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-  }
-}
-
 body.is-mobile {
   .mod-root .view-content {
     background-color: var(--background-primary);
@@ -1563,9 +1554,29 @@ body.is-mobile {
   }
 }
 
+body.is-phone {
+  div:not(.markdown-embed-content) > .markdown-preview-view:first-child,
+  div:not(.markdown-embed-content) > .cm-sizer:first-child {
+    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
+  }
+
+  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)):not(:has(.canvas-wrapper)) {
+    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
+  }
+}
+
 body.is-tablet {
   .view-header {
     padding: 0 16px;
+  }
+
+  div:not(.markdown-embed-content) > .markdown-preview-view:first-child,
+  div:not(.markdown-embed-content) > .cm-sizer:first-child {
+    padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 16px);
+  }
+
+  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)):not(:has(.canvas-wrapper)) {
+    margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
   }
 }
 
@@ -3056,6 +3067,22 @@ body.is-mobile {
   .view-header-title-container {
     height: var(--view-header-height);
   }
+
+  .workspace .mod-root .workspace-leaf .view-header {
+    height: fit-content;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      backdrop-filter: blur(50px);
+      background-color: rgb(from var(--background-primary) r g b / 50%) !important;
+      width: 100%;
+      height: 100%;
+      content: "";
+    }
+  }
 }
 
 body.is-phone {
@@ -3079,19 +3106,6 @@ body.is-phone {
     background-color: transparent;
     padding-top: var(--safe-area-inset-top);
     width: 100%;
-    height: fit-content;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: -1;
-      backdrop-filter: blur(50px);
-      background-color: rgb(from var(--background-primary) r g b / 50%) !important;
-      width: 100%;
-      height: 100%;
-      content: "";
-    }
 
     &:has(.view-header-breadcrumb) .view-header-title-container {
       justify-content: flex-start;
@@ -3133,6 +3147,25 @@ body.is-phone {
 
   &:has(.mobile-navbar):not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
     margin-bottom: 80px;
+  }
+}
+
+body.is-tablet {
+  .workspace-tab-header-container,
+  .workspace .mod-root .workspace-leaf .view-header {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+  }
+
+  .workspace-tab-header-container {
+    padding-top: var(--safe-area-inset-top) !important;
+    z-index: 100;
+    height: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
+  }
+
+  .workspace .mod-root .workspace-leaf .view-header {
+    padding-top: calc(var(--safe-area-inset-top) + var(--header-height));
   }
 }
 
@@ -3274,6 +3307,12 @@ body.is-mobile {
 body.is-phone {
   .canvas-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
+  }
+}
+
+body.is-tablet {
+  .canvas-controls {
+    top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 8px);
   }
 }
 
