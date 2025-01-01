@@ -98,6 +98,7 @@ body {
   --divider-color-hover: var(--text-normal);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
+  --embed-border-start: none;
   --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --h1-size: 1.5em;
@@ -137,6 +138,7 @@ body {
   --tab-radius-active: var(--radius-s);
   --tab-radius: var(--radius-s);
   --table-background: var(--background-secondary);
+  --table-header-background-hover: var(--table-background);
   --tag-padding-x: 12px;
   --tag-padding-y: 8px;
   --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
@@ -221,7 +223,7 @@ body {
 
   &.is-mobile {
     --background-modifier-form-field: var(--interactive-normal) !important;
-    --checkbox-size: var(--icon-l);
+    --checkbox-size: var(--icon-m);
     --divider-color: var(--color-base-25);
     --icon-xs-stroke-width: 2px;
     --icon-s-stroke-width: 1.5px;
@@ -1325,7 +1327,7 @@ body:not(.active-line-off) .cm-active::before {
 
 .inline-title {
   margin-bottom: 24px;
-  border-bottom: var(--hr-thickness) solid var(--hr-color);
+  border-bottom: 1px solid var(--hr-color);
   padding-bottom: 16px;
 }
 
@@ -1381,6 +1383,18 @@ body:not(.alt-heading-off) {
 
   pre {
     border: 1px solid var(--background-modifier-border);
+  }
+
+  .callout-title {
+    gap: 8px;
+  }
+
+  .callout-icon svg.svg-icon {
+    --icon-size: var(--icon-s);
+  }
+
+  .callout-content > *:last-child {
+    margin-bottom: 0 !important;
   }
 }
 
@@ -1442,6 +1456,12 @@ tr {
       border-bottom-right-radius: var(--radius-s);
     }
   }
+}
+
+.markdown-embed {
+  padding: 16px;
+  border-radius: var(--radius-m);
+  background-color: var(--background-secondary);
 }
 
 body:not(.is-phone) {
@@ -1509,8 +1529,8 @@ body:not(.is-mobile) {
 }
 
 body.is-phone {
-  .markdown-preview-view:first-child,
-  .cm-sizer:first-child {
+  div:not(.markdown-embed-content) > .markdown-preview-view:first-child,
+  div:not(.markdown-embed-content) > .cm-sizer:first-child {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 
@@ -1525,8 +1545,9 @@ body.is-mobile {
   }
 
   .markdown-preview-view .task-list-item-checkbox {
-    top: 0.45em;
+    top: 0.25em;
     margin-inline-start: calc((var(--checkbox-size) + 8px) * -1);
+    margin-inline-end: 10px;
   }
 }
 
@@ -1658,7 +1679,7 @@ body:not(.is-mobile) {
       box-shadow: 0px 1px 2.5px 0px hsla(var(--color-accent-hsl), 0.24), 0px 0px 0px 0.5px hsla(var(--color-accent-hsl), 0.12) !important;
       overflow: hidden;
     }
-    
+
     &[class*="mod-"]:not(.mod-cancel):not(.mod-secondary)::before {
       position: absolute;
       inset: 0;
