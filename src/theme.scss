@@ -1004,16 +1004,22 @@ body:not(.is-phone) {
         }
       }
 
+      .workspace-tab-header.is-active {
+        .workspace-tab-header-inner {
+          padding: 0 32px 0 12px !important;
+        }
+        .workspace-tab-header-inner-close-button {
+          position: absolute;
+          opacity: 0.5;
+          inset-inline-end: 8px;
+        }
+      }
       .workspace-tab-header-inner {
-        padding: 0 32px 0 12px !important;
+        padding-inline-start: 8px;
+        padding-inline-end: 4px;
       }
       .workspace-tab-header-inner-title {
         line-height: normal;
-      }
-      .workspace-tab-header-inner-close-button {
-        position: absolute;
-        opacity: 0.5;
-        inset-inline-end: 8px;
       }
       .workspace-tab-header-status-container.mod-pinned {
         position: absolute;
