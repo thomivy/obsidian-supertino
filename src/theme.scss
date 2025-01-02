@@ -1893,7 +1893,7 @@ body:not(.is-mobile) {
       overflow: hidden;
     }
 
-    &[class*="mod-"]:not(.mod-cancel):not(.mod-secondary)::before {
+    &[class*="mod-"]:not(.mod-cancel):not(.mod-secondary):not(.mod-destructive)::before {
       position: absolute;
       inset: 0;
       border-radius: var(--button-radius);
