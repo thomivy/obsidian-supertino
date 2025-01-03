@@ -2414,7 +2414,13 @@ body.is-tablet {
 
 body:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[aria-label="New tab"]),
 body:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[aria-label="No file"]) {
+  .app-container {
   --workspace-background-translucent: transparent !important;
+  }
+
+  .status-bar {
+    display: none;
+  }
 }
 body:has(.empty-state-action:first-child:not(:hover)):has(.workspace-tab-header.is-active[aria-label="New tab"]),
 body:has(.empty-state-action:first-child:not(:hover)):has(.workspace-tab-header.is-active[aria-label="No file"]) {
