@@ -1956,10 +1956,6 @@ body:not(.is-mobile) {
     }
   }
 
-  .modal.mod-community-modal {
-    box-shadow: none;
-  }
-
   .modal:not(.mod-settings):not(.mod-community-modal) {
     backdrop-filter: blur(50px);
     animation: var(--anim-duration-fast) fadeInDown;
