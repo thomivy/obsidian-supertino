@@ -4257,7 +4257,12 @@ body {
       --workspace-background-translucent: transparent !important;
     }
 
-    .cm-sizer > .inline-title {
+    .markdown-preview-view {
+      padding: 0 16px;
+    }
+
+    .cm-sizer > .inline-title,
+    .mod-header {
       display: none;
     }
 
@@ -4267,9 +4272,10 @@ body {
       padding-bottom: 0;
     }
 
+    .view-header,
     .view-content,
     .workspace-tab-container {
-      margin-bottom: 0;
+      margin: 0 !important;
       box-shadow: none !important;
       border-color: transparent !important;
       border-radius: 0;
@@ -4298,24 +4304,14 @@ body {
       border-color: var(--hr-color) !important;
     }
 
-    .edit-block-button {
-      display: none;
+    .edit-block-button,
+    .search-empty-state,
+    .view-header-title-container {
+      visibility: hidden;
     }
   }
-}
 
-body:not(.is-phone):has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery) .view-header {
-  display: none;
-}
-
-body.is-mobile:has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery) {
-  .workspace-tab-header-container {
-    backdrop-filter: blur(50px);
-  }
-  .cm-sizer {
-    padding-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
-  }
-  .note-card {
+  &.is-mobile .note-card {
     border-radius: var(--radius-m) !important;
   }
 }
