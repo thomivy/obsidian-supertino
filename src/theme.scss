@@ -1349,12 +1349,13 @@ body.is-tablet {
   display: none;
 }
 
-body:not(.active-line-off) .cm-active::after {
+body:not(.active-line-off) .view-content > div[class^="markdown-"] .cm-active:not(:hover:has(.cm-fold-indicator))::after {
   position: absolute;
-  z-index: -1;
-  inset: 0;
-  border-radius: var(--radius-s);
-  background: var(--color-base-10);
+  top: 4px;
+  bottom: 4px;
+  left: -12px;
+  border-left: 4px solid var(--background-modifier-border-hover);
+  border-radius: var(--input-radius);
   content: "";
 }
 
@@ -1510,10 +1511,6 @@ body {
   tr td:has(.cm-active),
   tr th:has(.cm-active) {
     background-color: var(--background-modifier-hover) !important;
-
-    .cm-active::after {
-      display: none;
-    }
   }
 
   tr td,
