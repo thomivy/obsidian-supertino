@@ -274,6 +274,7 @@ body {
   &.is-phone {
     --border-width: 1px;
     --divider-width: 1px;
+    --file-header-justify: flex-start;
     --input-height: 48px;
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
@@ -728,7 +729,7 @@ body.is-mobile {
       background-color: var(--interactive-normal);
 
       &:not(.node-insert-event) {
-        padding: 8px 16px !important;
+        padding: 8px 16px;
       }
     }
     .search-result-file-title {
@@ -1036,7 +1037,7 @@ body:not(.is-phone) {
 
       &:has(.sidebar-toggle-button.mod-left):not(:has(.sidebar-toggle-button.mod-right)) {
         padding-right: 68px !important;
-        padding-left: 48px !important;
+        padding-left: 52px !important;
       }
       &:has(.sidebar-toggle-button.mod-right):not(:has(.sidebar-toggle-button.mod-left)) {
         padding-left: 8px !important;
@@ -1331,6 +1332,10 @@ body.is-tablet {
   transition: var(--anim-duration-fast) ease-in-out;
 }
 
+.markdown-preview-view {
+  scrollbar-gutter: auto;
+}
+
 .workspace-leaf-content[data-mode="source"] .markdown-reading-view {
   transform: scale(0.99);
 }
@@ -1397,7 +1402,7 @@ body:not(.alt-heading-off) {
 .cm-s-obsidian span.cm-formatting-highlight,
 .cm-s-obsidian span.cm-highlight {
   border-radius: var(--radius-s);
-  padding: 2px 4px;
+  padding: 1px 4px;
   color: var(--color-orange);
 }
 
@@ -3170,7 +3175,6 @@ body.is-phone {
     width: 100%;
 
     &:has(.view-header-breadcrumb) .view-header-title-container {
-      justify-content: flex-start;
       padding: 0 8px;
     }
 
