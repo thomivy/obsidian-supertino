@@ -1592,7 +1592,7 @@ body:not(.is-mobile) {
     }
 
     .workspace-tab-container {
-      margin: 0;
+      margin-bottom: 0;
       box-shadow: none;
       border: 0px solid transparent;
       border-radius: 0;
@@ -4288,7 +4288,7 @@ body:not(.is-mobile) {
 
     .view-content,
     .workspace-tab-container {
-      margin: 0;
+      margin-bottom: 0;
       box-shadow: none !important;
       border-color: transparent !important;
       border-radius: 0;
