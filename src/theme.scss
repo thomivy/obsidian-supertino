@@ -1547,7 +1547,6 @@ body {
 }
 
 .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
-  border: 1px solid var(--text-accent) !important;
   background-color: var(--interactive-accent) !important;
   color: var(--text-on-accent) !important;
 }
@@ -3204,7 +3203,7 @@ body.is-phone {
     right: max(var(--safe-area-inset-right), 12px);
     bottom: 12px;
     backdrop-filter: blur(50px);
-    border: 1px solid var(--background-modifier-hover);
+    border: 1px solid var(--background-modifier-border);
     border-radius: 100%;
     background-color: rgb(from var(--background-secondary) r g b / 50%);
     padding: 14px;
