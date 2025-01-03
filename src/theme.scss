@@ -1488,7 +1488,7 @@ body {
   --table-column-last-border-width: 0;
 }
 
-.mod-root {
+.view-content [class^="markdown-"] {
   table {
     position: relative;
     border-radius: var(--radius-s);
@@ -1630,7 +1630,7 @@ body.is-phone {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 
-  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)):not(:has(.canvas-wrapper)) {
+  .mod-root .view-content:not(:has(> [class^="markdown-"])):not(:has(.canvas-wrapper)) {
     margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 }
@@ -1649,7 +1649,7 @@ body.is-tablet {
     padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 16px);
   }
 
-  .mod-root .view-content:not(:has(.markdown-source-view)):not(:has(.markdown-reading-view)):not(:has(.canvas-wrapper)) {
+  .mod-root .view-content:not(:has(> [class^="markdown-"])):not(:has(.canvas-wrapper)) {
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
   }
 }
