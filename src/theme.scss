@@ -4246,25 +4246,21 @@ body.is-mobile .advanced-tables-buttons {
   }
 }
 
-/********** Community Plugin: Cards View & Note Gallery **********/
-body:not(.is-mobile) {
-  &.theme-light .note-card:hover,
-  &.theme-light .card:hover {
+/********** Community Plugin: Note Gallery **********/
+body {
+  &.theme-light .note-card:hover {
     box-shadow: rgba(0, 0, 0, 0.04) 0px 24px 48px, rgba(0, 0, 0, 0.02) 0px 4px 16px;
   }
-  &.theme-dark .note-card:hover,
-  &.theme-dark .card:hover {
+  &.theme-dark .note-card:hover {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }
 
-  &:has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery),
-  &:has(.workspace-leaf:not([style*="display: none"]) .cards-container) {
+  &:has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery) {
     .app-container {
       --workspace-background-translucent: transparent !important;
     }
 
-    .view-header,
-    .inline-title {
+    .cm-sizer > .inline-title {
       display: none;
     }
 
@@ -4272,11 +4268,6 @@ body:not(.is-mobile) {
       margin-bottom: 0;
       border-bottom: none;
       padding-bottom: 0;
-    }
-
-    .view-content:has(.block-language-note-gallery),
-    .view-content:has(.cards-container) {
-      padding: 0;
     }
 
     .view-content,
@@ -4296,98 +4287,7 @@ body:not(.is-mobile) {
       display: none;
     }
 
-    /* Cards View */
-
-    .cards-container {
-      position: absolute;
-      top: 48px;
-      width: 100%;
-      height: 100% !important;
-      overflow: scroll;
-    }
-
-    .card {
-      &:hover {
-        padding-top: 16px;
-      }
-      &:not(:hover) .card-info {
-        opacity: 0;
-      }
-    }
-
-    .card-info {
-      position: absolute;
-      transition: var(--anim-duration-fast);
-      margin: 0;
-      inset: 8px 8px auto 8px;
-      border: none;
-      border-radius: 0;
-      background-color: transparent;
-      padding: 0;
-
-      .folder-name {
-        font-size: var(--font-ui-smaller);
-        text-align: center;
-        text-shadow: var(--shadow-l);
-
-        span {
-          display: none;
-        }
-      }
-
-      button {
-        border: 1px solid var(--background-modifier-hover);
-        border-radius: 100%;
-        background-color: var(--background-secondary);
-        padding: 8px;
-        width: 32px;
-        height: 32px;
-
-        &.is-active {
-          background-color: var(--interactive-accent);
-
-          svg {
-            color: var(--text-on-accent);
-          }
-        }
-      }
-    }
-
-    .action-bar {
-      position: absolute;
-      align-items: center;
-      gap: 8px;
-      z-index: 1;
-      margin-bottom: 0;
-      inset: 0 0 auto 0;
-    }
-
-    .action-bar__search {
-      display: flex;
-      align-items: center;
-      box-shadow: none;
-      min-width: 240px;
-
-      .search-input-container {
-        border-radius: var(--input-radius);
-      }
-    }
-
-    .action-bar__tags__list {
-      transition: var(--anim-duration-fast);
-      box-shadow: none;
-      border-radius: var(--radius-l);
-      padding: 8px;
-    }
-
-    .action-bar__tag {
-      box-shadow: none;
-      line-height: 1;
-    }
-
-    /* Note Gallery */
-    .note-card,
-    .card {
+    .note-card {
       transition: var(--anim-duration-fast);
       border-radius: var(--radius-l);
       padding: 16px;
@@ -4400,5 +4300,25 @@ body:not(.is-mobile) {
     .card-content hr {
       border-color: var(--hr-color) !important;
     }
+
+    .edit-block-button {
+          display: none;
+        }
+      }
+}
+
+body:not(.is-phone):has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery) .view-header {
+  display: none;
+}
+
+body.is-mobile:has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery) {
+  .workspace-tab-header-container {
+    backdrop-filter: blur(50px);
+      }
+  .cm-sizer {
+    padding-top: calc(var(--safe-area-inset-top) + var(--header-height)) !important;
+    }
+  .note-card {
+    border-radius: var(--radius-m) !important;
   }
 }
