@@ -3469,6 +3469,25 @@ body.is-tablet {
   overflow: visible;
 }
 
+body.is-mobile .embedded-backlinks {
+  .backlink-pane > .tree-item-self {
+    height: var(--input-height);
+  }
+  .nav-action-button {
+    width: var(--input-height);
+    height: var(--input-height);
+
+    &.is-active {
+      opacity: 1;
+      color: var(--icon-color-focused);
+      background-color: var(--interactive-accent);
+    }
+  }
+  .search-input-container {
+    width: calc(100% - 188px);
+  }
+}
+
 /********** Core Plugin: Outline **********/
 
 body.is-mobile {
