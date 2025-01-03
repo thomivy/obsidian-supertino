@@ -2434,6 +2434,7 @@ body:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[ar
     justify-content: center;
     align-items: center;
     margin: 0;
+    margin-top: var(--view-header-height);
     padding: var(--file-margins);
     width: 100%;
     max-width: 100%;
@@ -2452,6 +2453,7 @@ body:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[ar
     height: 15%;
     pointer-events: none;
     content: "";
+    margin-top: calc(-1 * (var(--header-height) + var(--view-header-height)));
   }
 
   .empty-state-title {
@@ -2465,7 +2467,6 @@ body:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[ar
     align-items: center;
     gap: 4px;
     margin: 0;
-    padding-top: var(--view-header-height);
     width: 100%;
     max-width: var(--file-line-width);
     height: 100%;
@@ -2521,20 +2522,19 @@ body:has(.empty-state-action:first-child):has(.workspace-tab-header.is-active[ar
 
 body.is-mobile {
   .empty-state-container {
-    padding: 0;
-  }
-  .empty-state-action-list {
-    gap: 0;
-    margin: var(--file-margins);
-    padding-top: 0;
-    padding-bottom: 80px;
+    padding-bottom: 96px !important;
+    &::before {
+      margin-top: 40px !important;
+    }
   }
   .empty-state-action {
     background-color: transparent;
-    padding: 0;
+    margin: unset;
+    padding: unset;
   }
   .empty-state-action:first-child {
-    padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
+    padding-top: calc(var(--safe-area-inset-top) + 12px);
+    margin-top: 0;
   }
   .empty-state-action:nth-child(2) {
     background-color: var(--background-secondary) !important;
@@ -2546,15 +2546,15 @@ body.is-mobile {
 }
 
 body.is-tablet {
-  .empty-state-action-list {
-    margin-top: 0;
-  }
   .empty-state-container {
-    padding: var(--file-margins);
+    padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + 16px) !important;
+    &::before {
+      margin-top: calc(-1 * var(--header-height));
+    }
   }
   .empty-state-action:first-child {
-    margin-top: 10px;
-    padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 16px);
+    padding-top: 5px;
+    margin-top: 0;
   }
 }
 
