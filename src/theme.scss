@@ -1472,28 +1472,52 @@ body:not(.full-table-off) .table-wrapper {
   border-spacing: 0;
 }
 
-:root :is(td, th) {
-  border-width: 0 var(--table-border-width) var(--table-border-width) 0;
+body {
+  --table-header-border-width: 0;
+  --table-row-last-border-width: 0;
+  --table-column-first-border-width: 0;
+  --table-column-last-border-width: 0;
 }
 
-th {
-  &:first-child {
-    border-top-left-radius: var(--radius-s);
+table {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-s);
   }
-  &:last-child {
-    border-top-right-radius: var(--radius-s);
+
+table::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  border: var(--table-border-width) solid var(--table-border-color);
+  border-radius: var(--radius-s);
+  pointer-events: none;
+  z-index: 1;
+}
+
+tr td,
+tr th,
+table:has(tbody:empty) tr th {
+  border-bottom-width: 0 !important;
+
+  &:not([dir="rtl"]):first-child {
+    border-right-width: 0 !important;
   }
 }
 
-tr {
-  &:last-child td {
-    &:first-child {
-      border-bottom-left-radius: var(--radius-s);
-    }
-    &:last-child {
-      border-bottom-right-radius: var(--radius-s);
-    }
-  }
+.cm-table-widget[dir="rtl"] tr th:first-child,
+.cm-table-widget[dir="rtl"] tr td:first-child,
+.el-table[dir="rtl"] tr th:first-child,
+.el-table[dir="rtl"] tr td:first-child {
+  border-right-width: 0 !important;
+}
+.cm-table-widget[dir="rtl"] tr th:last-child,
+.cm-table-widget[dir="rtl"] tr td:last-child,
+.el-table[dir="rtl"] tr th:last-child,
+.el-table[dir="rtl"] tr td:last-child {
+  border-left-width: 0 !important;
 }
 
 .markdown-embed {
@@ -3870,23 +3894,14 @@ body.is-phone {
 }
 
 /********** Community Plugin: Dataview **********/
-.dataview.table-view-table {
-  position: relative;
-}
-.dataview.table-view-table::before {
-  position: absolute;
-  inset: 0;
-  border: var(--table-border-width) solid var(--table-border-color);
-  border-radius: var(--radius-s);
-  width: calc(100% - 2px);
-  height: calc(100% - 2px);
-  pointer-events: none;
-  content: "";
-}
-
 .table-view-th {
   border-bottom: var(--table-border-width) solid var(--table-border-color) !important;
   font-size: unset !important;
+}
+
+.dataview-error-box {
+  border-radius: var(--radius-s);
+  border-width: 2px !important;
 }
 
 /********** Community Plugin: Tldraw **********/
