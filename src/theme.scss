@@ -1351,11 +1351,11 @@ body.is-tablet {
 
 body:not(.active-line-off) .cm-active::after {
   position: absolute;
-  inset: 0;
-  background: var(--color-base-10);
-  border-radius: var(--radius-s);
-  content: "";
   z-index: -1;
+  inset: 0;
+  border-radius: var(--radius-s);
+  background: var(--color-base-10);
+  content: "";
 }
 
 .inline-title {
@@ -1395,12 +1395,12 @@ body:not(.alt-heading-off) {
 
 .markdown-rendered button.copy-code-button,
 .markdown-source-view.mod-cm6 .edit-block-button {
-  width: 32px !important;
-  height: 32px !important;
-  padding: 8px;
+  top: 4px;
   margin: 0;
   box-shadow: none !important;
-  top: 4px;
+  padding: 8px;
+  width: 32px !important;
+  height: 32px !important;
 }
 
 .markdown-rendered button.copy-code-button {
@@ -1491,20 +1491,20 @@ body {
 .mod-root {
   table {
     position: relative;
-    overflow: hidden;
     border-radius: var(--radius-s);
+    overflow: hidden;
   }
 
   table::before {
-    content: "";
     position: absolute;
+    z-index: 1;
     inset: 0;
-    width: calc(100% - 2px);
-    height: calc(100% - 2px);
     border: var(--table-border-width) solid var(--table-border-color);
     border-radius: var(--radius-s);
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
     pointer-events: none;
-    z-index: 1;
+    content: "";
   }
 
   tr td:has(.cm-active),
@@ -3311,8 +3311,8 @@ body.is-mobile {
     bottom: 0;
     left: 0;
     z-index: var(--layer-status-bar);
-    border: none;
     backdrop-filter: blur(50px);
+    border: none;
     padding: 4px max(var(--safe-area-inset-right), 16px) max(4px, var(--safe-area-inset-bottom)) max(var(--safe-area-inset-left), 16px);
     width: 100%;
   }
@@ -3406,10 +3406,10 @@ body.is-mobile {
 
 .canvas-card-menu {
   gap: 8px;
-  box-shadow: none;
-  background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
   backdrop-filter: blur(50px);
+  box-shadow: none;
   border: 1px solid var(--background-modifier-border);
+  background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
   padding: 8px;
 }
 
@@ -3925,8 +3925,8 @@ body.is-phone {
 }
 
 .dataview-error-box {
-  border-radius: var(--radius-s);
   border-width: 2px !important;
+  border-radius: var(--radius-s);
 }
 
 /********** Community Plugin: Tldraw **********/
@@ -4289,11 +4289,11 @@ body:not(.is-mobile) {
 
     .view-content,
     .workspace-tab-container {
+      margin: 0;
       box-shadow: none !important;
       border-color: transparent !important;
-      background-color: transparent !important;
-      margin: 0;
       border-radius: 0;
+      background-color: transparent !important;
     }
 
     .markdown-preview-sizer {
@@ -4308,10 +4308,10 @@ body:not(.is-mobile) {
 
     .cards-container {
       position: absolute;
-      overflow: scroll;
+      top: 48px;
       width: 100%;
       height: 100% !important;
-      top: 48px;
+      overflow: scroll;
     }
 
     .card {
@@ -4324,18 +4324,18 @@ body:not(.is-mobile) {
     }
 
     .card-info {
-      border: none;
-      inset: 8px 8px auto 8px;
-      padding: 0;
-      margin: 0;
-      border-radius: 0;
-      background-color: transparent;
       position: absolute;
       transition: var(--anim-duration-fast);
+      margin: 0;
+      inset: 8px 8px auto 8px;
+      border: none;
+      border-radius: 0;
+      background-color: transparent;
+      padding: 0;
 
       .folder-name {
-        text-align: center;
         font-size: var(--font-ui-smaller);
+        text-align: center;
         text-shadow: var(--shadow-l);
 
         span {
@@ -4344,12 +4344,12 @@ body:not(.is-mobile) {
       }
 
       button {
-        width: 32px;
-        height: 32px;
-        padding: 8px;
         border: 1px solid var(--background-modifier-hover);
         border-radius: 100%;
         background-color: var(--background-secondary);
+        padding: 8px;
+        width: 32px;
+        height: 32px;
 
         &.is-active {
           background-color: var(--interactive-accent);
@@ -4362,18 +4362,18 @@ body:not(.is-mobile) {
     }
 
     .action-bar {
+      position: absolute;
       align-items: center;
       gap: 8px;
-      position: absolute;
-      inset: 0 0 auto 0;
       z-index: 1;
       margin-bottom: 0;
+      inset: 0 0 auto 0;
     }
 
     .action-bar__search {
-      box-shadow: none;
       display: flex;
       align-items: center;
+      box-shadow: none;
       min-width: 240px;
 
       .search-input-container {
@@ -4382,23 +4382,23 @@ body:not(.is-mobile) {
     }
 
     .action-bar__tags__list {
+      transition: var(--anim-duration-fast);
       box-shadow: none;
       border-radius: var(--radius-l);
-      transition: var(--anim-duration-fast);
       padding: 8px;
     }
 
     .action-bar__tag {
-      line-height: 1;
       box-shadow: none;
+      line-height: 1;
     }
 
     /* Note Gallery */
     .note-card,
     .card {
-      padding: 16px;
-      border-radius: var(--radius-l);
       transition: var(--anim-duration-fast);
+      border-radius: var(--radius-l);
+      padding: 16px;
 
       &:hover {
         border-color: var(--background-modifier-border);
