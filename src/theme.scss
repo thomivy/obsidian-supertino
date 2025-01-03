@@ -47,12 +47,7 @@ settings:
     -
         id: windows-mode-off
         title: Use macOS style on Windows
-        description: Turn off Windows specific styling. (Requires reload)
-        type: class-toggle
-    -
-        id: alt-font-off
-        title: Disable Apple Notes font style
-        description: Turn off alternative lowercase 'a' font style. (Desktop)
+        description: Turn off Windows specific styling.
         type: class-toggle
     -
         id: hide-nav-header-off
@@ -1590,11 +1585,6 @@ body:not(.is-mobile) {
     .status-bar:not(:hover) {
       opacity: 0;
     }
-  }
-
-  /* Alt font style */
-  &:not(.alt-font-off) .mod-root .view-content * {
-    font-feature-settings: "ss07" 1;
   }
 }
 
