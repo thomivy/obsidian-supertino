@@ -1483,7 +1483,7 @@ table {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-s);
-  }
+}
 
 table::before {
   content: "";
@@ -3373,17 +3373,21 @@ body.is-mobile {
 .canvas-control-group {
   backdrop-filter: blur(50px);
   box-shadow: none;
-  background-color: rgb(from var(--background-primary) r g b / 50%);
+  background-color: rgb(from var(--background-secondary) r g b / 50%);
 }
 
 .canvas-control-item {
   --icon-size: var(--icon-m);
   background-color: transparent;
+  width: 32px;
+  height: 32px;
 }
 
 .canvas-card-menu {
   gap: 8px;
   box-shadow: none;
+  background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
+  backdrop-filter: blur(50px);
   border: 1px solid var(--background-modifier-border);
   padding: 8px;
 }
@@ -3434,7 +3438,7 @@ body.is-tablet {
 .graph-controls.is-close {
   backdrop-filter: blur(50px);
   border: 1px solid var(--background-modifier-border);
-  background-color: rgb(from var(--background-primary) r g b / 50%);
+  background-color: rgb(from var(--background-secondary) r g b / 50%);
   padding: 0;
 }
 .graph-controls-button {
@@ -3483,8 +3487,8 @@ body.is-mobile {
     .tree-item-inner {
       padding-left: 16px;
     }
-    }
   }
+}
 
 /********** Community Plugin: Style Settings **********/
 
@@ -3967,6 +3971,182 @@ body.is-phone {
     margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 1px) !important;
     padding-bottom: 79px !important;
   }
+}
+
+/********** Community Plugin: Excalidraw **********/
+
+body:not(.is-mobile) .excalidraw.theme--dark {
+  --theme-filter: invert(88.2%) hue-rotate(180deg) !important;
+}
+
+body.is-mobile .excalidraw.theme--dark {
+  --theme-filter: invert(100%) hue-rotate(180deg) !important;
+}
+
+.excalidraw-view .excalidraw {
+  --button-hover-bg: var(--interactive-hover) !important;
+  --color-brand-active: transparent !important;
+  --color-brand-hover: transparent !important;
+  --default-border-color: var(--background-modifier-border) !important;
+  --excalidraw-caret-color: var(--text-normal) !important;
+  --icon-fill-color: var(--text-muted) !important;
+  --island-bg-color: var(--background-secondary) !important;
+  --sidebar-border-color: var(--background-modifier-border) !important;
+  --ui-font: unset !important;
+
+  .FixedSideContainer_side_top {
+    inset: 8px !important;
+  }
+
+  button {
+    box-shadow: none !important;
+    letter-spacing: normal !important;
+  }
+
+  .dropdown-menu-button {
+    background-color: transparent;
+    height: var(--default-button-size);
+  }
+
+  .ToolIcon .ToolIcon_type_radio:checked + .ToolIcon__icon svg {
+    --icon-fill-color: var(--text-on-accent);
+  }
+
+  .sidebar-trigger,
+  .ToolIcon__icon {
+    padding: 8px;
+    width: 32px;
+    height: 32px;
+
+    svg {
+      width: var(--icon-m);
+      height: var(--icon-m);
+    }
+  }
+
+  .mobile-misc-tools-container {
+    top: 0;
+    right: 0;
+    backdrop-filter: blur(50px);
+    border: none;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--radius-s);
+    background-color: rgb(from var(--background-secondary) r g b / 50%);
+
+    label:not(:last-child) {
+      border-bottom: 1px solid var(--background-modifier-border);
+      border-radius: 0;
+    }
+
+    .sidebar-trigger:not(:hover) {
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    .sidebar-trigger,
+    .ToolIcon__icon {
+      border-radius: 0;
+    }
+  }
+
+  .Island {
+    box-shadow: none;
+    border: 1px solid var(--background-modifier-border);
+    background-color: var(--background-secondary);
+    padding: 0;
+
+    .App-toolbar-content,
+    > .Stack {
+      padding: 8px;
+    }
+
+    .Stack .ToolIcon__icon {
+      border-radius: var(--radius-s);
+    }
+
+    > .Stack > .Stack {
+      padding: 0;
+    }
+  }
+
+  .undo-redo-buttons,
+  .zoom-actions {
+    box-shadow: none;
+    border-radius: 0;
+    background-color: transparent;
+
+    button {
+      background-color: transparent !important;
+    }
+  }
+
+  .dropdown-menu {
+    div[data-testid="canvas-background-label"] {
+      padding: 0 0.5em;
+    }
+
+    .color-picker__button {
+      border: 1px solid var(--color-gray-30);
+      width: 24px;
+      height: 24px;
+    }
+
+    .dropdown-menu-item {
+      margin: 0;
+      border: none;
+    }
+  }
+
+  .App-menu__left {
+    padding: 0.75rem;
+
+    .buttonList button {
+      height: var(--button-height, var(--default-button-size));
+    }
+  }
+
+  .sidebar {
+    margin: 8px;
+    border-radius: var(--radius-s);
+
+    .excalidraw-button {
+      flex-grow: 1;
+      border-radius: var(--input-radius);
+      padding: 4px;
+    }
+
+    .sidebar__header {
+      gap: 4px;
+    }
+
+    .sidebar-triggers {
+      flex-grow: 1;
+      margin: 0;
+      border: none;
+      border-radius: var(--input-radius);
+      background-color: var(--background-modifier-border-hover);
+      padding: 2px;
+      height: 32px;
+    }
+
+    .sidebar__close {
+      width: 32px;
+      height: 32px;
+    }
+
+    .ExcTextField__input {
+      border: 1px solid var(--background-modifier-border) !important;
+      background: var(--background-modifier-form-field) !important;
+
+      input::placeholder {
+        color: var(--text-muted);
+      }
+    }
+  }
+}
+
+body:has(.excalidraw-view) .status-bar {
+  display: none;
 }
 
 /********** Community Plugin: Folder notes **********/
