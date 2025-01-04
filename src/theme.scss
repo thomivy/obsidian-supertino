@@ -230,6 +230,8 @@ body {
 
   &.is-mobile {
     --background-modifier-form-field: var(--interactive-normal) !important;
+    --border-width: 0.3px;
+    --divider-width: 0.3px;
     --checkbox-size: var(--icon-m);
     --divider-color: var(--color-base-25) !important;
     --icon-xs-stroke-width: 2px;
@@ -268,8 +270,6 @@ body {
   }
 
   &.is-phone {
-    --border-width: 0.3px;
-    --divider-width: 0.3px;
     --file-header-justify: flex-start;
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
@@ -456,13 +456,13 @@ body:not(.is-mobile) {
   input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"] {
     box-shadow: none;
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     background-color: transparent;
   }
 
   input[type="search"] {
     box-shadow: none;
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
   }
 
   button {
@@ -732,7 +732,7 @@ body.is-mobile {
     .search-result-file-matches {
       margin: 0;
       box-shadow: none;
-      border: 1px solid var(--background-modifier-border);
+      border: var(--border-width) solid var(--background-modifier-border);
     }
     .search-result-file-match {
       padding: 16px;
@@ -757,7 +757,7 @@ body.is-mobile {
       position: absolute;
       right: 0;
       bottom: 0;
-      border-bottom: var(--divider-width) solid var(--background-modifier-border);
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
       width: 100%;
       content: "";
     }
@@ -774,7 +774,7 @@ body.is-mobile {
       position: absolute;
       top: 0;
       right: 0;
-      border-top: var(--divider-width) solid var(--background-modifier-border);
+      border-top: var(--border-width) solid var(--background-modifier-border);
       width: calc(100% + var(--nav-item-children-margin-start));
       content: "";
     }
@@ -1388,7 +1388,7 @@ body:not(.alt-heading-off) {
 
 .markdown-rendered code,
 .cm-s-obsidian .cm-inline-code:not(.cm-formatting) {
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   padding: 2px 4px;
 }
 
@@ -1428,7 +1428,7 @@ body:not(.alt-heading-off) {
   }
 
   pre {
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
   }
 
   .callout-title {
@@ -2149,7 +2149,7 @@ body:not(.is-mobile) .suggestion-container {
 body.is-mobile {
   .menu {
     backdrop-filter: blur(50px);
-        background-color: var(--modal-background);
+    background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;
     white-space: normal;
@@ -2632,7 +2632,7 @@ body.windows-mode-off:not(.is-mobile) {
   }
 
   .mobile-option-setting-item {
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
     padding: 12px 16px;
   }
@@ -2737,7 +2737,7 @@ body.is-phone {
   }
 
   .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
-    border-bottom: 1px solid var(--background-modifier-border);
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
     border-bottom-right-radius: 0;
     border-bottom-left-radius: 0;
   }
@@ -2764,7 +2764,7 @@ body.is-phone {
     border-radius: 0;
 
     &:not(:last-child) {
-      border-bottom: 1px solid var(--background-modifier-border);
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
     }
   }
 }
@@ -2812,7 +2812,7 @@ body:not(.center-status-off) .status-bar {
   bottom: 8px;
   opacity: 0.1;
   transition: var(--anim-duration-fast);
-  border: 1px solid transparent;
+  border: var(--border-width) solid transparent;
   border-radius: var(--radius-xl);
   background-color: transparent;
   padding: 4px !important;
@@ -2821,7 +2821,7 @@ body:not(.center-status-off) .status-bar {
 
 .status-bar:hover {
   opacity: 1;
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   background-color: var(--background-primary);
 }
 
@@ -2959,7 +2959,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   .mod-root .workspace-tab-container {
     box-shadow: none !important;
-    border: 1px solid var(--background-modifier-hover);
+    border: var(--border-width) solid var(--background-modifier-hover);
   }
 
   /********** Sidebar **********/
@@ -3048,7 +3048,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .menu,
   .suggestion-container {
     outline: none;
-    border: 1px solid var(--background-modifier-border-hover);
+    border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);
     background-color: var(--background-secondary);
     padding: 6px;
@@ -3195,7 +3195,7 @@ body.is-phone {
     right: max(var(--safe-area-inset-right), 14px);
     bottom: 12px;
     backdrop-filter: blur(50px);
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100%;
     background-color: rgb(from var(--background-secondary) r g b / 50%);
     padding: 14px;
@@ -3285,7 +3285,7 @@ body.is-tablet {
   backdrop-filter: blur(20px);
   animation: fadeInDown var(--anim-duration-moderate);
   box-shadow: var(--shadow-s);
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   background-color: var(--modal-background);
   padding: 12px 24px;
   width: fit-content;
@@ -3402,7 +3402,7 @@ body.is-mobile {
   gap: 8px;
   backdrop-filter: blur(50px);
   box-shadow: none;
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
   padding: 8px;
 }
@@ -3422,7 +3422,7 @@ body.is-mobile {
 }
 
 .canvas-node-container {
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   background-color: var(--background-secondary);
 }
 .canvas-node-label {
@@ -3452,7 +3452,7 @@ body.is-tablet {
 
 .graph-controls.is-close {
   backdrop-filter: blur(50px);
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-border);
   background-color: rgb(from var(--background-secondary) r g b / 50%);
   padding: 0;
 }
@@ -3460,7 +3460,7 @@ body.is-tablet {
   padding: 8px;
 }
 .graph-controls-button.mod-open {
-  border-bottom: 1px solid var(--background-modifier-border);
+  border-bottom: var(--border-width) solid var(--background-modifier-border);
   border-radius: 0;
 }
 .graph-controls-button.mod-animate {
@@ -3564,12 +3564,12 @@ body.is-mobile {
   line-height: 100%;
 
   &.linter-navigation-item-selected {
-    border: 1px solid transparent;
+    border: var(--border-width) solid transparent;
     padding: 8px 12px !important;
   }
 
   &:hover {
-    border: 1px solid var(--interactive-accent);
+    border: var(--border-width) solid var(--interactive-accent);
   }
 }
 
@@ -3633,7 +3633,7 @@ body.is-mobile {
   .tasks-modal-dates-section,
   .tasks-modal-dependencies-section {
     box-sizing: border-box;
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-m);
     background-color: var(--background-primary);
     padding: 12px 16px;
@@ -3689,12 +3689,12 @@ body.is-mobile {
   }
 
   .ddc_ink_visible-frame {
-    border: 1px solid var(--background-modifier-border) !important;
+    border: var(--border-width) solid var(--background-modifier-border) !important;
   }
 
   .ddc_ink_visible-background,
   .tl-canvas {
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     background-color: var(--background-primary-alt);
   }
 
@@ -4063,7 +4063,7 @@ body.is-mobile .excalidraw.theme--dark {
     right: 0;
     backdrop-filter: blur(50px);
     border: none;
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
     background-color: rgb(from var(--background-secondary) r g b / 50%);
 
@@ -4085,7 +4085,7 @@ body.is-mobile .excalidraw.theme--dark {
 
   .Island {
     box-shadow: none;
-    border: 1px solid var(--background-modifier-border);
+    border: var(--border-width) solid var(--background-modifier-border);
     background-color: var(--background-secondary);
     padding: 0;
 
@@ -4120,7 +4120,7 @@ body.is-mobile .excalidraw.theme--dark {
     }
 
     .color-picker__button {
-      border: 1px solid var(--color-gray-30);
+      border: var(--border-width) solid var(--color-gray-30);
       width: 24px;
       height: 24px;
     }
@@ -4169,7 +4169,7 @@ body.is-mobile .excalidraw.theme--dark {
     }
 
     .ExcTextField__input {
-      border: 1px solid var(--background-modifier-border) !important;
+      border: var(--border-width) solid var(--background-modifier-border) !important;
       background: var(--background-modifier-form-field) !important;
 
       input::placeholder {
