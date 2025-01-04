@@ -3343,9 +3343,11 @@ body.is-mobile {
 
 body.is-phone {
   &.theme-light {
-    .mobile-navbar,
-    .workspace-drawer .nav-header {
+    .mobile-navbar {
       background-color: rgb(from var(--background-primary) r g b / 50%);
+    }
+    .workspace-drawer .nav-header {
+      background-color: rgb(from var(--background-secondary) r g b / 50%);
     }
   }
   &.theme-dark {
@@ -3479,7 +3481,7 @@ body.is-mobile .embedded-backlinks {
 
     &.is-active {
       opacity: 1;
-      color: var(--icon-color-focused);
+      color: white;
       background-color: var(--interactive-accent);
     }
   }
