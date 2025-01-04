@@ -268,8 +268,8 @@ body {
   }
 
   &.is-phone {
-    --border-width: 1px;
-    --divider-width: 1px;
+    --border-width: 0.3px;
+    --divider-width: 0.3px;
     --file-header-justify: flex-start;
     --mobile-sidebar-max-width: 100%;
     --tab-outline-width: 1px;
@@ -757,7 +757,7 @@ body.is-mobile {
       position: absolute;
       right: 0;
       bottom: 0;
-      border-bottom: 1px solid var(--background-modifier-border);
+      border-bottom: var(--divider-width) solid var(--background-modifier-border);
       width: 100%;
       content: "";
     }
@@ -774,7 +774,7 @@ body.is-mobile {
       position: absolute;
       top: 0;
       right: 0;
-      border-top: 1px solid var(--background-modifier-border);
+      border-top: var(--divider-width) solid var(--background-modifier-border);
       width: calc(100% + var(--nav-item-children-margin-start));
       content: "";
     }
@@ -2848,7 +2848,7 @@ body:not(.center-status-off) .status-bar {
 .notice {
   backdrop-filter: blur(20px);
   margin-bottom: 0;
-  border: 1px solid var(--background-modifier-border);
+  border: var(--border-width) solid var(--background-modifier-hover);
   border-radius: var(--radius-l);
   background-color: var(--modal-background);
   padding: 16px 24px;
