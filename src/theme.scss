@@ -1025,13 +1025,11 @@ body:not(.is-phone) {
         height: 100%;
       }
     }
-    &:has(:not(:last-child).mod-top-left-space:not(.mod-top-right-space)) .workspace-tabs:not(.mod-stacked) .workspace-tab-header-container {
-      justify-content: flex-start;
-      padding-left: 48px !important;
+    &:has(> .workspace-tabs:not(:only-of-type)) .workspace-tab-header-container {
+      justify-content: flex-start !important;
 
       &:has(.sidebar-toggle-button.mod-left):not(:has(.sidebar-toggle-button.mod-right)) {
         padding-right: 68px !important;
-        padding-left: 52px !important;
       }
       &:has(.sidebar-toggle-button.mod-right):not(:has(.sidebar-toggle-button.mod-left)) {
         padding-left: 8px !important;
@@ -1217,6 +1215,14 @@ body.mod-linux:not(.is-mobile) {
     }
     .workspace.is-left-sidedock-open .mod-root .workspace-tabs .workspace-tab-header-container {
       padding-left: 8px;
+    }
+  }
+
+  .workspace .mod-root:has(> .workspace-tabs:not(:only-of-type)) .workspace-tab-header-container {
+    padding-left: 48px;
+
+    &:has(.sidebar-toggle-button.mod-left):not(:has(.sidebar-toggle-button.mod-right)) {
+      padding-left: 52px !important;
     }
   }
 }
