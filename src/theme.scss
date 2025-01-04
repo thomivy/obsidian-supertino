@@ -2322,10 +2322,10 @@ body:not(.is-phone) {
 
 body.is-phone {
   &.theme-light .prompt-input-container {
-    background: linear-gradient(180deg, rgba(209, 211, 218, 0) 0%, rgba(209, 211, 218, 1) 100%);
+    background: linear-gradient(rgba(209, 211, 218, 0), rgba(209, 211, 218, 1) 80%);
   }
   &.theme-dark .prompt-input-container {
-    background: linear-gradient(180deg, rgba(43, 43, 43, 0) 0%, rgba(43, 43, 43, 1) 80%);
+    background: linear-gradient(rgba(43, 43, 43, 0), rgba(43, 43, 43, 1) 80%);
   }
 
   &:has(.prompt) .app-container {
@@ -3311,6 +3311,13 @@ body.is-tablet {
 /********** Mobile: Bottom Bar **********/
 
 body.is-mobile {
+  &.theme-light .mobile-toolbar {
+    background-color: rgb(209, 211, 218);
+  }
+  &.theme-dark .mobile-toolbar {
+    background-color: rgb(43, 43, 43);
+  }
+
   .mobile-navbar,
   .workspace-drawer .nav-header {
     position: fixed;
@@ -3338,9 +3345,6 @@ body.is-mobile {
     height: calc(var(--icon-size) - 2px);
   }
 
-  .mobile-toolbar {
-    background-color: var(--background-secondary);
-  }
   .mobile-toolbar-option {
     color: var(--text-normal);
   }
@@ -3354,6 +3358,7 @@ body.is-mobile {
 
   .nav-buttons-container {
     justify-content: space-between;
+    padding: 0;
   }
   .nav-action-button {
     flex-grow: 0 !important;
