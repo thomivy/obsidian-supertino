@@ -2149,8 +2149,7 @@ body:not(.is-mobile) .suggestion-container {
 body.is-mobile {
   .menu {
     backdrop-filter: blur(50px);
-    box-shadow: none;
-    background-color: var(--modal-background);
+        background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;
     white-space: normal;
@@ -2216,6 +2215,9 @@ body.is-mobile {
 }
 
 body.is-phone {
+  .menu {
+    box-shadow: none;
+  }
   .menu-grabber {
     position: absolute;
     top: 8px;
