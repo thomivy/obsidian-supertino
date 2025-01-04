@@ -2224,7 +2224,7 @@ body.is-phone {
     height: 5px;
   }
   .menu-scroll {
-    padding: 40px 16px var(--safe-area-inset-bottom);
+    padding: 40px 16px calc(var(--safe-area-inset-bottom) + 16px);
   }
   .menu-item + .menu-item,
   .menu-item:has(+ .menu-item) {
