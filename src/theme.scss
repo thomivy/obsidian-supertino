@@ -233,7 +233,6 @@ body {
     --border-width: 0.3px;
     --divider-width: 0.3px;
     --checkbox-size: var(--icon-m);
-    --divider-color: var(--color-base-25) !important;
     --icon-xs-stroke-width: 2px;
     --icon-s-stroke-width: 1.5px;
     --icon-m-stroke-width: 1.5px;
@@ -260,10 +259,12 @@ body {
     padding: 0;
 
     &.theme-light {
+      --divider-color: rgba(84, 84, 84, 0.3) !important;
       --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
       --interactive-normal: var(--background-primary);
     }
     &.theme-dark {
+      --divider-color: rgba(84, 84, 84, 0.6) !important;
       --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
       --interactive-normal: var(--background-secondary);
     }
