@@ -3190,7 +3190,7 @@ body.is-mobile {
 body.is-phone {
   &:not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
     position: fixed;
-    right: max(var(--safe-area-inset-right), 12px);
+    right: max(var(--safe-area-inset-right), 14px);
     bottom: 12px;
     backdrop-filter: blur(50px);
     border: 1px solid var(--background-modifier-border);
@@ -3310,7 +3310,8 @@ body.is-mobile {
     justify-content: center;
   }
   .mobile-navbar-action .clickable-icon {
-    width: 100%;
+    width: var(--input-height);
+    height: var(--input-height);
   }
   .mobile-navbar-tabs-action {
     border-width: var(--icon-l-stroke-width);
