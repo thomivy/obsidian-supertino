@@ -624,7 +624,7 @@ body:not(.is-mobile) {
 
       .nav-action-button {
         flex-grow: 0;
-        background-color: var(--background-modifier-border-hover);
+        background-color: var(--background-modifier-hover);
         padding: 2px;
         width: unset;
         height: unset;
@@ -2974,18 +2974,27 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     animation: fadeInUp var(--anim-duration-moderate);
   }
 
+  .nav-buttons-container {
+    padding: 0;
+    gap: 0;
+  }
+
   .nav-action-button {
     padding: 8px;
   }
 
-  .nav-action-button.is-active::after {
-    position: absolute;
-    bottom: 0;
-    border-radius: var(--radius-l);
-    background-color: var(--interactive-accent);
-    width: 24px;
-    height: 3px;
-    content: "";
+  .nav-action-button.is-active {
+    box-shadow: 0 0 0 1px var(--background-modifier-hover) inset;
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      border-radius: var(--radius-l);
+      background-color: var(--interactive-accent);
+      width: 24px;
+      height: 3px;
+      content: "";
+    }
   }
 
   .tree-item-self.is-active::after,
