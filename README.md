@@ -8,36 +8,40 @@ Cupertino is a theme that brings native experience to Obsidian.
 
 - **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
 
-    ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases built-in auto focus mode.](img/native.png)
+  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases built-in auto focus mode.](img/native.png)
 
 - **Optimized for mobile** — Redesigned modals, menu, editor, search, and more, with comfortable spacing for usability.
 
-    ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights "Quick Mode Switcher" within the editor. The third displays a redesigned search interface.](img/mobile.png)
+  ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights "Quick Mode Switcher" within the editor. The third displays a redesigned search interface.](img/mobile.png)
 
 - **Windows Mode** — Fluent Design UI for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
 
-    ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
+  ![Screenshot of Cupertino theme for Obsidian running on Windows.](img/windows.png)
 
 > [!NOTE]
 > Make sure to enable "Translucent window" in Obsidian Appearance settings.
-  
+
 ## Plugins
 
 All features are enable by default, following plugins can be installed to modify your installation. they are **_not_** required.
 
 ### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
-- Disable auto hiding elements
+
 - Disable active line indicator
+- Disable alternative heading style
 - Disable centered status bar
 - Disable centered tabs
-- Disable frontmatter foldable heading
 - Disable full width table
+- Disable Quick Mode Switcher
 - Disable Windows Mode
 - Enable accented window
+- Enable compact view
+- Enable frontmatter foldable heading
 
 ### [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Desktop)
-- Add pseudo-Mica (wallpaper as background) on Windows
-- Fix misaligned window control buttons on macOS
+
+- Add pseudo-Mica (wallpaper as background) on Windows (Alternatively, wait for Obsidian native support)
+- Fix misaligned window control buttons on macOS (Alternatively, just resize the window)
 
 ## Philosophy
 
@@ -62,7 +66,6 @@ You can follow Cupertino's development or my future work on my [Twitter](https:/
 <a href="https://www.buymeacoffee.com/cittoj"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=cittoj&button_colour=BD5FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## Credits
-
 
 - **@mgmeyers** — [California Coast Obsidian Theme](https://github.com/mgmeyers/obsidian-california-coast-theme)
 - **@colineckert** — [Things 2 (Quick Mode Switcher)](https://github.com/colineckert/obsidian-things)

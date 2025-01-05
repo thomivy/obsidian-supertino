@@ -472,8 +472,8 @@ body:not(.is-mobile) {
   }
 
   button {
-    padding: 4px 10px;
     position: relative;
+    padding: 4px 10px;
   }
   button.mod-cta {
     box-shadow: 0px 1px 2.5px 0px hsla(var(--color-accent-hsl), 0.24), 0px 0px 0px 0.5px hsla(var(--color-accent-hsl), 0.12) !important;
@@ -1063,8 +1063,8 @@ body:not(.is-phone) {
     }
 
     .workspace-tab-header-container:not(:has(.sidebar-toggle-button)) {
-      padding-left: 60px !important;
       padding-right: 60px !important;
+      padding-left: 60px !important;
       .workspace-tab-header-new-tab {
         right: 24px;
       }
@@ -1341,8 +1341,8 @@ body.is-tablet {
       height: fit-content !important;
 
       .clickable-icon {
-        width: 24px;
         padding: 0;
+        width: 24px;
       }
     }
 
@@ -1356,8 +1356,8 @@ body.is-tablet {
       justify-content: flex-start !important;
 
       &:has(.sidebar-toggle-button.mod-left):not(:has(.sidebar-toggle-button.mod-right)) {
-        padding-left: 64px !important;
         padding-right: 80px !important;
+        padding-left: 64px !important;
       }
       &:has(.sidebar-toggle-button.mod-right):not(:has(.sidebar-toggle-button.mod-left)) {
         padding-left: 16px !important;
@@ -4400,11 +4400,11 @@ body {
     }
 
     .note-card {
-      background-color: rgb(from var(--background-primary) r g b / 50%);
       transition: var(--anim-duration-fast);
-      border-radius: var(--radius-m);
-      padding: 16px;
       border-color: var(--background-modifier-border-hover);
+      border-radius: var(--radius-m);
+      background-color: rgb(from var(--background-primary) r g b / 50%);
+      padding: 16px;
     }
 
     .card-content hr {
@@ -4431,18 +4431,18 @@ body {
   .leaflet-bar {
     backdrop-filter: blur(50px);
     border: var(--border-width) solid var(--background-modifier-border) !important;
-    background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
     border-radius: var(--radius-s);
+    background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
 
     a {
-      font: unset;
       background-color: transparent !important;
+      width: 32px !important;
+      height: 32px !important;
       color: var(--text-muted);
+      font: unset;
       font-weight: normal;
       font-size: var(--icon-m);
       line-height: unset !important;
-      width: 32px !important;
-      height: 32px !important;
 
       &:not(:last-child) {
         border-bottom: var(--border-width) solid var(--background-modifier-border) !important;
@@ -4461,20 +4461,20 @@ body {
   }
 
   .map-view-graph-controls {
-    padding: 8px !important;
-    border: var(--border-width) solid var(--background-modifier-border);
-    background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
     backdrop-filter: blur(50px);
+    border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
+    background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
+    padding: 8px !important;
 
     .lbl-triangle {
       color: var(--nav-collapse-icon-color);
     }
 
     .lbl-toggle {
+      color: var(--text-normal);
       font-weight: var(--font-semibold);
       font-size: var(--font-ui-small);
-      color: var(--text-normal);
     }
 
     .graph-control-div {
