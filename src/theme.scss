@@ -4299,7 +4299,7 @@ body {
 
   &:has(.markdown-reading-view .el-pre .block-language-note-gallery) {
     .app-container {
-      --workspace-background-translucent: transparent !important;
+      --workspace-background-translucent: rgb(from var(--background-primary) r g b / 50%) !important;
     }
 
     .markdown-preview-view {
@@ -4336,13 +4336,11 @@ body {
     }
 
     .note-card {
+      background-color: rgb(from var(--background-primary) r g b / 50%);
       transition: var(--anim-duration-fast);
-      border-radius: var(--radius-l);
+      border-radius: var(--radius-m);
       padding: 16px;
-
-      &:hover {
-        border-color: var(--background-modifier-border);
-      }
+      border-color: var(--background-modifier-border-hover);
     }
 
     .card-content hr {
