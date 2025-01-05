@@ -1632,7 +1632,7 @@ body.is-phone {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 
-  .mod-root .view-content:not(:has(> [class^="markdown-"])):not(:has(.canvas-wrapper)) {
+  .mod-root .view-content:not(:has(> .markdown-source-view)):not(:has(.canvas-wrapper)) {
     margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 }
@@ -1651,7 +1651,7 @@ body.is-tablet {
     padding-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height) + 16px);
   }
 
-  .mod-root .view-content:not(:has(> [class^="markdown-"])):not(:has(.canvas-wrapper)) {
+  .mod-root .view-content:not(:has(> .markdown-source-view)):not(:has(.canvas-wrapper)) {
     margin-top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
   }
 }
@@ -4297,7 +4297,7 @@ body {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px, rgba(0, 0, 0, 0.12) 0px 4px 16px;
   }
 
-  &:has(.workspace-leaf:not([style*="display: none"]) .block-language-note-gallery) {
+  &:has(.markdown-reading-view .el-pre .block-language-note-gallery) {
     .app-container {
       --workspace-background-translucent: transparent !important;
     }
