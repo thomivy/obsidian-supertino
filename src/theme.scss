@@ -231,6 +231,7 @@ body {
   &.is-mobile {
     --background-modifier-form-field: var(--interactive-normal) !important;
     --border-width: 0.3px;
+    --divider-color: var(--color-base-35) !important;
     --divider-width: 0.3px;
     --checkbox-size: var(--icon-m);
     --icon-xs-stroke-width: 2px;
@@ -259,12 +260,10 @@ body {
     padding: 0;
 
     &.theme-light {
-      --divider-color: rgba(84, 84, 84, 0.3) !important;
       --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
       --interactive-normal: var(--background-primary);
     }
     &.theme-dark {
-      --divider-color: rgba(84, 84, 84, 0.6) !important;
       --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
       --interactive-normal: var(--background-secondary);
     }
@@ -434,7 +433,7 @@ body:not(.is-mobile) {
   overflow: visible;
 
   &:before {
-  top: unset !important;
+    top: unset !important;
   }
 
   input {
@@ -809,12 +808,6 @@ body.is-mobile {
 }
 
 body.is-tablet {
-  &.theme-light .workspace-drawer {
-    background-color: var(--background-secondary-alt);
-    .nav-header {
-      background-color: rgb(from var(--background-secondary-alt) r g b / 50%);
-    }
-  }
   &.theme-dark .workspace-drawer {
     background-color: var(--background-primary-alt);
     .nav-header {
