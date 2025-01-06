@@ -2443,47 +2443,54 @@ body.is-tablet {
 .status-bar {
   right: 8px;
   bottom: 8px;
-  background-color: var(--background-primary);
   border: var(--border-width) solid var(--background-modifier-border);
-  padding: 4px 8px !important;
-  transition: var(--anim-duration-fast);
   border-radius: var(--radius-xl);
+  background-color: var(--background-primary);
+  padding: 4px 8px !important;
+  min-height: unset;
   color: var(--text-muted);
 }
 
 body:not(.hide-status-off) .status-bar {
-  transition: var(--anim-duration-fast) var(--anim-duration-fast);
   right: unset;
   bottom: 2px;
   justify-content: center;
-  background-color: var(--background-modifier-border-hover);
-  border-radius: 100px;
-  transform: scaleX(0.3) scaleY(0.1);
-  transform-origin: 50% 100%;
+  transition: var(--anim-duration-fast) var(--anim-duration-fast);
   border: none;
+  border-radius: 100px;
+  background-color: var(--background-modifier-border-hover);
+  padding: 16px 8px !important;
 
   > div {
-    transition: var(--anim-duration-fast) var(--anim-duration-fast);
+    transition: var(--anim-duration-moderate) var(--anim-duration-fast);
   }
 
-  &:not(:hover) > div {
+  &:not(:hover) {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 4px;
+
+    > div {
+      transform: scale(0.9);
     opacity: 0;
+      filter: blur(4px);
+    }
   }
 
   &::before {
-    transition: var(--anim-duration-fast) var(--anim-duration-fast);
-    content: "";
     position: absolute;
+    transform: scaleX(1.5) scaleY(7);
+    z-index: -1;
+    transition: var(--anim-duration-fast) var(--anim-duration-fast);
     width: 100%;
     height: 100%;
-    z-index: -1;
-    transform: scaleX(2) scaleY(7);
+    content: "";
   }
 
   &:hover {
-    background-color: black;
-    transform: scale(1);
     bottom: 4px;
+    background-color: black;
+    height: 40px;
 
     &::before {
       transform: scaleY(1);
