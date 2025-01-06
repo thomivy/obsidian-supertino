@@ -27,9 +27,9 @@ All features are enable by default, following plugins can be installed to modify
 
 ### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 
+- Always show status bar
 - Disable active line indicator
 - Disable alternative heading style
-- Disable centered status bar
 - Disable centered tabs
 - Disable full width table
 - Disable Quick Mode Switcher
