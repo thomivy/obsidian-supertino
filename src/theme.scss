@@ -148,6 +148,7 @@ body {
   --table-background: var(--background-secondary);
   --table-header-background-hover: var(--table-background);
   --tag-padding-x: 12px;
+  --tag-padding-y: 8px;
   --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
   --text-selection: var(--background-modifier-hover);
   --titlebar-background-focused: transparent;
@@ -1140,6 +1141,10 @@ body:not(.alt-heading-off) {
   .callout-content > *:last-child {
     margin-bottom: 0 !important;
   }
+}
+
+a.tag {
+  line-height: 2.5;
 }
 
 img {
