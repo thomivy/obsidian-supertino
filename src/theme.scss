@@ -1111,6 +1111,10 @@ body:not(.alt-heading-off) {
   inset-inline-end: 36px;
 }
 
+.markdown-rendered pre:not(:hover) button.copy-code-button {
+  display: none !important;
+}
+
 .markdown-rendered mark,
 .cm-s-obsidian span.cm-formatting-highlight,
 .cm-s-obsidian span.cm-highlight {
