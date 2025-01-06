@@ -2447,7 +2447,7 @@ body.is-tablet {
   background-color: var(--background-primary);
   padding: 4px 8px !important;
   min-height: unset;
-  color: var(--text-muted);
+  color: var(--text-normal);
 }
 
 body:not(.hide-status-off) .status-bar {
@@ -2455,16 +2455,17 @@ body:not(.hide-status-off) .status-bar {
   bottom: 2px;
   justify-content: center;
   transition: var(--anim-duration-fast) var(--anim-duration-fast);
-  border: none;
+  border-color: transparent;
   border-radius: 10000px;
-  background-color: var(--background-modifier-border-hover);
-  padding: 16px 8px !important;
+  background-color: rgba(var(--mono-rgb-100), 0.2);
+  padding: 8px !important;
 
   > div {
     transition: var(--anim-duration-moderate) var(--anim-duration-fast);
   }
 
   &:not(:hover) {
+    transform: scaleX(0.5);
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     height: 4px;
@@ -2488,7 +2489,8 @@ body:not(.hide-status-off) .status-bar {
 
   &:hover {
     bottom: 4px;
-    background-color: black;
+    border-color: var(--background-secondary);
+    background-color: rgba(var(--mono-rgb-0), 1);
     height: 40px;
 
     &::before {
