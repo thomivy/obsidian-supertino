@@ -150,7 +150,7 @@ body {
   --text-selection: var(--background-modifier-hover);
   --titlebar-background-focused: transparent;
   --titlebar-background: transparent;
-  --toggle-border-width: 1px;
+  --toggle-border-width: var(--border-width);
   --toggle-s-border-width: var(--toggle-border-width);
   --toggle-s-thumb-height: var(--toggle-thumb-height);
   --toggle-s-thumb-width: var(--toggle-thumb-width);
@@ -230,7 +230,7 @@ body {
   &.is-mobile {
     --background-modifier-form-field: var(--interactive-normal) !important;
     --border-width: 0.3px;
-    --divider-color: var(--color-base-35) !important;
+    --divider-color: rgba(var(--mono-rgb-100), 0.1) !important;
     --divider-width: 0.3px;
     --checkbox-size: var(--icon-m);
     --icon-xs-stroke-width: 2px;
@@ -1435,7 +1435,7 @@ body:not(.active-line-off) .view-content > div[class^="markdown-"] .cm-active:no
 
 .inline-title {
   margin-bottom: 24px;
-  border-bottom: 1px solid var(--hr-color);
+  border-bottom: var(--border-width) solid var(--hr-color);
   padding-bottom: 16px;
 }
 
@@ -2133,7 +2133,7 @@ body.is-mobile {
       button {
         justify-content: center;
         margin: 0;
-        border-top: 1px solid var(--background-modifier-border);
+        border-top: var(--border-width) solid var(--background-modifier-border);
         border-radius: 0;
         background-color: transparent;
         padding: 32px 0;
@@ -2246,7 +2246,7 @@ body.is-mobile {
     background-color: rgb(from var(--background-secondary-alt) r g b / 75%);
   }
   .menu-item:not(:has(+ .menu-separator)):not(:last-child) {
-    border-bottom: 1px solid var(--background-modifier-border-hover);
+    border-bottom: var(--border-width) solid var(--background-modifier-border-hover);
   }
 
   .menu-separator {
@@ -2265,7 +2265,7 @@ body.is-mobile {
       display: flex;
       align-items: center;
       margin: 0;
-      border-bottom: 1px solid var(--background-modifier-border-hover);
+      border-bottom: var(--border-width) solid var(--background-modifier-border-hover);
       border-radius: 0;
       background-color: transparent;
       padding: 8px 16px;
@@ -2443,7 +2443,7 @@ body.is-tablet {
   .prompt-input-container {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--background-modifier-border);
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
   }
 
   .prompt-input-container::before {
@@ -2669,8 +2669,8 @@ body.windows-mode-off:not(.is-mobile) {
       padding: 16px 16px 12px;
     }
     .setting-item:not(.setting-item-heading) {
-      border-right: 1px solid var(--background-modifier-border);
-      border-left: 1px solid var(--background-modifier-border);
+      border-right: var(--border-width) solid var(--background-modifier-border);
+      border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
       background-color: var(--background-primary);
       padding: 12px 16px;
@@ -2678,14 +2678,14 @@ body.windows-mode-off:not(.is-mobile) {
     .setting-item-heading + .setting-item,
     *:not(.setting-item) + .setting-item:not(.setting-item-heading),
     .setting-item:first-child:not(.setting-item-heading) {
-      border-top: 1px solid var(--background-modifier-border);
+      border-top: var(--border-width) solid var(--background-modifier-border);
       border-top-right-radius: var(--radius-s) !important;
       border-top-left-radius: var(--radius-s) !important;
     }
     .setting-item:has(+ .setting-item-heading),
     .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
     .setting-item:last-child {
-      border-bottom: 1px solid var(--background-modifier-border);
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
       border-bottom-right-radius: var(--radius-s) !important;
       border-bottom-left-radius: var(--radius-s) !important;
     }
@@ -3189,7 +3189,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
     .modal-button-container {
       margin: 0;
-      border-top: 1px solid var(--background-modifier-border);
+      border-top: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--divider-color);
       padding: 24px;
 
@@ -3668,7 +3668,7 @@ body.is-mobile {
     display: none;
   }
   .setting-item:has(+ .linter-visually-hidden) {
-    border-bottom: 1px solid var(--background-modifier-border);
+    border-bottom: var(--border-width) solid var(--background-modifier-border);
     border-bottom-right-radius: var(--radius-s) !important;
     border-bottom-left-radius: var(--radius-s) !important;
   }
@@ -4152,7 +4152,7 @@ body.is-mobile .excalidraw.theme--dark {
     background-color: rgb(from var(--background-secondary) r g b / 50%);
 
     label:not(:last-child) {
-      border-bottom: 1px solid var(--background-modifier-border);
+      border-bottom: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
     }
 
