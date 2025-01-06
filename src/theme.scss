@@ -50,12 +50,12 @@ settings:
         description: Turn off Windows specific styling.
         type: class-toggle
     -
-        id: hide-nav-header-off
-        title: Disable auto hiding panel actions
+        id: hide-status-off
+        title: Always show status bar
         type: class-toggle
     -
-        id: center-status-off
-        title: Disable centered status bar
+        id: hide-nav-header-off
+        title: Disable auto hiding panel actions
         type: class-toggle
     -
         id: center-tabs-off
@@ -344,6 +344,7 @@ body.is-phone .app-container,
 body.is-tablet .app-container {
   transition: all var(--anim-duration-moderate) !important;
   overflow: hidden;
+  align-items: center;
 }
 
 body:not(.is-mobile) {
@@ -2481,28 +2482,55 @@ body.is-tablet {
 }
 
 /********** Desktop: Status Bar **********/
-body:not(.center-status-off) .status-bar {
-  right: 50%;
-  bottom: 12px;
-  transform: translateX(50%);
-}
-
 .status-bar {
   right: 8px;
   bottom: 8px;
-  opacity: 0.1;
+  background-color: var(--background-primary);
+  border: var(--border-width) solid var(--background-modifier-border);
+  padding: 4px 8px !important;
   transition: var(--anim-duration-fast);
-  border: var(--border-width) solid transparent;
   border-radius: var(--radius-xl);
-  background-color: transparent;
-  padding: 4px !important;
   color: var(--text-muted);
 }
 
-.status-bar:hover {
-  opacity: 1;
-  border: var(--border-width) solid var(--background-modifier-border);
-  background-color: var(--background-primary);
+body:not(.hide-status-off) .status-bar {
+  transition: var(--anim-duration-fast) var(--anim-duration-fast);
+  right: unset;
+  bottom: 2px;
+  justify-content: center;
+  background-color: var(--background-modifier-border-hover);
+  border-radius: 100px;
+  transform: scaleX(0.3) scaleY(0.1);
+  transform-origin: 50% 100%;
+  border: none;
+
+  > div {
+    transition: var(--anim-duration-fast) var(--anim-duration-fast);
+  }
+
+  &:not(:hover) > div {
+    opacity: 0;
+  }
+
+  &::before {
+    transition: var(--anim-duration-fast) var(--anim-duration-fast);
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: scaleX(2) scaleY(7);
+  }
+
+  &:hover {
+    background-color: black;
+    transform: scale(1);
+    bottom: 4px;
+
+    &::before {
+      transform: scaleY(1);
+    }
+  }
 }
 
 .status-bar span {
