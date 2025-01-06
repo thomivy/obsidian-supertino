@@ -476,7 +476,7 @@ body.is-mobile {
   .clickable-icon {
     background-color: transparent;
     padding: 10px;
-    width: var(--input-height);
+    min-width: var(--input-height);
     height: var(--input-height);
   }
 }
