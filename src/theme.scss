@@ -594,11 +594,12 @@ body:not(.is-mobile) {
   }
 
   /* Auto hide panel actions */
-  &:not(.hide-nav-header-off) .workspace-leaf-content > .nav-header,
-  &:not(.hide-nav-header-off) .view-content > .nav-header {
-    *,
-    *::before {
-      transition: all var(--anim-duration-fast) !important;
+  &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content > .nav-header,
+  &:not(.hide-nav-header-off) .mod-sidedock .view-content > .nav-header {
+    .nav-buttons-container,
+    .nav-action-button,
+    svg.svg-icon {
+      transition: var(--anim-duration-fast) !important;
     }
 
     &:not(:hover):not(:has(.is-active)):not(:has(.has-active-menu)) .nav-buttons-container {
@@ -1153,6 +1154,10 @@ img {
   border-radius: var(--radius-s);
 }
 
+svg.svg-icon {
+  fill: none;
+}
+
 .cm-html-embed td,
 .markdown-rendered td,
 .cm-html-embed th,
@@ -1659,10 +1664,6 @@ body:not(.is-mobile) {
       margin: 8px 0;
     }
 
-    .modal-content:not(:has(:not(p))) {
-      text-align: center;
-    }
-
     .modal-button-container {
       justify-content: center;
 
@@ -2004,7 +2005,7 @@ body.is-phone {
     background: linear-gradient(rgba(43, 43, 43, 0), rgba(43, 43, 43, 1) 80%);
   }
 
-  &:has(.prompt) .app-container {
+  &:has(.prompt:not(.omnisearch-modal)) .app-container {
     filter: blur(20px) brightness(0.5);
   }
 
@@ -2090,28 +2091,7 @@ body.is-tablet {
   transition: all var(--anim-duration-fast);
 }
 
-body:has(.workspace-tab-header.is-active[aria-label="New tab"]),
-body:has(.workspace-tab-header.is-active[aria-label="No file"]) {
-  &.cupertino-helper {
-    --workspace-background-translucent: rgb(from var(--background-primary) r g b / 50%) !important;
-  }
-
-  .app-container {
-    --workspace-background-translucent: transparent !important;
-  }
-
-  .mod-root .view-header,
-  .mod-root .view-content,
-  .workspace-tab-container {
-    box-shadow: none;
-    border-color: transparent !important;
-    background-color: transparent;
-  }
-
-  .status-bar {
-    display: none;
-  }
-
+.empty-state {
   .empty-state-container {
     display: flex;
     justify-content: center;
@@ -2907,7 +2887,7 @@ body.is-mobile {
 }
 
 body.is-phone {
-  &:not(.quick-mode-switch-off) .mod-root .view-actions button:nth-last-child(2) {
+  &:not(.quick-mode-switch-off) .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
     position: fixed;
     right: max(var(--safe-area-inset-right), 14px);
     bottom: 12px;
@@ -3356,9 +3336,7 @@ body.is-mobile {
 
 /********** Community Plugin: Tasks **********/
 
-.modal:has(.tasks-modal) {
-  --dialog-width: fit-content;
-
+.tasks-modal {
   .accesskey {
     text-decoration: none;
   }
@@ -3617,13 +3595,10 @@ body.is-phone {
   &.theme-dark .omnisearch-input-field {
     background: linear-gradient(180deg, rgba(43, 43, 43, 0) 0%, rgba(43, 43, 43, 1) 80%);
   }
-  &:has(.omnisearch-modal.prompt) .app-container {
-    filter: none;
-  }
 
   .omnisearch-modal {
     --text-muted: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(20px) brightness(0.5);
+    backdrop-filter: blur(20px);
     border-radius: var(--radius-l) var(--radius-l) 0 0;
     height: 85%;
 
@@ -3681,22 +3656,6 @@ body.is-phone {
 }
 
 /********** Community Plugin: Tldraw **********/
-body:has(.tl-theme__light) {
-  --color-background: hsl(210, 20%, 98%);
-  --color-low: hsl(204, 16%, 94%);
-  --color-text: hsl(0, 0%, 0%);
-}
-
-body:has(.tl-theme__dark) {
-  --color-background: hsl(240, 5%, 6.5%);
-  --color-low: hsl(260, 4.5%, 10.5%);
-  --color-text: hsl(210, 17%, 98%);
-}
-
-body:has(.tldraw-view-content) .status-bar {
-  display: none;
-}
-
 .tldraw-view-content {
   button {
     box-shadow: none !important;
@@ -3718,31 +3677,8 @@ body:not(.is-mobile) {
   }
 }
 
-body.is-mobile {
-  svg.svg-icon {
-    fill: none;
-  }
-}
-
-body.is-phone {
-  &:not(.quick-mode-switch-off) .workspace-leaf-content:has(.tldraw-view-content) .mod-root .view-actions button:nth-last-child(2) {
-    top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 1px) !important;
-    right: 0 !important;
-    bottom: unset !important;
-    backdrop-filter: none !important;
-    border: none !important;
-    border-radius: 0 0 0 11px !important;
-    background: var(--color-low) !important;
-    padding: 8px !important;
-    width: 40px !important;
-    height: 40px !important;
-    color: var(--color-text) !important;
-  }
-
-  .tldraw-view-content {
-    margin-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 1px) !important;
-    padding-bottom: 79px !important;
-  }
+body.is-phone .tldraw-view-content {
+  padding-bottom: 80px !important;
 }
 
 /********** Community Plugin: Excalidraw **********/
@@ -3917,10 +3853,6 @@ body.is-mobile .excalidraw.theme--dark {
   }
 }
 
-body:has(.excalidraw-view) .status-bar {
-  display: none;
-}
-
 /********** Community Plugin: Folder notes **********/
 
 body.obsidian-app.fn-whitespace-stop-collapsing {
@@ -4048,10 +3980,14 @@ body {
       max-width: unset;
     }
 
-    .status-bar {
-      display: none;
+    .edit-block-button,
+    .search-empty-state,
+    .view-header-title-container {
+      visibility: hidden;
     }
+  }
 
+  .block-language-note-gallery {
     .note-card {
       transition: var(--anim-duration-fast);
       border-color: var(--background-modifier-border-hover);
@@ -4062,12 +3998,6 @@ body {
 
     .card-content hr {
       border-color: var(--hr-color) !important;
-    }
-
-    .edit-block-button,
-    .search-empty-state,
-    .view-header-title-container {
-      visibility: hidden;
     }
   }
 }
