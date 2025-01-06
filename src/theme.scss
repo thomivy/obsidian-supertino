@@ -76,6 +76,7 @@ settings:
 /* General */
 
 body {
+  --anim-motion-cupertino: cubic-bezier(0, 0.5, 0.25, 1);
   --background-modifier-border: var(--divider-color);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);
@@ -334,6 +335,38 @@ body {
   }
   50% {
     transform: scale(0.99);
+  }
+}
+
+.workspace-drawer.mod-left,
+.workspace-drawer.mod-right,
+.menu {
+  transition-duration: var(--anim-duration-moderate) !important;
+  transition-timing-function: var(--anim-motion-cupertino) !important;
+}
+
+body.is-mobile {
+  .workspace-drawer.mod-left {
+    @starting-style {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  .workspace-drawer.mod-right {
+    @starting-style {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+}
+
+body.is-phone {
+  .menu {
+    @starting-style {
+      transform: translateY(100%);
+      opacity: 0;
+    }
   }
 }
 
