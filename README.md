@@ -51,11 +51,7 @@ I’ve spent way too much time on customizing Obsidian, thousands of themes with
 2. **Less customizations** — Cupertino will never have customization. More customization make you waste more time on fiddling.
 3. **Less visual noise** — Content is the key. Cupertino makes Obsidian blend in system style, so you can focus on what you're typing.
 
-Cupertino is designed as I use Obsidian, while I'm trying to focus on being consistent, inconsistency happens. If you spot any, feel free to submit issues.
-
-## Performance
-
-Cupertino is very resource heavy due to the amount of blur and calculation used. Performance issue is known and will not be fixed nor addressed further. Unless Obsidian optimizes the app, I can't do anything about it.
+Cupertino is developed as I use Obsidian, while I'm trying to focus on being consistent, inconsistency happens. If you spot any, feel free to submit issues.
 
 ## Support
 
