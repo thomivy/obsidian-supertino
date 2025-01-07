@@ -583,25 +583,19 @@ body.is-tablet {
 }
 
 body:not(.is-mobile) {
+  &.show-ribbon .mod-sidedock.mod-left-split {
+    margin-left: -8px;
+  }
   .workspace .workspace-ribbon,
   .workspace .workspace-ribbon.mod-left:before,
   .workspace .mod-sidedock > .workspace-leaf-resize-handle {
     border: none;
   }
-  .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
-  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content {
-    padding: 4px 16px;
-  }
 
-  &.show-ribbon {
-    .workspace-split.mod-left-split .workspace-leaf-content > .node-insert-event,
-    .workspace-split.mod-left-split .workspace-leaf-content > .view-content,
-    .workspace-split.mod-left-split .nav-header {
-      padding-left: 4px;
-    }
-    .search-row {
-      margin-left: 4px;
-    }
+  .workspace-split.mod-sidedock .workspace-leaf-content > .node-insert-event,
+  .workspace-split.mod-sidedock .workspace-leaf-content > .view-content,
+  .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
+    padding: 4px 16px;
   }
 
   .view-content > .node-insert-event {
@@ -610,6 +604,10 @@ body:not(.is-mobile) {
 
   .search-row {
     margin: 4px 16px;
+  }
+
+  .view-content .nav-header {
+    padding: 4px 0;
   }
 
   /* Unfocused window opacity */
@@ -621,13 +619,6 @@ body:not(.is-mobile) {
     }
   }
 
-  .view-content .nav-header {
-    padding: 4px 0;
-  }
-  .nav-header {
-    padding: 4px 16px;
-  }
-
   /* Auto hide panel actions */
   &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content > .nav-header,
   &:not(.hide-nav-header-off) .mod-sidedock .view-content > .nav-header {
@@ -635,6 +626,7 @@ body:not(.is-mobile) {
     .nav-action-button,
     svg.svg-icon {
       transition: var(--anim-duration-fast) var(--anim-duration-fast) !important;
+      transition-timing-function: var(--anim-motion-cupertino-smooth) !important;
     }
 
     &:not(:hover):not(:has(.is-active)):not(:has(.has-active-menu)) .nav-buttons-container {
