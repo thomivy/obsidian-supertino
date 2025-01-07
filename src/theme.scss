@@ -76,7 +76,8 @@ settings:
 /* General */
 
 body {
-  --anim-motion-cupertino: cubic-bezier(0, 0.5, 0.25, 1);
+  --anim-motion-cupertino-smooth: cubic-bezier(0, 0.5, 0.25, 1);
+  --anim-motion-cupertino-jumpy: cubic-bezier(0.3, 1.5, 0.7, 1);
   --background-modifier-border: var(--divider-color);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);
@@ -342,7 +343,7 @@ body {
 .workspace-drawer.mod-right,
 .menu {
   transition-duration: var(--anim-duration-moderate) !important;
-  transition-timing-function: var(--anim-motion-cupertino) !important;
+  transition-timing-function: var(--anim-motion-cupertino-smooth) !important;
 }
 
 body.is-mobile {
@@ -948,8 +949,8 @@ body:not(.is-phone) {
   }
 
   .workspace .mod-sidedock.mod-left-split .mod-top-left-space .sidebar-toggle-button.mod-left {
-      position: absolute;
-      left: max(var(--frame-left-space), 8px);
+    position: absolute;
+    left: max(var(--frame-left-space), 8px);
   }
 }
 
@@ -1046,7 +1047,7 @@ body.mod-macos.is-hidden-frameless {
 body.mod-windows.is-hidden-frameless,
 body.mod-linux.is-hidden-frameless {
   &.show-ribbon .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-      margin-left: 0;
+    margin-left: 0;
   }
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
@@ -2079,6 +2080,7 @@ body:not(.is-phone) {
 
 body.is-phone {
   .prompt {
+    --mobile-height: 70vh;
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
     backdrop-filter: blur(50px);
     animation: var(--anim-duration-slow) blurInScale !important;
@@ -2087,7 +2089,6 @@ body.is-phone {
     border-radius: var(--radius-l);
     background-color: var(--modal-background) !important;
     width: 95vw;
-    height: 70vh;
   }
 
   .prompt-input {
@@ -2536,6 +2537,7 @@ body:not(.hide-status-off) .status-bar {
   bottom: 2px;
   justify-content: center;
   transition: var(--anim-duration-fast) var(--anim-duration-fast);
+  transition-timing-function: var(--anim-motion-cupertino-jumpy);
   border-color: transparent;
   border-radius: 10000px;
   background-color: rgba(var(--mono-rgb-100), 0.2);
