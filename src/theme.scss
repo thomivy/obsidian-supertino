@@ -2635,8 +2635,8 @@ body:not(.hide-status-off) .status-bar {
 /********** Desktop: Windows specific styling **********/
 
 body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
-  --font-text-theme: "Segoe UI Variable", "Segoe UI", sans-serif;
-  --font-interface-theme: "Segoe UI Variable", "Segoe UI", sans-serif;
+  --font-text-theme: "Segoe UI Variable", "Segoe UI Variable Text", "Segoe UI", sans-serif;
+  --font-interface-theme: "Segoe UI Variable", "Segoe UI Variable Display", "Segoe UI", sans-serif;
   --input-height: 32px;
   --dialog-width: 448px;
   --radius-l: 8px;
