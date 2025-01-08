@@ -1888,7 +1888,11 @@ body:not(.is-mobile) .suggestion-container {
   border: none;
   border-radius: var(--radius-m);
   background-color: var(--background-secondary);
+  padding: 0;
+
+  > div {
   padding: 4px;
+  }
 
   .menu-separator {
     margin: 6px 8px;
@@ -2825,7 +2829,10 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);
     background-color: var(--background-secondary);
+
+    > div {
     padding: 6px;
+    }
 
     .menu-separator {
       margin: 6px 0;
