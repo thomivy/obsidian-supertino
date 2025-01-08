@@ -246,7 +246,7 @@ body {
     --input-height: 44px;
     --input-radius: 10px;
     --mobile-sidebar-width: 100%;
-    --mobile-toolbar-height: 48px;
+    --mobile-toolbar-height: var(--input-height);
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
@@ -1272,7 +1272,8 @@ body {
   --table-column-last-border-width: 0;
 }
 
-.view-content [class^="markdown-"] {
+.view-content .markdown-preview-view,
+.view-content .cm-sizer {
   table {
     position: relative;
     border-radius: var(--radius-s);
@@ -4072,4 +4073,85 @@ body:not(.is-mobile) {
 /********** Community Plugin: Settings Search **********/
 .settings-search-container {
   padding: 0;
+}
+
+/********** Community Plugin: Editing Toolbar **********/
+
+#cMenuToolbarModalBar,
+#cMenuToolbarPopoverBar {
+  backdrop-filter: blur(50px);
+  background-color: var(--modal-background);
+  padding: 4px;
+  height: fit-content !important;
+
+  &.top {
+    margin: 0 8px;
+  }
+
+  button {
+    position: relative;
+    flex-grow: 1;
+    margin: 0 !important;
+    height: 32px !important;
+  }
+  button[class^="cMenuToolbarCommandsubItem"]::after {
+    position: absolute;
+    right: 4px;
+    margin: 0;
+    border: none;
+  }
+
+  .cMenuToolbarCommandItem {
+    backdrop-filter: none;
+  }
+
+  .subitem {
+    padding: 4px;
+  }
+  .cMenuToolbarCommandsubItem-font-color .subitem {
+    padding: 0;
+  }
+
+  .x-color-picker-wrapper {
+    box-shadow: none;
+    border: 1px solid var(--background-modifier-border);
+    padding: 8px;
+    font-size: var(--font-ui-smaller);
+    font-family: var(--font-interface-theme);
+
+    button {
+      box-shadow: none;
+      width: 50%;
+    }
+  }
+}
+
+body:not(.is-phone) #cMenuToolbarModalBar button {
+  min-width: 32px;
+}
+
+body.is-phone {
+  #cMenuToolbarModalBar,
+  #cMenuToolbarPopoverBar {
+    top: calc(var(--safe-area-inset-top) + var(--view-header-height)) !important;
+  }
+
+  #cMenuToolbarpopover {
+    margin-top: 44px;
+  }
+
+  #cMenuToolbarPopoverBar {
+    gap: 8px;
+  }
+
+  button[class^="cMenuToolbarCommandsubItem"]::after {
+    right: -4px;
+  }
+}
+
+body.is-tablet {
+  #cMenuToolbarModalBar,
+  #cMenuToolbarPopoverBar {
+    top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height)) !important;
+  }
 }
