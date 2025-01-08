@@ -2777,6 +2777,15 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   /********** Settings **********/
 
+  &.theme-light .modal.mod-settings .setting-item:not(.setting-item-heading) {
+    border: var(--border-width) solid rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  &.theme-dark .modal.mod-settings .setting-item:not(.setting-item-heading) {
+    border: var(--border-width) solid rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
   .modal.mod-settings {
     .vertical-tab-header {
       border: none;
@@ -2809,11 +2818,9 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       font-size: var(--font-ui-large);
     }
     .setting-item:not(.setting-item-heading) {
-      border: var(--border-width) solid rgba(0, 0, 0, 0.1);
-      border-radius: var(--radius-m);
+            border-radius: var(--radius-m);
       padding: 16px 20px;
-      background-color: rgba(255, 255, 255, 0.05);
-    }
+          }
     .setting-item:not(:last-child):not(.setting-item-heading) {
       margin-bottom: 4px;
     }
