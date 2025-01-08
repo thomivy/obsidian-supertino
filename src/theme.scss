@@ -2090,15 +2090,16 @@ body:not(.is-phone) {
 
 body.is-phone {
   .prompt {
-    --mobile-height: 70vh;
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
     backdrop-filter: blur(50px);
     animation: var(--anim-duration-slow) blurInScale !important;
+    transition: var(--anim-duration-fast);
     margin-top: var(--prompt-top);
     border: var(--prompt-border-width) solid var(--background-modifier-hover);
     border-radius: var(--radius-l);
     background-color: var(--modal-background) !important;
     width: 95vw;
+    height: 70vh;
   }
 
   .prompt-input {
