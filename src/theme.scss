@@ -1057,7 +1057,7 @@ body.mod-linux.is-hidden-frameless {
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-    padding-left: calc(56px + var(--frame-right-space));
+    padding-left: calc(48px + var(--frame-right-space));
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1104,7 +1104,7 @@ body.is-tablet {
 
   .workspace-tab-header-container-inner {
     margin: 6px 0;
-    padding-left: 60px !important;
+    padding-left: 88px !important;
   }
 }
 
@@ -1382,7 +1382,7 @@ body:not(.is-mobile) {
     background-color: var(--background-primary);
 
     .workspace-tab-container {
-      margin: 0;
+      margin: 0 !important;
       box-shadow: none !important;
       border: 0px solid transparent !important;
       border-radius: 0;
