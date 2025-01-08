@@ -1044,15 +1044,11 @@ body.mod-windows.is-hidden-frameless,
 body.mod-linux.is-hidden-frameless {
   &.show-ribbon {
     .mod-sidedock.mod-left-split .mod-top-left-space .workspace-tab-header-container-inner {
-    margin-left: 0;
+      margin-left: 0;
     }
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
       padding-left: calc(88px + var(--frame-right-space));
-    }
-    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
-    .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-      padding-left: calc(76px + var(--frame-right-space));
     }
     .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
     .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1062,7 +1058,7 @@ body.mod-linux.is-hidden-frameless {
 
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-    padding-left: calc(48px + var(--frame-right-space));
+    padding-left: calc(56px + var(--frame-right-space));
   }
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
   .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1386,10 +1382,11 @@ body:not(.is-mobile) {
 
     .workspace-tab-container {
       margin: 0;
-      box-shadow: none;
-      border: 0px solid transparent;
+      box-shadow: none !important;
+      border: 0px solid transparent !important;
       border-radius: 0;
     }
+    .workspace-ribbon:not(:hover),
     .workspace-tab-header-container:not(:hover),
     .view-header:not(:hover) {
       opacity: 0.5;
