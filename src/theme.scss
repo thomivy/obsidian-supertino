@@ -1186,21 +1186,22 @@ body:not(.alt-heading-off) {
 }
 
 .markdown-rendered button.copy-code-button,
-.markdown-source-view.mod-cm6 .edit-block-button {
+.markdown-source-view.mod-cm6 .edit-block-button,
+.code-block-flair {
   top: 4px;
   margin: 0;
   box-shadow: none !important;
-  padding: 8px;
-  width: 32px !important;
+  padding: 8px !important;
+  min-width: 32px !important;
   height: 32px !important;
 }
 
-.markdown-rendered button.copy-code-button {
-  inset-inline-end: 36px;
+.markdown-reading-view .markdown-rendered button.copy-code-button {
+  inset-inline-end: 4px;
 }
 
-.markdown-rendered pre:not(:hover) button.copy-code-button {
-  display: none !important;
+.markdown-source-view .markdown-rendered button.copy-code-button {
+  inset-inline-end: 36px;
 }
 
 .markdown-rendered mark,
@@ -1891,7 +1892,7 @@ body:not(.is-mobile) .suggestion-container {
   padding: 0;
 
   > div {
-  padding: 4px;
+    padding: 4px;
   }
 
   .menu-separator {
@@ -2831,7 +2832,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     background-color: var(--background-secondary);
 
     > div {
-    padding: 6px;
+      padding: 6px;
     }
 
     .menu-separator {
