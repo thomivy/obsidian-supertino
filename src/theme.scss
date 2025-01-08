@@ -1226,6 +1226,10 @@ body:not(.alt-heading-off) {
     gap: 8px;
   }
 
+  .callout-title-inner > * {
+    margin: 0;
+  }
+
   .callout-icon svg.svg-icon {
     --icon-size: var(--icon-s);
   }
