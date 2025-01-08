@@ -571,9 +571,6 @@ body.is-tablet {
     cursor: pointer;
   }
 }
-.tree-item-self.is-active .tree-item-icon svg.svg-icon {
-  color: var(--text-on-accent);
-}
 .search-results-info .dropdown {
   box-shadow: none !important;
   background-color: transparent;
@@ -2101,12 +2098,12 @@ body.is-phone {
     animation: var(--anim-duration-slow) blurInScale !important;
     transition: var(--anim-duration-fast);
     margin-top: var(--prompt-top);
+    box-shadow: var(--shadow-l);
     border: var(--prompt-border-width) solid var(--background-modifier-hover);
     border-radius: var(--radius-l);
     background-color: var(--modal-background) !important;
     width: 95vw;
     height: 70vh;
-    box-shadow: var(--shadow-l);
   }
 
   .prompt-input {
@@ -2822,9 +2819,9 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       font-size: var(--font-ui-large);
     }
     .setting-item:not(.setting-item-heading) {
-            border-radius: var(--radius-m);
+      border-radius: var(--radius-m);
       padding: 16px 20px;
-          }
+    }
     .setting-item:not(:last-child):not(.setting-item-heading) {
       margin-bottom: 4px;
     }
@@ -2877,7 +2874,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   .modal {
-    backdrop-filter: blur(240px) saturate(200%);
+    backdrop-filter: blur(240px);
 
     textarea,
     input[type="text"]:not(.metadata-container input):not(.prompt input),
