@@ -1208,14 +1208,9 @@ body:not(.alt-heading-off) {
   color: var(--color-orange);
 }
 
-body.theme-light .callout {
-  background-color: rgba(var(--callout-color), 0.15);
-}
-body.theme-dark .callout {
-  background-color: rgba(var(--callout-color), 0.3);
-}
-
 .callout {
+  background-color: rgba(var(--callout-color), 0.15);
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -1239,6 +1234,11 @@ body.theme-dark .callout {
 
   .callout-content > *:last-child {
     margin-bottom: 0 !important;
+  }
+
+  .callout-content .callout {
+    background-color: transparent;
+    border: var(--border-width) solid var(--background-modifier-border);
   }
 }
 
@@ -1328,7 +1328,8 @@ body {
   }
 }
 
-.markdown-embed {
+.markdown-embed,
+.file-embed {
   border-radius: var(--radius-m);
   background-color: var(--background-secondary);
   padding: 16px;
