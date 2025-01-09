@@ -1220,8 +1220,8 @@ body:not(.alt-heading-off) {
   }
 
   .callout-title {
-    gap: 8px;
     align-items: center;
+    gap: 8px;
   }
 
   .callout-title-inner {
@@ -1237,8 +1237,8 @@ body:not(.alt-heading-off) {
   }
 
   .callout-content .callout {
-    background-color: transparent;
     border: var(--border-width) solid var(--background-modifier-border);
+    background-color: transparent;
   }
 }
 
