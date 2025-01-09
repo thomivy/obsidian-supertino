@@ -3746,13 +3746,8 @@ body.is-mobile .excalidraw.theme--dark {
 }
 
 .excalidraw-view .excalidraw {
-  --button-hover-bg: var(--interactive-hover) !important;
   --color-brand-active: transparent !important;
   --color-brand-hover: transparent !important;
-  --default-border-color: var(--background-modifier-border) !important;
-  --excalidraw-caret-color: var(--text-normal) !important;
-  --icon-fill-color: var(--text-muted) !important;
-  --island-bg-color: var(--background-secondary) !important;
   --sidebar-border-color: var(--background-modifier-border) !important;
   --ui-font: unset !important;
 
@@ -3768,10 +3763,6 @@ body.is-mobile .excalidraw.theme--dark {
   .dropdown-menu-button {
     background-color: transparent;
     height: var(--default-button-size);
-  }
-
-  .ToolIcon .ToolIcon_type_radio:checked + .ToolIcon__icon svg {
-    --icon-fill-color: var(--text-on-accent);
   }
 
   .sidebar-trigger,
@@ -3793,7 +3784,6 @@ body.is-mobile .excalidraw.theme--dark {
     border: none;
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
-    background-color: rgb(from var(--background-secondary) r g b / 50%);
 
     label:not(:last-child) {
       border-bottom: var(--border-width) solid var(--background-modifier-border);
@@ -3814,7 +3804,6 @@ body.is-mobile .excalidraw.theme--dark {
   .Island {
     box-shadow: none;
     border: var(--border-width) solid var(--background-modifier-border);
-    background-color: var(--background-secondary);
     padding: 0;
 
     .App-toolbar-content,
@@ -3886,9 +3875,8 @@ body.is-mobile .excalidraw.theme--dark {
       margin: 0;
       border: none;
       border-radius: var(--input-radius);
-      background-color: var(--background-modifier-border-hover);
       padding: 2px;
-      height: 32px;
+      height: fit-content;
     }
 
     .sidebar__close {
@@ -3898,7 +3886,6 @@ body.is-mobile .excalidraw.theme--dark {
 
     .ExcTextField__input {
       border: var(--border-width) solid var(--background-modifier-border) !important;
-      background: var(--background-modifier-form-field) !important;
 
       input::placeholder {
         color: var(--text-muted);
