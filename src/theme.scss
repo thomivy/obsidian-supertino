@@ -1208,9 +1208,14 @@ body:not(.alt-heading-off) {
   color: var(--color-orange);
 }
 
-.callout {
+body.theme-light .callout {
   background-color: rgba(var(--callout-color), 0.15);
+}
+body.theme-dark .callout {
+  background-color: rgba(var(--callout-color), 0.3);
+}
 
+.callout {
   p:last-child {
     margin-bottom: 0;
   }
@@ -1221,7 +1226,6 @@ body:not(.alt-heading-off) {
 
   .callout-title {
     gap: 8px;
-    line-height: 100%;
     align-items: center;
   }
 
