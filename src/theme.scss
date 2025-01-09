@@ -789,9 +789,6 @@ body.is-mobile {
 body.is-tablet {
   &.theme-dark .workspace-drawer {
     background-color: var(--background-primary-alt);
-    .nav-header {
-      background-color: rgb(from var(--background-primary-alt) r g b / 75%);
-    }
   }
 
   .workspace-drawer {
@@ -3110,6 +3107,9 @@ body.is-mobile {
     background-color: rgb(43, 43, 43);
   }
 
+  .workspace-drawer .nav-header {
+    backdrop-filter: blur(50px);
+  }
   .mobile-navbar,
   .workspace-drawer .nav-header {
     position: fixed;
@@ -3117,10 +3117,21 @@ body.is-mobile {
     bottom: 0;
     left: 0;
     z-index: var(--layer-status-bar);
-    backdrop-filter: blur(50px);
     border: none;
+    background-color: transparent;
     padding: 4px max(var(--safe-area-inset-right), 16px) max(4px, var(--safe-area-inset-bottom)) max(var(--safe-area-inset-left), 16px);
-    width: 100%;
+  }
+  .mobile-navbar::before {
+    z-index: -2 !important;
+    backdrop-filter: blur(20px);
+  }
+  .mobile-navbar::before,
+  .mobile-navbar::after {
+    position: absolute;
+    z-index: -1;
+    mask: linear-gradient(transparent, black, black);
+    inset: -16px 0 0;
+    content: "";
   }
   .mobile-navbar-action {
     display: flex;
@@ -3160,7 +3171,7 @@ body.is-mobile {
 
 body.is-phone {
   &.theme-light {
-    .mobile-navbar {
+    .mobile-navbar::after {
       background-color: rgb(from var(--background-primary) r g b / 50%);
     }
     .workspace-drawer .nav-header {
@@ -3168,7 +3179,7 @@ body.is-phone {
     }
   }
   &.theme-dark {
-    .mobile-navbar,
+    .mobile-navbar::after,
     .workspace-drawer .nav-header {
       background-color: rgb(from var(--background-primary) r g b / 75%);
     }
@@ -3176,7 +3187,10 @@ body.is-phone {
 }
 
 body.is-tablet {
-  .workspace-drawer .nav-buttons-container {
+  &.theme-dark .workspace-drawer .nav-header {
+    background-color: rgb(from var(--background-primary-alt) r g b / 75%);
+  }
+  .nav-buttons-container {
     padding: 0;
   }
 }
