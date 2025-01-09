@@ -88,7 +88,6 @@ body {
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
   --checkbox-radius: var(--radius-xl);
-  --code-background: var(--background-secondary);
   --code-white-space: pre-wrap;
   --code-size: var(--font-smaller);
   --code-background: var(--background-primary-alt);
@@ -349,14 +348,12 @@ body.is-mobile {
   .workspace-drawer.mod-left {
     @starting-style {
       transform: translateX(-100%);
-      opacity: 0;
     }
   }
 
   .workspace-drawer.mod-right {
     @starting-style {
       transform: translateX(100%);
-      opacity: 0;
     }
   }
 }
@@ -365,7 +362,6 @@ body.is-phone {
   .menu {
     @starting-style {
       transform: translateY(100%);
-      opacity: 0;
     }
   }
 }
@@ -2170,7 +2166,7 @@ body.is-tablet {
   transition: all var(--anim-duration-fast);
 }
 
-.empty-state {
+.workspace-split .empty-state {
   .empty-state-container {
     display: flex;
     justify-content: center;
