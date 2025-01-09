@@ -4165,3 +4165,15 @@ body.is-tablet {
     top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height)) !important;
   }
 }
+
+/********** Community Theme: Obsidian-Notebook-Themes **********/
+.page-white,
+.page-manila,
+.page-blueprint {
+  .metadata-properties {
+    background-color: transparent;
+  }
+  .metadata-property-key {
+    padding-left: 0;
+  }
+}
