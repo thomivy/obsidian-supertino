@@ -2882,16 +2882,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   .modal {
     backdrop-filter: blur(240px);
-
-    textarea,
-    input[type="text"]:not(.metadata-container input):not(.prompt input),
-    input[type="number"],
-    input[type="search"],
-    button:not(.clickable-icon),
-    select,
-    .dropdown {
-      min-width: 120px;
-    }
   }
 
   .modal:not(.mod-settings):not(.mod-community-modal) {
