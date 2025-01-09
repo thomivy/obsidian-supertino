@@ -1221,10 +1221,12 @@ body:not(.alt-heading-off) {
 
   .callout-title {
     gap: 8px;
+    line-height: 100%;
+    align-items: center;
   }
 
-  .callout-title-inner > * {
-    margin: 0;
+  .callout-title-inner {
+    --p-spacing: 0;
   }
 
   .callout-icon svg.svg-icon {
