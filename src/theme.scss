@@ -240,6 +240,7 @@ body {
     --input-radius: 10px;
     --mobile-sidebar-width: 100%;
     --mobile-toolbar-height: var(--input-height);
+    --modal-background: rgb(from var(--background-secondary-alt) r g b / 50%) !important;
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
@@ -257,11 +258,9 @@ body {
     padding: 0;
 
     &.theme-light {
-      --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
       --interactive-normal: var(--background-primary);
     }
     &.theme-dark {
-      --modal-background: rgb(from var(--background-secondary) r g b / 50%) !important;
       --interactive-normal: var(--background-secondary);
     }
   }
@@ -455,14 +454,9 @@ body:not(.is-mobile) {
     line-height: unset;
     letter-spacing: -0.015em;
   }
-
+  textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input),
-  input[type="number"] {
-    box-shadow: none;
-    border: var(--border-width) solid var(--background-modifier-border);
-    background-color: transparent;
-  }
-
+  input[type="number"],
   input[type="search"] {
     box-shadow: none;
     border: var(--border-width) solid var(--background-modifier-border);
@@ -481,6 +475,7 @@ body:not(.is-mobile) {
     inset: 0;
     border-radius: var(--button-radius);
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none;
     content: "";
   }
   select,
@@ -1928,6 +1923,7 @@ body.is-mobile {
         background-color: transparent;
         padding: 32px 0;
         color: var(--text-accent);
+        font-size: var(--font-ui-medium);
       }
 
       .mod-destructive,
@@ -4205,6 +4201,93 @@ body.is-tablet {
   #cMenuToolbarModalBar,
   #cMenuToolbarPopoverBar {
     top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height)) !important;
+  }
+}
+
+/********** Community Plugin: Quiz Generator **********/
+.modal-qg {
+  p {
+    margin: 1em 0 !important;
+  }
+
+  .item-container-qg {
+    border: var(--border-width) solid var(--background-modifier-border);
+    padding: 8px;
+
+    .item-qg {
+      align-items: center;
+
+      margin: 0;
+      border: none;
+      padding: 8px;
+    }
+
+    .item-button-qg {
+      margin: 0;
+    }
+  }
+
+  button {
+    transition: var(--anim-duration-fast);
+  }
+
+  .matching-button-qg,
+  .select-all-that-apply-button-qg,
+  .true-false-button-qg,
+  .multiple-choice-button-qg {
+    border: none;
+    background-color: var(--interactive-normal) !important;
+    height: 100% !important;
+
+    &:hover {
+      background-color: var(--background-modifier-hover) !important;
+    }
+
+    &.correct-choice-qg {
+      background-color: rgb(from var(--color-green) r g b / 50%) !important;
+      font-weight: bold;
+    }
+
+    &.incorrect-choice-qg {
+      background-color: rgb(from var(--color-red) r g b / 50%) !important;
+      text-decoration: line-through;
+    }
+  }
+  .answer-qg {
+    border: none;
+    background-color: var(--interactive-normal) !important;
+  }
+  .selected-choice-qg,
+  .selected-choice-qg:hover {
+    background-color: var(--interactive-accent) !important;
+  }
+  .svg-left-qg,
+  .svg-right-qg {
+    z-index: 10;
+  }
+
+  .submit-answer-qg {
+    position: relative;
+    border: none;
+    background-color: var(--interactive-accent) !important;
+    font-size: var(--font-ui-small);
+
+    &::before {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--button-radius);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+      pointer-events: none;
+      content: "";
+    }
+
+    &:disabled {
+      background-color: var(--interactive-normal) !important;
+    }
+
+    &:disabled::before {
+      background: none;
+    }
   }
 }
 
