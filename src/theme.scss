@@ -2615,6 +2615,10 @@ body.is-tablet {
   color: var(--text-normal);
 }
 
+.status-bar:has(.status-bar-item-icon:empty) {
+  display: none;
+}
+
 body:not(.hide-status-off) .status-bar {
   right: unset;
   bottom: 2px;
