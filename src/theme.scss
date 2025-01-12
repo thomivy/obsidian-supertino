@@ -141,8 +141,6 @@ body {
   --tab-outline-width: 0;
   --tab-radius-active: var(--radius-s);
   --tab-radius: var(--radius-s);
-  --table-background: var(--background-secondary);
-  --table-header-background-hover: var(--table-background);
   --tag-border-width: var(--border-width);
   --tag-size: var(--font-smallest);
   --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
@@ -1361,13 +1359,21 @@ body {
     background-color: var(--background-modifier-hover) !important;
   }
 
+  thead,
+  tbody {
+    background-color: var(--background-secondary);
+  }
+
+  thead tr th {
+    border-top: none;
+  }
+
   tr td,
   tr th {
-    border-bottom-width: 0 !important;
-
-    &:not([dir="rtl"]):first-child {
-      border-right-width: 0 !important;
-    }
+    border-left: var(--table-border-width) solid var(--table-border-color);
+    border-top: var(--table-border-width) solid var(--table-border-color);
+    border-bottom: none !important;
+    border-right: none !important;
   }
 
   .cm-table-widget[dir="rtl"] tr th:first-child,
