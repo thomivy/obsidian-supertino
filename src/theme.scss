@@ -458,6 +458,12 @@ body:not(.is-mobile) {
   input[type="search"] {
     box-shadow: none;
     border: var(--border-width) solid var(--background-modifier-border);
+
+    &:active,
+    &:focus,
+    &:focus-visible {
+      box-shadow: 0 0 0 2px var(--background-modifier-border-focus);
+    }
   }
 
   button {
