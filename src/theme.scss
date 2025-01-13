@@ -4298,6 +4298,13 @@ body.is-tablet {
   }
 }
 
+/********** Community Plugin: Execute Code **********/
+
+button.run-code-button,
+button.clear-button {
+  position: absolute !important;
+}
+
 /********** Community Theme: Obsidian-Notebook-Themes **********/
 .page-white,
 .page-manila,
