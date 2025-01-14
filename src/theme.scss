@@ -2691,7 +2691,6 @@ body:not(.hide-status-off) .status-bar {
   }
 
   &:not(:hover) {
-    transform: scaleX(0.5);
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     height: 4px;
