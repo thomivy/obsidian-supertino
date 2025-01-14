@@ -2240,7 +2240,7 @@ body.is-tablet {
   transition: all var(--anim-duration-fast);
 }
 
-.workspace-split .empty-state {
+.workspace-leaf-content[data-type="empty"] .empty-state {
   .empty-state-container {
     display: flex;
     justify-content: center;
