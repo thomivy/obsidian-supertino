@@ -3176,16 +3176,18 @@ body.is-mobile {
   }
   .mobile-navbar::before {
     z-index: -2 !important;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(50px);
   }
   .mobile-navbar::before,
   .mobile-navbar::after {
     position: absolute;
     z-index: -1;
-    mask: linear-gradient(transparent, black, black);
-    inset: -16px 0 0;
+    mask: linear-gradient(180deg, rgb(0% 0% 0% / 0) 0%, rgb(0% 0% 0% / 0.009607359798384785) 6.25%, rgb(0% 0% 0% / 0.03806023374435663) 12.5%, rgb(0% 0% 0% / 0.08426519384872738) 18.75%, rgb(0% 0% 0% / 0.1464466094067262) 25%, rgb(0% 0% 0% / 0.22221488349019886) 31.25%, rgb(0% 0% 0% / 0.3086582838174551) 37.5%, rgb(0% 0% 0% / 0.40245483899193585) 43.75%, rgb(0% 0% 0% / 0.49999999999999994) 50%, rgb(0% 0% 0% / 0.5975451610080641) 56.25%, rgb(0% 0% 0% / 0.6913417161825448) 62.5%, rgb(0% 0% 0% / 0.777785116509801) 68.75%, rgb(0% 0% 0% / 0.8535533905932737) 75%, rgb(0% 0% 0% / 0.9157348061512727) 81.25%, rgb(0% 0% 0% / 0.9619397662556434) 87.5%, rgb(0% 0% 0% / 0.9903926402016152) 93.75%, rgb(0% 0% 0%) 100%);
+    inset: -32px 0 0;
     content: "";
+    pointer-events: none;
   }
+
   .mobile-navbar-action {
     display: flex;
     justify-content: center;
