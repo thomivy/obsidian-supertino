@@ -328,13 +328,6 @@ body {
   }
 }
 
-.workspace-drawer.mod-left,
-.workspace-drawer.mod-right,
-.menu {
-  transition-duration: var(--anim-duration-moderate) !important;
-  transition-timing-function: var(--anim-motion-cupertino-smooth) !important;
-}
-
 body.is-mobile {
   .workspace-drawer.mod-left {
     @starting-style {
@@ -346,6 +339,13 @@ body.is-mobile {
     @starting-style {
       transform: translateX(100%);
     }
+  }
+
+  .workspace-drawer.mod-left,
+  .workspace-drawer.mod-right,
+  .menu {
+    transition-duration: var(--anim-duration-moderate) !important;
+    transition-timing-function: var(--anim-motion-cupertino-smooth) !important;
   }
 }
 
@@ -983,8 +983,8 @@ body.mod-macos.is-hidden-frameless {
 
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
     .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-      padding-left: 32px;
       padding-right: 0;
+      padding-left: 32px;
     }
     .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
     .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1002,8 +1002,8 @@ body.mod-macos.is-hidden-frameless {
 
       .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
       .workspace:not(.is-left-sidedock-open):not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-        padding-left: 32px;
         padding-right: 0;
+        padding-left: 32px;
       }
       .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
       .workspace.is-left-sidedock-open:not(.is-right-sidedock-open) .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
@@ -1011,8 +1011,8 @@ body.mod-macos.is-hidden-frameless {
       }
       .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-tabs .workspace-tab-header-container-inner,
       .workspace:not(.is-left-sidedock-open).is-right-sidedock-open .mod-root > .workspace-split:first-of-type .workspace-tab-header-container-inner {
-        padding-left: 32px;
         padding-right: 0;
+        padding-left: 32px;
       }
     }
   }
@@ -1376,10 +1376,10 @@ body {
 
   tr td,
   tr th {
-    border-left: var(--table-border-width) solid var(--table-border-color);
     border-top: var(--table-border-width) solid var(--table-border-color);
-    border-bottom: none !important;
     border-right: none !important;
+    border-bottom: none !important;
+    border-left: var(--table-border-width) solid var(--table-border-color);
   }
 
   .cm-table-widget[dir="rtl"] tr th:first-child,
@@ -2950,7 +2950,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       padding: 24px 24px 4px;
     }
 
-    .modal-content {
+    .modal-content:not(:has(.modal-button-container)) {
       padding: 4px 24px 24px;
     }
 
@@ -3184,8 +3184,8 @@ body.is-mobile {
     z-index: -1;
     mask: linear-gradient(180deg, rgb(0% 0% 0% / 0) 0%, rgb(0% 0% 0% / 0.009607359798384785) 6.25%, rgb(0% 0% 0% / 0.03806023374435663) 12.5%, rgb(0% 0% 0% / 0.08426519384872738) 18.75%, rgb(0% 0% 0% / 0.1464466094067262) 25%, rgb(0% 0% 0% / 0.22221488349019886) 31.25%, rgb(0% 0% 0% / 0.3086582838174551) 37.5%, rgb(0% 0% 0% / 0.40245483899193585) 43.75%, rgb(0% 0% 0% / 0.49999999999999994) 50%, rgb(0% 0% 0% / 0.5975451610080641) 56.25%, rgb(0% 0% 0% / 0.6913417161825448) 62.5%, rgb(0% 0% 0% / 0.777785116509801) 68.75%, rgb(0% 0% 0% / 0.8535533905932737) 75%, rgb(0% 0% 0% / 0.9157348061512727) 81.25%, rgb(0% 0% 0% / 0.9619397662556434) 87.5%, rgb(0% 0% 0% / 0.9903926402016152) 93.75%, rgb(0% 0% 0%) 100%);
     inset: -32px 0 0;
-    content: "";
     pointer-events: none;
+    content: "";
   }
 
   .mobile-navbar-action {
@@ -4315,8 +4315,8 @@ button.clear-button {
 
 /********** Community Plugin: Home tab **********/
 .home-tab-searchbar {
-  height: calc(var(--input-height) * 1.5) !important;
   padding: 0 !important;
+  height: calc(var(--input-height) * 1.5) !important;
 
   input[type="search"] {
     box-shadow: none !important;
