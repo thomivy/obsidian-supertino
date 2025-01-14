@@ -4313,6 +4313,16 @@ button.clear-button {
   position: absolute !important;
 }
 
+/********** Community Plugin: Home tab **********/
+.home-tab-searchbar {
+  height: calc(var(--input-height) * 1.5) !important;
+  padding: 0 !important;
+
+  input[type="search"] {
+    box-shadow: none !important;
+  }
+}
+
 /********** Community Theme: Obsidian-Notebook-Themes **********/
 .page-white,
 .page-manila,
