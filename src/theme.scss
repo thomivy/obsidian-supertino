@@ -2610,6 +2610,26 @@ body.is-tablet {
   }
 }
 
+/********** Notice **********/
+.notice-container {
+  display: flex;
+  top: unset;
+  bottom: 16px;
+  flex-direction: column-reverse;
+  gap: 8px;
+}
+
+.notice {
+  backdrop-filter: blur(50px);
+  margin-bottom: 0;
+  border: var(--border-width) solid var(--background-modifier-hover);
+  border-radius: var(--radius-l);
+  background-color: var(--modal-background);
+  padding: 16px 24px;
+  overflow: hidden;
+  color: var(--text-muted);
+}
+
 /********** Desktop: Status Bar **********/
 .status-bar {
   right: 8px;
@@ -2687,26 +2707,6 @@ body:not(.hide-status-off) .status-bar {
 
 .tooltip-arrow {
   display: none;
-}
-
-/********** Desktop: Notice **********/
-.notice-container {
-  display: flex;
-  top: unset;
-  bottom: 16px;
-  flex-direction: column-reverse;
-  gap: 8px;
-}
-
-.notice {
-  backdrop-filter: blur(20px);
-  margin-bottom: 0;
-  border: var(--border-width) solid var(--background-modifier-hover);
-  border-radius: var(--radius-l);
-  background-color: var(--modal-background);
-  padding: 16px 24px;
-  overflow: hidden;
-  color: var(--text-muted);
 }
 
 /********** Desktop: Windows specific styling **********/
@@ -3140,7 +3140,7 @@ body.is-tablet {
 /********** Mobile: Pull Action **********/
 
 .pull-action {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(50px);
   animation: fadeInDown var(--anim-duration-moderate);
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-border);
