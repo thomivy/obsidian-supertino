@@ -77,7 +77,6 @@ settings:
 
 body {
   --anim-motion-cupertino-smooth: cubic-bezier(0, 0.5, 0.25, 1);
-  --anim-motion-cupertino-jumpy: cubic-bezier(0.3, 1.5, 0.7, 1);
   --background-modifier-border: var(--divider-color);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);
@@ -2660,6 +2659,7 @@ body.is-tablet {
 .status-bar {
   right: 8px;
   bottom: 8px;
+  transition: var(--anim-duration-fast);
   border: var(--border-width) solid var(--background-modifier-border);
   border-radius: var(--radius-xl);
   background-color: var(--background-primary);
@@ -2672,16 +2672,22 @@ body.is-tablet {
   display: none;
 }
 
+body.hide-status-off .status-bar:not(:hover) {
+  opacity: 0.3;
+  border-color: transparent;
+  background-color: transparent;
+}
+
 body:not(.hide-status-off) .status-bar {
   right: unset;
   bottom: 2px;
   justify-content: center;
   transition: var(--anim-duration-fast) var(--anim-duration-fast);
-  transition-timing-function: var(--anim-motion-cupertino-jumpy);
   border-color: transparent;
   border-radius: 10000px;
   background-color: rgba(var(--mono-rgb-100), 0.2);
   padding: 8px !important;
+  max-width: 100%;
 
   > div {
     transition: var(--anim-duration-moderate) var(--anim-duration-fast);
@@ -2690,12 +2696,14 @@ body:not(.hide-status-off) .status-bar {
   &:not(:hover) {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    max-width: var(--tab-width);
     height: 4px;
 
     > div {
       transform: scale(0.9);
       opacity: 0;
       filter: blur(4px);
+      white-space: nowrap;
     }
   }
 
