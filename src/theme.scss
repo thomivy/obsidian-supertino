@@ -2639,13 +2639,15 @@ body.is-tablet {
   display: flex;
   top: unset;
   bottom: 16px;
-  flex-direction: column-reverse;
+  flex-direction: column;
   gap: 8px;
+  overflow: visible;
 }
 
 .notice {
   backdrop-filter: blur(50px);
   margin-bottom: 0;
+  box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-hover);
   border-radius: var(--radius-l);
   background-color: var(--modal-background);
