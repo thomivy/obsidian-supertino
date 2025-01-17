@@ -1809,13 +1809,6 @@ li[data-task="d"] > p > input:checked::after {
 }
 
 /********** Modal **********/
-
-.modal {
-  .modal-header:empty {
-    display: none;
-  }
-}
-
 body:not(.is-mobile) {
   .modal-bg {
     background-color: transparent;
@@ -1856,7 +1849,15 @@ body:not(.is-mobile) {
     }
 
     .modal-header {
+      margin: 0;
+    }
+
+    .modal-title {
       margin: 8px 0;
+
+      &:empty {
+        display: none;
+      }
     }
 
     .modal-button-container {
