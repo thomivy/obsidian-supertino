@@ -1423,13 +1423,13 @@ body {
   .el-table[dir="rtl"] tr td:last-child {
     border-left-width: 0 !important;
   }
-}
 
-.markdown-embed,
-.file-embed {
-  border-radius: var(--radius-m);
-  background-color: var(--background-secondary);
-  padding: 16px;
+  .markdown-embed,
+  .file-embed {
+    border-radius: var(--radius-m);
+    background-color: var(--background-secondary);
+    padding: 16px;
+  }
 }
 
 .mod-root .workspace-leaf-content[data-mode="source"] .view-header .view-actions button:nth-last-child(2) {
