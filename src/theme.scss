@@ -119,7 +119,6 @@ body {
   --metadata-property-radius-focus: var(--input-radius);
   --metadata-property-radius-hover: var(--input-radius);
   --metadata-property-radius: var(--input-radius);
-  --modal-background: rgb(from var(--background-primary) r g b / 85%) !important;
   --nav-item-color: var(--text-normal);
   --nav-item-padding: 8px 8px 8px 24px;
   --prompt-border-color: var(--modal-border-color);
@@ -180,6 +179,7 @@ body {
     --color-pink: #ff2d55;
     --divider-color: rgba(0, 0, 0, 0.05) !important;
     --modal-border-color: rgba(0, 0, 0, 0.1);
+    --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
   }
 
   /* Dark Theme */
@@ -203,6 +203,7 @@ body {
     --color-pink: #ff375f;
     --divider-color: rgba(255, 255, 255, 0.05) !important;
     --modal-border-color: rgba(0, 0, 0, 1);
+    --modal-background: rgb(from var(--background-primary) r g b / 75%) !important;
   }
 
   &:not(.is-mobile) {
