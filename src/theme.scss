@@ -2954,7 +2954,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   /********** Menu and Suggestions **********/
   .menu,
   .suggestion-container {
-    backdrop-filter: blur(50px) brightness(0.5);
+    backdrop-filter: blur(50px);
     outline: none;
     border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);
