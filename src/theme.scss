@@ -2009,6 +2009,8 @@ body:not(.is-mobile) .suggestion-container {
   .menu-item,
   .suggestion-item {
     border-radius: 4px;
+    padding: var(--size-4-1) var(--size-4-2);
+    font-size: var(--font-ui-small);
   }
   .menu-item.selected:not(.is-label):not(.is-disabled),
   .suggestion-item.is-selected:not(.mod-group) {
@@ -2021,9 +2023,6 @@ body:not(.is-mobile) .suggestion-container {
     }
   }
 
-  .suggestion {
-    padding: 0;
-  }
   .search-suggest-item.mod-group {
     margin: 0;
     padding: 4px 8px;
