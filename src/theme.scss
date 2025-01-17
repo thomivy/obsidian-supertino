@@ -119,7 +119,7 @@ body {
   --metadata-property-radius-focus: var(--input-radius);
   --metadata-property-radius-hover: var(--input-radius);
   --metadata-property-radius: var(--input-radius);
-  --modal-background: rgb(from var(--background-primary) r g b / 75%) !important;
+  --modal-background: rgb(from var(--background-primary) r g b / 85%) !important;
   --nav-item-color: var(--text-normal);
   --nav-item-padding: 8px 8px 8px 24px;
   --prompt-border-color: var(--modal-border-color);
@@ -2402,15 +2402,10 @@ body.is-tablet {
 /********** Settings **********/
 
 body:not(.is-phone) {
-  &.theme-light .modal,
-  &.theme-light .vertical-tab-content,
-  &.theme-light .community-modal-details {
-    background-color: rgb(from var(--background-primary) r g b / 50%);
-  }
-  &.theme-dark .modal,
-  &.theme-dark .vertical-tab-content,
-  &.theme-dark .community-modal-details {
-    background-color: rgb(from var(--background-secondary) r g b / 50%);
+  .modal,
+  .vertical-tab-content,
+  .community-modal-details {
+    background-color: var(--modal-background);
   }
 
   .modal {
@@ -2987,21 +2982,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Modal **********/
-  &.theme-light {
-    .modal,
-    .vertical-tab-content,
-    .community-modal-details {
-      background-color: var(--modal-background);
-    }
-  }
-  &.theme-dark {
-    .modal,
-    .vertical-tab-content,
-    .community-modal-details {
-      background-color: var(--modal-background);
-    }
-  }
-
   .modal:not(.mod-settings):not(.mod-community-modal) {
     padding: 0;
 
