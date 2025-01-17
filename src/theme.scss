@@ -3588,7 +3588,12 @@ body.is-mobile {
     padding: 8px;
   }
 
-  .today,
+  .today {
+    background-color: transparent;
+    color: var(--color-text-today);
+    font-weight: bold;
+  }
+
   .active {
     background-color: var(--color-text-today);
     color: var(--text-on-accent);
