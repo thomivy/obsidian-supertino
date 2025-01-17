@@ -30,6 +30,7 @@ All features are enable by default, following plugins can be installed to modify
 - Always show status bar
 - Disable active line indicator
 - Disable alternative heading style
+- Disable auto hiding panel actions
 - Disable centered tabs
 - Disable full width table
 - Disable Quick Mode Switcher
@@ -38,10 +39,9 @@ All features are enable by default, following plugins can be installed to modify
 - Enable compact view
 - Enable frontmatter foldable heading
 
-### [Cupertino Helper](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Desktop)
+### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Windows only)
 
-- Add pseudo-Mica (wallpaper as background) on Windows (Alternatively, wait for Obsidian native support)
-- Fix misaligned window control buttons on macOS (Alternatively, just resize the window)
+Adds pseudo-Mica (wallpaper as background) on Windows (Alternatively, wait for Obsidian native support)
 
 ## Philosophy
 
@@ -55,15 +55,12 @@ Cupertino is developed as I use Obsidian, while I'm trying to focus on being con
 
 ## Support
 
-You can follow Cupertino's development or my future work on my [Twitter](https://x.com/cittoj).
+[Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep regular updates and fixes. You’re also welcomed to submit pull requests.
 
-[Support me and my work](https://www.buymeacoffee.com/cittoj) so I can keep regular updates and fixes. You’re also welcomed to submit pull requests.
-
-<a href="https://www.buymeacoffee.com/cittoj"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=cittoj&button_colour=BD5FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" /></a>
+<a href="https://www.buymeacoffee.com/sevenaxis"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sevenaxis&button_colour=BD5FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
 ## Credits
 
 - **@mgmeyers** — [California Coast Obsidian Theme](https://github.com/mgmeyers/obsidian-california-coast-theme)
 - **@colineckert** — [Things 2 (Quick Mode Switcher)](https://github.com/colineckert/obsidian-things)
 - **@krios2146** — [Obsidian GitHub Theme (Codeblock Styling)](https://github.com/krios2146/obsidian-theme-github)
-- **@FireIsGood** — [Table Rounded Corner](https://forum.obsidian.md/t/60551)
