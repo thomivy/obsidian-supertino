@@ -100,6 +100,7 @@ body {
   --code-string: var(--color-cyan);
   --code-tag: var(--color-red);
   --code-value: var(--color-purple);
+  --dialog-width: fit-content;
   --divider-color-hover: var(--text-normal);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
@@ -202,7 +203,7 @@ body {
     --color-pink: #ff375f;
     --divider-color: rgba(255, 255, 255, 0.05) !important;
     --modal-border-color: rgba(0, 0, 0, 1);
-    --modal-background: rgb(from var(--background-primary) r g b / 75%) !important;
+    --modal-background: rgb(from var(--color-base-25) r g b / 75%) !important;
   }
 
   &:not(.is-mobile) {
@@ -1853,7 +1854,7 @@ body:not(.is-mobile) {
     }
 
     .modal-title {
-      margin: 8px 0;
+      margin: 4px 0 8px;
 
       &:empty {
         display: none;
@@ -1865,14 +1866,8 @@ body:not(.is-mobile) {
 
       button {
         flex-grow: 1;
-        box-shadow: none !important;
         width: 0;
         line-height: var(--line-height-normal);
-
-        &:not(.mod-destructive):not(.mod-warning):not(.mod-cta),
-        &.mod-secondary {
-          background-color: var(--background-modifier-border-hover);
-        }
       }
 
       .mod-checkbox {
@@ -2401,39 +2396,50 @@ body.is-tablet {
 
 /********** Settings **********/
 
-body:not(.is-phone) {
-  .modal,
+body:not(.is-phone) .modal {
+  backdrop-filter: blur(50px);
+  box-shadow: var(--shadow-l);
+
+  .vertical-tab-header {
+    background-color: transparent;
+  }
+
+  .vertical-tab-content {
+    background-color: rgb(from var(--color-base-20) r g b / 75%) !important;
+  }
+
+  .vertical-tab-content-container,
+  .community-modal-details {
+    margin: 1px 1px 1px 0;
+    border-radius: 0 var(--modal-radius) var(--modal-radius) 0;
+  }
+
   .vertical-tab-content,
   .community-modal-details {
     background-color: var(--modal-background);
   }
 
-  .modal {
-    backdrop-filter: blur(50px);
-    box-shadow: var(--shadow-l);
+  .modal-sidebar {
+    background-color: transparent;
+  }
 
-    .vertical-tab-header {
-      background-color: transparent;
-    }
-    .vertical-tab-content-container,
-    .community-modal-details {
-      margin: 1px 1px 1px 0;
-      border-radius: 0 var(--modal-radius) var(--modal-radius) 0;
-    }
-
-    .modal-sidebar {
-      background-color: transparent;
-    }
-
-    .installed-plugins-container {
-      border: none;
-      padding: 0;
-    }
+  .installed-plugins-container {
+    border: none;
+    padding: 0;
   }
 }
 
 body:not(.mod-windows):not(.is-mobile),
 body.windows-mode-off:not(.is-mobile) {
+  &.theme-light .mod-settings,
+  &.theme-light .mod-community-modal {
+    background-color: rgb(from var(--color-base-30) r g b / 75%) !important;
+  }
+  &.theme-dark .mod-settings,
+  &.theme-dark .mod-community-modal {
+    background-color: rgb(from var(--color-base-20) r g b / 50%) !important;
+  }
+
   .modal:not(.mod-community-modal) {
     .setting-item-heading {
       border: none;
@@ -2443,7 +2449,7 @@ body.windows-mode-off:not(.is-mobile) {
       border-right: var(--border-width) solid var(--background-modifier-border);
       border-left: var(--border-width) solid var(--background-modifier-border);
       border-radius: 0;
-      background-color: var(--background-primary);
+      background-color: rgba(var(--mono-rgb-100), 0.02);
       padding: 12px 16px;
     }
     .setting-item-heading + .setting-item,
@@ -2749,7 +2755,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   --font-text-theme: "Segoe UI Variable", "Segoe UI Variable Text", "Segoe UI", sans-serif;
   --font-interface-theme: "Segoe UI Variable", "Segoe UI Variable Display", "Segoe UI", sans-serif;
   --input-height: 32px;
-  --dialog-width: 448px;
   --radius-l: 10px;
   --radius-m: 5px;
   --radius-s: 5px;
@@ -3018,11 +3023,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       border-top: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--divider-color);
       padding: 24px;
-
-      button:not(.mod-destructive):not(.mod-warning):not(.mod-cta),
-      button.mod-secondary {
-        background-color: var(--interactive-normal);
-      }
     }
   }
 
@@ -3558,6 +3558,8 @@ body.is-mobile {
 /********** Community Plugin: Tasks **********/
 
 .tasks-modal {
+  font-size: var(--font-ui-medium);
+
   .accesskey {
     text-decoration: none;
   }
