@@ -1,6 +1,6 @@
 # Cupertino for Obsidian
 
-Cupertino is a theme that brings native experience to Obsidian.
+Cupertino brings native experience to your Obsidian vault.
 
 ![Screenshot of Cupertino theme for Obsidian running on macOS and iOS.](img/hero.png)
 
