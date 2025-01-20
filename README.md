@@ -28,17 +28,14 @@ All features are enable by default, following plugins can be installed to modify
 ### [Style Settings](https://github.com/mgmeyers/obsidian-style-settings)
 
 - Always show status bar
-- Always show tabs count
 - Disable active line indicator
 - Disable alternative heading style
 - Disable auto hiding panel actions
 - Disable centered tabs
-- Disable full width table
-- Disable Quick Mode Switcher
 - Disable Windows Mode
 - Enable accented window
 - Enable compact view
-- Enable frontmatter foldable heading
+  ...etc.
 
 ### [Pseudo Mica](https://github.com/aaaaalexis/obsidian-cupertino-helper/) (Windows only)
 
