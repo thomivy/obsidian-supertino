@@ -2303,8 +2303,8 @@ body.is-tablet {
     position: absolute;
     margin-top: calc(-1 * (var(--header-height) + var(--view-header-height)));
     background-color: var(--background-modifier-hover);
-    width: 15%;
-    height: 15%;
+    width: 20%;
+    height: 20%;
     pointer-events: none;
     content: "";
   }
@@ -2377,7 +2377,7 @@ body.is-mobile {
   .empty-state-container {
     padding-bottom: 96px !important;
     &::before {
-      margin-top: 40px !important;
+      margin-top: 44px !important;
     }
   }
   .empty-state-action {
