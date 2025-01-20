@@ -523,6 +523,12 @@ body.is-mobile {
     height: var(--input-height);
   }
 
+  .clickable-icon.is-active {
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    opacity: 1;
+  }
+
   .checkbox-container {
     box-shadow: none;
     overflow: hidden;
