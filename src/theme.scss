@@ -251,7 +251,7 @@ body {
     --input-radius: 10px;
     --mobile-sidebar-width: 100%;
     --mobile-toolbar-height: var(--input-height);
-    --modal-background: rgb(from var(--background-secondary-alt) r g b / 75%) !important;
+    --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
@@ -839,13 +839,8 @@ body.is-tablet {
 
   .workspace-drawer {
     &.is-pinned {
-      top: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
+      padding-top: var(--safe-area-inset-top);
       border-color: var(--hr-color);
-      padding-top: 16px;
-    }
-
-    &.is-pinned .nav-header {
-      bottom: calc(var(--safe-area-inset-top) + var(--header-height) + var(--view-header-height));
     }
 
     &.is-pinned,
@@ -3212,7 +3207,7 @@ body.is-phone {
 body.is-tablet {
   .workspace-tab-header-container,
   .workspace .mod-root .workspace-leaf .view-header {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -3374,8 +3369,13 @@ body.is-phone {
 }
 
 body.is-tablet {
-  &.theme-dark .workspace-drawer .nav-header {
-    background-color: rgb(from var(--background-primary-alt) r g b / 75%);
+  &.theme-dark {
+    .workspace-drawer .nav-header {
+      background-color: rgb(from var(--background-primary-alt) r g b / 75%);
+    }
+    .workspace-drawer.is-pinned .nav-header {
+      background-color: rgb(from var(--background-primary) r g b / 75%);
+    }
   }
   .nav-buttons-container {
     padding: 0;
