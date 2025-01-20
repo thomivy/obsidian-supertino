@@ -46,20 +46,25 @@ settings:
         step: 5
     -
         id: windows-mode-off
-        title: Use macOS style on Windows
-        description: Turn off Windows specific styling.
+        title: Use macOS style
+        description: Turn off Fluent styling on Windows.
         type: class-toggle
     -
-        id: hide-status-off
-        title: Always show status bar
+        id: prompt-blur-off
+        title: Disable command palette transparency
+        description: Turn off blur effect on command palette on macOS.
+        type: class-toggle
+    -
+        id: center-tabs-off
+        title: Disable centered tabs
         type: class-toggle
     -
         id: hide-nav-header-off
         title: Disable auto hiding panel actions
         type: class-toggle
     -
-        id: center-tabs-off
-        title: Disable centered tabs
+        id: hide-status-off
+        title: Always show status bar
         type: class-toggle
     -
         id: mobile-header
@@ -2195,6 +2200,11 @@ body.is-tablet {
 /********** Prompt **********/
 
 body:not(.is-phone) {
+  &.prompt-blur-off .prompt {
+    backdrop-filter: none;
+    background-color: var(--background-secondary);
+  }
+
   .modal-container:has(.prompt):not(:last-child) {
     opacity: 0;
   }
@@ -2661,7 +2671,7 @@ body.is-tablet {
     button:not(.clickable-icon),
     select,
     .dropdown {
-      background-color: var(--background-secondary);
+      background-color: var(--interactive-normal);
     }
     button.mod-cta {
       color: var(--text-accent);
