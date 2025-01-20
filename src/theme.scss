@@ -879,7 +879,6 @@ body:not(.is-phone) {
   .workspace {
     .workspace-tab-header-container-inner {
       position: relative;
-      justify-content: center;
       border-radius: var(--tab-radius);
       padding: 0;
     }
@@ -893,6 +892,7 @@ body:not(.is-phone) {
 
   .workspace .mod-root {
     .workspace-tab-header-container-inner {
+      justify-content: center;
       gap: 4px;
     }
 
