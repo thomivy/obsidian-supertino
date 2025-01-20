@@ -71,6 +71,10 @@ settings:
         id: quick-mode-switch-off
         title: Disable Quick Mode Switcher
         type: class-toggle
+    -
+        id: hide-tabs-count-off
+        title: Show tabs count
+        type: class-toggle
 */
 
 /* General */
@@ -3235,6 +3239,22 @@ body.is-mobile {
   &.theme-dark .mobile-toolbar {
     background-color: rgb(43, 43, 43);
   }
+  &:not(.hide-tabs-count-off) {
+    .mobile-navbar-action:nth-child(4) .clickable-icon::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      background-color: var(--icon-color);
+      -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY29weSI+PHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSI4IiB5PSI4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIi8+PC9zdmc+");
+      -webkit-mask-position: 50%;
+      -webkit-mask-size: 100%;
+      -webkit-mask-repeat: no-repeat;
+    }
+
+    .mobile-navbar-tabs-action {
+      display: none;
+    }
+  }
 
   .workspace-drawer .nav-header {
     backdrop-filter: blur(50px);
@@ -3269,18 +3289,18 @@ body.is-mobile {
     justify-content: center;
   }
 
-  .mobile-navbar-tabs-action {
-    border-width: var(--icon-l-stroke-width);
-    border-radius: 30%;
-    width: calc(var(--icon-size) - 2px);
-    height: calc(var(--icon-size) - 2px);
-  }
-
   .mobile-toolbar-option {
     color: var(--text-normal);
   }
   .mobile-toolbar-options-list {
     padding: 0;
+  }
+
+  .mobile-navbar-tabs-action {
+    border-width: var(--icon-l-stroke-width);
+    border-radius: 30%;
+    width: calc(var(--icon-size) - 2px);
+    height: calc(var(--icon-size) - 2px);
   }
 
   .mobile-tab-switcher {
