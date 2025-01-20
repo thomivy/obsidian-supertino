@@ -1913,12 +1913,10 @@ body.is-mobile {
     background-color: var(--modal-background);
   }
 
-  .modal .modal-header {
-    border: none !important;
-  }
-
   .modal {
-    box-shadow: none !important;
+    .modal-header {
+      border: none !important;
+    }
 
     .modal-nav-action {
       margin-top: unset;
@@ -1996,10 +1994,15 @@ body.is-mobile {
 body.is-phone {
   .modal {
     padding-bottom: var(--safe-area-inset-bottom);
+    box-shadow: none !important;
   }
 }
 
 body.is-tablet {
+  .modal {
+    outline: var(--prompt-border-width) solid var(--background-modifier-hover);
+  }
+
   .modal:not([class*="mod-"]:not(.mod-file-rename)) {
     width: 35%;
   }
@@ -2449,16 +2452,8 @@ body.is-tablet {
 /********** Settings **********/
 
 body:not(.is-phone) .modal {
-  backdrop-filter: blur(50px);
-  box-shadow: var(--shadow-l);
-
   .vertical-tab-header {
     background-color: transparent;
-  }
-
-  .vertical-tab-content,
-  .community-modal-details {
-    background-color: var(--color-base-20);
   }
 
   .modal-sidebar {
@@ -2519,20 +2514,22 @@ body.windows-mode-off:not(.is-mobile) {
     }
   }
 
-  .mobile-option-setting-item {
-    border: var(--border-width) solid var(--background-modifier-border);
-    border-radius: var(--radius-s);
-    padding: 12px 16px;
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    .vertical-tab-content,
+    .community-modal-details {
+      background-color: var(--color-base-20);
+    }
+
+    .mobile-option-setting-item {
+      border: var(--border-width) solid var(--background-modifier-border);
+      border-radius: var(--radius-s);
+      padding: 12px 16px;
+    }
   }
 }
 
 body.is-mobile {
-  .setting-item-control {
-    align-items: center;
-  }
-}
-
-body.is-phone {
   &.theme-light .modal.mod-settings,
   &.theme-light .modal.mod-community-modal {
     .modal-header,
@@ -2556,18 +2553,11 @@ body.is-phone {
 
   .modal.mod-settings,
   .modal.mod-community-modal {
-    --divider-color: var(--background-primary);
     background-color: transparent;
 
     .modal-header,
     .modal-sidebar {
       border: none !important;
-    }
-
-    .vertical-tab-header,
-    .vertical-tab-content {
-      padding-right: 16px;
-      padding-left: 16px;
     }
 
     .vertical-tab-nav-item {
@@ -2608,82 +2598,136 @@ body.is-phone {
     .community-modal-details {
       background-color: var(--background-secondary);
     }
-  }
 
-  .setting-item {
-    border: none;
+    .setting-item-heading .setting-item-name {
+      font-size: var(--font-ui-small);
+      color: var(--text-faint);
+      text-transform: uppercase;
+      font-weight: normal;
+    }
   }
-  .setting-item:not(.mod-toggle) .setting-item-info {
-    padding: 0 8px;
-  }
+}
 
-  .setting-item.mod-toggle,
-  .setting-item-control .mobile-option-setting-item {
-    border-radius: var(--input-radius);
-    background-color: var(--interactive-normal) !important;
-    padding: 12px 16px;
-  }
+body.is-phone {
+  .modal:not(.mod-community-modal) {
+    .setting-item {
+      border: none;
+    }
+    .setting-item:not(.mod-toggle) .setting-item-info {
+      padding: 0 8px;
+    }
 
-  .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
-    border-bottom: var(--border-width) solid var(--background-modifier-border);
-    border-bottom-right-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+    .setting-item.mod-toggle,
+    .setting-item-control .mobile-option-setting-item {
+      border-radius: var(--input-radius);
+      background-color: var(--interactive-normal) !important;
+      padding: 12px 16px;
+    }
 
-  .setting-item.mod-toggle + .setting-item.mod-toggle {
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-  }
-
-  .setting-item-control .clickable-icon {
-    background-color: var(--interactive-normal);
-    min-width: var(--input-height);
-    height: var(--input-height);
-  }
-
-  .setting-item-control:not(:has(:not(button))) {
-    flex-direction: column;
-    gap: 0;
-    border-radius: var(--input-radius);
-    overflow: hidden;
-  }
-
-  .setting-item-control:not(:has(:not(button))) > button {
-    border-radius: 0;
-
-    &:not(:last-child) {
+    .setting-item.mod-toggle:has(+ .setting-item.mod-toggle) {
       border-bottom: var(--border-width) solid var(--background-modifier-border);
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    .setting-item.mod-toggle + .setting-item.mod-toggle {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+    }
+
+    .setting-item-control {
+      align-items: center;
+    }
+
+    .setting-item-control .clickable-icon {
+      background-color: var(--interactive-normal);
+      min-width: var(--input-height);
+      height: var(--input-height);
+    }
+
+    .setting-item-control:not(:has(:not(button))) {
+      flex-direction: column;
+      gap: 0;
+      border-radius: var(--input-radius);
+      overflow: hidden;
+    }
+
+    .setting-item-control:not(:has(:not(button))) > button {
+      border-radius: 0;
+
+      &:not(:last-child) {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+      }
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    --divider-color: var(--background-primary);
+
+    .vertical-tab-header,
+    .vertical-tab-content {
+      padding-right: 16px;
+      padding-left: 16px;
     }
   }
 }
 
 body.is-tablet {
   .modal:not(.mod-community-modal) {
-    textarea,
-    input[type="text"]:not(.metadata-container input):not(.prompt input),
-    input[type="number"],
-    input[type="search"]:not(.search-input-container > input),
-    button:not(.clickable-icon),
-    select,
-    .dropdown {
-      background-color: var(--interactive-normal);
-    }
-    button.mod-cta {
-      color: var(--text-accent);
+    .setting-item-heading {
+      border: none;
+      padding: 16px 16px 12px;
     }
     .setting-item:not(.setting-item-heading) {
-      border-right: none;
-      border-left: none;
+      border-radius: 0;
+      background-color: var(--interactive-normal);
+      padding: 16px;
     }
     .setting-item-heading + .setting-item,
-    *:not(.setting-item) + .setting-item,
+    *:not(.setting-item) + .setting-item:not(.setting-item-heading),
     .setting-item:first-child:not(.setting-item-heading) {
-      border-top: none;
+      border-top: none !important;
+      border-top-right-radius: var(--radius-s) !important;
+      border-top-left-radius: var(--radius-s) !important;
     }
     .setting-item:has(+ .setting-item-heading),
     .setting-item:has(+ *:not(.setting-item)):not(.setting-item-heading),
     .setting-item:last-child {
-      border-bottom: none;
+      border-bottom-right-radius: var(--radius-s) !important;
+      border-bottom-left-radius: var(--radius-s) !important;
+    }
+    .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
+      padding: 0;
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    textarea,
+    input[type="text"],
+    input[type="search"] {
+      background-color: var(--background-modifier-border);
+    }
+    .vertical-tab-header-group-items {
+      gap: 0;
+    }
+    .vertical-tab-nav-item {
+      display: flex;
+      align-items: center;
+      border-radius: 0;
+      padding-left: 16px;
+
+      &:not(:last-child) {
+        border-bottom: var(--border-width) solid var(--background-modifier-border);
+      }
+    }
+
+    button:not(.clickable-icon):not([class*="mod-"]),
+    select,
+    .dropdown {
+      background-color: var(--background-modifier-border);
+      color: var(--text-accent);
     }
   }
 }
@@ -3052,6 +3096,11 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Modal **********/
+  .modal {
+    backdrop-filter: blur(50px);
+    box-shadow: var(--shadow-l);
+  }
+
   .modal:not(.mod-settings):not(.mod-community-modal) {
     padding: 0;
 
