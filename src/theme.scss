@@ -300,6 +300,18 @@ body {
     --workspace-background-translucent: var(--background-secondary);
   }
 
+  &:not(.show-view-header):not(.is-phone) {
+    --view-header-height: 0px;
+
+    .view-header {
+      display: flex !important;
+
+      > div {
+        display: none;
+      }
+    }
+  }
+
   &.compact-mode {
     --nav-item-padding: 6px 8px 6px 24px;
 
