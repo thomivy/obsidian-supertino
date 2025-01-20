@@ -529,9 +529,9 @@ body.is-mobile {
   }
 
   .clickable-icon.is-active {
+    opacity: 1;
     background-color: var(--interactive-accent);
     color: var(--text-on-accent);
-    opacity: 1;
   }
 
   .checkbox-container {
@@ -1335,8 +1335,8 @@ body:not(.active-line-off) .markdown-source-view .cm-active:not(:has(.cm-fold-in
   }
 
   &[dir="rtl"]::after {
-    left: unset;
     right: -12px;
+    left: unset;
   }
 }
 
@@ -3136,10 +3136,10 @@ body.is-mobile {
       left: 0;
       z-index: -1;
       backdrop-filter: blur(16px) saturate(2);
+      background-color: rgb(from var(--background-primary) r g b / 75%) !important;
       width: 100%;
       height: 100%;
       content: "";
-      background-color: rgb(from var(--background-primary) r g b / 75%) !important;
     }
   }
 }
@@ -3277,10 +3277,10 @@ body.is-mobile {
   }
   &:not(.hide-tabs-count-off) {
     .mobile-navbar-action:nth-child(4) .clickable-icon::before {
-      content: "";
+      background-color: var(--icon-color);
       width: 24px;
       height: 24px;
-      background-color: var(--icon-color);
+      content: "";
       -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgY2xhc3M9Imx1Y2lkZSBsdWNpZGUtY29weSI+PHJlY3Qgd2lkdGg9IjE0IiBoZWlnaHQ9IjE0IiB4PSI4IiB5PSI4IiByeD0iMiIgcnk9IjIiLz48cGF0aCBkPSJNNCAxNmMtMS4xIDAtMi0uOS0yLTJWNGMwLTEuMS45LTIgMi0yaDEwYzEuMSAwIDIgLjkgMiAyIi8+PC9zdmc+");
       -webkit-mask-position: 50%;
       -webkit-mask-size: 100%;
@@ -4594,13 +4594,13 @@ body.mod-windows:not(.windows-mode-off) {
   .tree-item-self {
     --nav-item-padding: 0px 8px 0px 12px;
     align-items: center !important;
-    transition: height var(--anim-duration-fast);
     gap: 2px;
+    transition: height var(--anim-duration-fast);
 
     .tree-item-icon {
       position: relative;
-      margin-inline-start: 0;
       justify-content: flex-start;
+      margin-inline-start: 0;
     }
   }
 
