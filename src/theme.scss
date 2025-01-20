@@ -242,7 +242,7 @@ body {
     --input-radius: 10px;
     --mobile-sidebar-width: 100%;
     --mobile-toolbar-height: var(--input-height);
-    --modal-background: rgb(from var(--background-secondary-alt) r g b / 50%) !important;
+    --modal-background: rgb(from var(--background-secondary-alt) r g b / 75%) !important;
     --nav-item-background-active: var(--color-accent);
     --nav-item-background-selected: var(--color-accent);
     --nav-item-color-active: var(--text-on-accent);
@@ -3075,13 +3075,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 /********** Mobile: Top Bar **********/
 
 body.is-mobile {
-  &.theme-light .workspace .mod-root .workspace-leaf .view-header::before {
-    background-color: rgb(from var(--background-primary) r g b / 50%) !important;
-  }
-  &.theme-dark .workspace .mod-root .workspace-leaf .view-header::before {
-    background-color: rgb(from var(--background-primary) r g b / 75%) !important;
-  }
-
   .view-actions {
     padding: 0;
     height: var(--view-header-height);
@@ -3102,10 +3095,11 @@ body.is-mobile {
       top: 0;
       left: 0;
       z-index: -1;
-      backdrop-filter: blur(50px);
+      backdrop-filter: blur(16px) saturate(2);
       width: 100%;
       height: 100%;
       content: "";
+      background-color: rgb(from var(--background-primary) r g b / 75%) !important;
     }
   }
 }
@@ -3258,14 +3252,14 @@ body.is-mobile {
   }
   .mobile-navbar::before {
     z-index: -2 !important;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(16px) saturate(2);
   }
   .mobile-navbar::before,
   .mobile-navbar::after {
     position: absolute;
     z-index: -1;
-    mask: linear-gradient(180deg, rgb(0% 0% 0% / 0) 0%, rgb(0% 0% 0% / 0.009607359798384785) 6.25%, rgb(0% 0% 0% / 0.03806023374435663) 12.5%, rgb(0% 0% 0% / 0.08426519384872738) 18.75%, rgb(0% 0% 0% / 0.1464466094067262) 25%, rgb(0% 0% 0% / 0.22221488349019886) 31.25%, rgb(0% 0% 0% / 0.3086582838174551) 37.5%, rgb(0% 0% 0% / 0.40245483899193585) 43.75%, rgb(0% 0% 0% / 0.49999999999999994) 50%, rgb(0% 0% 0% / 0.5975451610080641) 56.25%, rgb(0% 0% 0% / 0.6913417161825448) 62.5%, rgb(0% 0% 0% / 0.777785116509801) 68.75%, rgb(0% 0% 0% / 0.8535533905932737) 75%, rgb(0% 0% 0% / 0.9157348061512727) 81.25%, rgb(0% 0% 0% / 0.9619397662556434) 87.5%, rgb(0% 0% 0% / 0.9903926402016152) 93.75%, rgb(0% 0% 0%) 100%);
-    inset: -32px 0 0;
+    mask: linear-gradient(transparent, black 35%);
+    inset: -8px 0 0;
     pointer-events: none;
     content: "";
   }
