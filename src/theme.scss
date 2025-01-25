@@ -3119,7 +3119,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     }
 
     .modal-content:not(:has(.modal-button-container)) {
-      padding: 4px 24px 24px;
+      padding: 4px 24px 16px;
     }
 
     .modal-button-container {
@@ -3127,6 +3127,17 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       border-top: var(--border-width) solid var(--background-modifier-border);
       background-color: var(--divider-color);
       padding: 24px;
+    }
+
+    &.mod-narrow .modal-content {
+      padding: 4px 24px 88px;
+
+      .modal-button-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+      }
     }
   }
 
