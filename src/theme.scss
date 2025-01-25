@@ -50,9 +50,8 @@ settings:
         description: Turn off Fluent styling on Windows.
         type: class-toggle
     -
-        id: prompt-blur-off
-        title: Disable command palette transparency
-        description: Turn off blur effect on command palette on macOS.
+        id: blur-effect-off
+        title: Reduce transparency
         type: class-toggle
     -
         id: center-tabs-off
@@ -188,7 +187,7 @@ body {
     --color-pink: #ff2d55;
     --divider-color: rgba(0, 0, 0, 0.05) !important;
     --modal-border-color: rgba(0, 0, 0, 0.1);
-    --modal-background: rgb(from var(--background-secondary) r g b / 75%) !important;
+    --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
     --input-shadow: inset 0 -0.15px 0 0.5px rgba(0, 0, 0, 0.2), 0 1px 1.5px 0 rgba(0, 0, 0, 0.03), 0 0.3px 0.5px 0 rgba(0, 0, 0, 0.1) !important;
   }
 
@@ -213,7 +212,7 @@ body {
     --color-pink: #ff375f;
     --divider-color: rgba(255, 255, 255, 0.05) !important;
     --modal-border-color: rgba(0, 0, 0, 1);
-    --modal-background: rgb(from var(--color-base-25) r g b / 75%) !important;
+    --modal-background: rgb(from var(--color-base-25) r g b / 90%) !important;
     --interactive-normal: var(--color-base-40);
     --input-shadow: inset 0 0.5px 0px 0px rgba(255, 255, 255, 0.3), 0 2px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 1px 1px 0 rgba(0, 0, 0, 0.1) !important;
   }
@@ -1845,11 +1844,18 @@ li[data-task="d"] > p > input:checked::after {
 
 /********** Modal **********/
 body:not(.is-mobile) {
-  .modal-bg {
-    background-color: transparent;
+  &.blur-effect-off {
+    .modal {
+      background-color: var(--background-secondary);
+      backdrop-filter: none;
+    }
   }
 
   &.mod-macos {
+    .modal:not(.mod-settings) {
+      animation: var(--anim-duration-fast) fadeInDown;
+    }
+
     .modal-container {
       .modal-title {
         font-weight: 700;
@@ -1863,13 +1869,13 @@ body:not(.is-mobile) {
     }
   }
 
-  .modal button {
-    position: relative;
+  .modal-bg {
+    background-color: transparent;
   }
 
-  .modal:not(.mod-settings):not(.mod-community-modal) {
-    backdrop-filter: blur(50px);
-    animation: var(--anim-duration-fast) fadeInDown;
+  .modal {
+    backdrop-filter: blur(32px);
+    border: none;
 
     .modal-close-button {
       display: none;
@@ -1881,6 +1887,10 @@ body:not(.is-mobile) {
     h3,
     p {
       text-align: center;
+    }
+
+    button {
+      position: relative;
     }
 
     .modal-header {
@@ -1916,7 +1926,7 @@ body:not(.is-mobile) {
 body.is-mobile {
   .mod-confirmation .modal:not(.mod-lg) {
     --interactive-normal: unset;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     background-color: var(--modal-background);
   }
 
@@ -1943,7 +1953,7 @@ body.is-mobile {
 
   .modal:not([class*="mod-"]:not(.mod-file-rename)) {
     bottom: var(--safe-area-inset-bottom);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     box-shadow: none;
     border-radius: var(--radius-xl);
     padding: 0;
@@ -2022,12 +2032,19 @@ body.is-tablet {
 
 /********** Menu and Suggestions **********/
 
+body:not(.is-mobile).blur-effect-off .menu,
+body:not(.is-mobile).blur-effect-off .suggestion-container {
+  background-color: var(--background-secondary);
+  backdrop-filter: none;
+}
+
 body:not(.is-mobile) .menu,
 body:not(.is-mobile) .suggestion-container {
   outline: var(--prompt-border-width) solid var(--prompt-border-color);
   border: none;
   border-radius: var(--radius-m);
-  background-color: var(--background-secondary);
+  background-color: var(--modal-background);
+  backdrop-filter: blur(32px);
   padding: 0;
 
   > div {
@@ -2069,7 +2086,7 @@ body:not(.is-mobile) .suggestion-container {
 
 body.is-mobile {
   .menu {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     background-color: var(--modal-background);
     padding: 0;
     overflow: hidden;
@@ -2112,7 +2129,7 @@ body.is-mobile {
   }
 
   .suggestion-container {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     border: none;
     background-color: rgb(from var(--background-secondary-alt) r g b / 75%) !important;
 
@@ -2196,9 +2213,9 @@ body.is-tablet {
 /********** Prompt **********/
 
 body:not(.is-phone) {
-  &.prompt-blur-off .prompt {
+  &.blur-effect-off .prompt {
     backdrop-filter: none;
-    background-color: var(--background-secondary);
+    background-color: var(--background-secondary) !important;
   }
 
   .modal-container:has(.prompt):not(:last-child) {
@@ -2206,7 +2223,7 @@ body:not(.is-phone) {
   }
 
   .prompt {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     outline: var(--prompt-border-width) solid var(--prompt-border-color);
     border: none;
     background-color: var(--workspace-background-translucent);
@@ -2235,7 +2252,7 @@ body.is-phone {
 
   .prompt {
     --prompt-top: calc(var(--safe-area-inset-top) + 8px);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     animation: var(--anim-duration-slow) blurInScale !important;
     transition: var(--anim-duration-fast);
     margin-top: var(--prompt-top);
@@ -2466,18 +2483,58 @@ body:not(.is-phone) .modal {
 
 body:not(.mod-windows):not(.is-mobile),
 body.windows-mode-off:not(.is-mobile) {
-  &.theme-light .mod-settings,
-  &.theme-light .mod-community-modal {
-    background-color: var(--color-base-30) !important;
-  }
-  &.theme-dark .mod-settings,
-  &.theme-dark .mod-community-modal {
-    background-color: var(--color-base-10) !important;
-
-    .vertical-tab-content-container,
+  &:not(.blur-effect-off) {
+    &.theme-light .vertical-tab-header {
+      background-color: rgb(from var(--color-base-30) r g b / 75%);
+    }
+    &.theme-dark .vertical-tab-header {
+      background-color: rgb(from var(--color-base-10) r g b / 75%);
+    }
+    .vertical-tab-content,
     .community-modal-details {
+      background-color: rgb(from var(--color-base-20) r g b / 75%);
+    }
+  }
+
+  &.blur-effect-off {
+    &.theme-light .vertical-tab-header {
+      background-color: var(--color-base-30);
+    }
+    &.theme-dark .vertical-tab-header {
+      background-color: var(--color-base-10);
+    }
+    .vertical-tab-content,
+    .community-modal-details {
+      background-color: var(--color-base-20);
+    }
+  }
+  &.theme-light .modal {
+    outline: var(--border-width) solid var(--divider-color);
+  }
+  &.theme-dark {
+    .vertical-tab-header {
+      margin: 1px 0 1px 1px;
+      border-radius: var(--modal-radius) 0 0 var(--modal-radius);
+    }
+    .vertical-tab-content {
       margin: 1px 1px 1px 0;
       border-radius: 0 var(--modal-radius) var(--modal-radius) 0;
+    }
+  }
+
+  .modal.mod-settings,
+  .modal.mod-community-modal {
+    .mobile-option-setting-item {
+      border: var(--border-width) solid var(--background-modifier-border);
+      border-radius: var(--radius-s);
+      padding: 12px 16px;
+    }
+
+    textarea,
+    input[type="text"]:not(.metadata-container input):not(.prompt input),
+    input[type="number"],
+    input[type="search"] {
+      border: var(--border-width) solid var(--background-modifier-border-hover);
     }
   }
 
@@ -2509,20 +2566,6 @@ body.windows-mode-off:not(.is-mobile) {
     }
     .setting-item-info:has(.setting-item-name:empty) .setting-item-description {
       padding: 0;
-    }
-  }
-
-  .modal.mod-settings,
-  .modal.mod-community-modal {
-    .vertical-tab-content,
-    .community-modal-details {
-      background-color: var(--color-base-20);
-    }
-
-    .mobile-option-setting-item {
-      border: var(--border-width) solid var(--background-modifier-border);
-      border-radius: var(--radius-s);
-      padding: 12px 16px;
     }
   }
 }
@@ -2661,8 +2704,6 @@ body.is-phone {
 
   .modal.mod-settings,
   .modal.mod-community-modal {
-    --divider-color: var(--background-primary);
-
     .vertical-tab-header,
     .vertical-tab-content {
       padding-right: 16px;
@@ -2744,7 +2785,7 @@ body.is-tablet {
 }
 
 .notice {
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(32px);
   margin-bottom: 0;
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-hover);
@@ -2871,7 +2912,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
     --input-shadow: 0px 0px 0px 1px var(--background-modifier-border), 0 -0.5px 0 0 rgba(0, 0, 0, 0.25) inset !important;
     --interactive-normal: var(--background-primary);
-    --modal-background: rgb(from var(--background-secondary) r g b / 95%) !important;
+    --modal-background: rgb(from var(--background-secondary) r g b / 90%) !important;
     --modal-border-color: rgba(0, 0, 0, 0.1);
     --slider-thumb-border-color: var(--color-base-00);
   }
@@ -2880,7 +2921,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px !important;
     --input-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1), 0 0.5px 0 0 rgba(255, 255, 255, 0.1) inset !important;
     --interactive-normal: var(--color-base-35);
-    --modal-background: rgb(from var(--background-primary) r g b / 95%) !important;
+    --modal-background: rgb(from var(--background-primary) r g b / 90%) !important;
     --modal-border-color: rgba(255, 255, 255, 0.1);
     --slider-thumb-border-color: var(--color-base-35);
 
@@ -3024,10 +3065,8 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     .vertical-tab-header-group-title {
       padding: 8px 16px;
     }
-    .vertical-tab-content-container {
-      animation: fadeInUp var(--anim-duration-moderate);
-    }
     .vertical-tab-content {
+      animation: fadeInUp var(--anim-duration-moderate);
       background-color: transparent !important;
     }
     .vertical-tab-nav-item {
@@ -3059,11 +3098,9 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   /********** Menu and Suggestions **********/
   .menu,
   .suggestion-container {
-    backdrop-filter: blur(50px);
     outline: none;
     border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);
-    background-color: rgb(from var(--background-secondary) r g b / 75%);
 
     > div {
       padding: 6px;
@@ -3097,11 +3134,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   }
 
   /********** Modal **********/
-  .modal {
-    backdrop-filter: blur(50px);
-    box-shadow: var(--shadow-l);
-  }
-
   .modal:not(.mod-settings):not(.mod-community-modal) {
     padding: 0;
 
@@ -3118,7 +3150,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       padding: 24px 24px 4px;
     }
 
-    .modal-content:not(:has(.modal-button-container)) {
+    .modal-content {
       padding: 4px 24px 16px;
     }
 
@@ -3205,7 +3237,7 @@ body.is-phone {
     position: fixed;
     right: max(var(--safe-area-inset-right), 14px);
     bottom: 16px;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: 100%;
     background-color: rgb(from var(--background-secondary) r g b / 50%);
@@ -3312,7 +3344,7 @@ body.is-tablet {
 /********** Mobile: Pull Action **********/
 
 .pull-action {
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(32px);
   animation: fadeInDown var(--anim-duration-moderate);
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-border);
@@ -3357,7 +3389,7 @@ body.is-mobile {
   }
 
   .workspace-drawer .nav-header {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
   }
   .mobile-navbar,
   .workspace-drawer .nav-header {
@@ -3404,7 +3436,7 @@ body.is-mobile {
   }
 
   .mobile-tab-switcher {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
   }
 
   .mobile-tab-switcher-menubar {
@@ -3452,7 +3484,7 @@ body.is-tablet {
 
 body.is-mobile {
   .mobile-image-viewer {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     animation: var(--anim-duration-fast) fadeInScale;
     background-color: var(--workspace-background-translucent);
   }
@@ -3468,7 +3500,7 @@ body.is-mobile {
 }
 
 .canvas-control-group {
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(32px);
   box-shadow: none;
   background-color: rgb(from var(--background-secondary) r g b / 50%);
 }
@@ -3482,7 +3514,7 @@ body.is-mobile {
 
 .canvas-card-menu {
   gap: 8px;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(32px);
   box-shadow: none;
   border: var(--border-width) solid var(--background-modifier-border);
   background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
@@ -3528,7 +3560,7 @@ body.is-tablet {
 /********** Core Plugin: Graph **********/
 
 .graph-controls.is-close {
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(32px);
   border: var(--border-width) solid var(--background-modifier-border);
   background-color: rgb(from var(--background-secondary) r g b / 50%);
   padding: 0;
@@ -4065,7 +4097,7 @@ body.is-mobile .excalidraw.theme--dark {
   .mobile-misc-tools-container {
     top: 0;
     right: 0;
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     border: none;
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
@@ -4273,7 +4305,7 @@ body.is-mobile .advanced-tables-buttons {
   }
 
   .leaflet-bar {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     border: var(--border-width) solid var(--background-modifier-border) !important;
     border-radius: var(--radius-s);
     background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
@@ -4305,7 +4337,7 @@ body.is-mobile .advanced-tables-buttons {
   }
 
   .map-view-graph-controls {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     border: var(--border-width) solid var(--background-modifier-border);
     border-radius: var(--radius-s);
     background-color: rgb(from var(--background-secondary) r g b / 50%) !important;
@@ -4347,7 +4379,7 @@ body:not(.is-mobile) {
 
 #cMenuToolbarModalBar,
 #cMenuToolbarPopoverBar {
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(32px);
   background-color: var(--modal-background);
   padding: 4px;
   height: fit-content !important;
@@ -4598,7 +4630,7 @@ button.clear-button {
 body.mod-windows:not(.windows-mode-off) {
   .model-select-content,
   .chain-select-content {
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(32px);
     outline: none !important;
     border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);
