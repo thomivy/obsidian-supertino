@@ -850,8 +850,8 @@ body.is-tablet {
 
   .workspace-drawer {
     &.is-pinned {
-      padding-top: var(--safe-area-inset-top);
       border-color: var(--hr-color);
+      padding-top: var(--safe-area-inset-top);
     }
   }
 
@@ -1846,8 +1846,8 @@ li[data-task="d"] > p > input:checked::after {
 body:not(.is-mobile) {
   &.blur-effect-off {
     .modal {
-      background-color: var(--background-secondary);
       backdrop-filter: none;
+      background-color: var(--background-secondary);
     }
   }
 
@@ -2010,8 +2010,8 @@ body.is-mobile {
 
 body.is-phone {
   .modal {
-    padding-bottom: var(--safe-area-inset-bottom);
     box-shadow: none !important;
+    padding-bottom: var(--safe-area-inset-bottom);
   }
 }
 
@@ -2034,17 +2034,17 @@ body.is-tablet {
 
 body:not(.is-mobile).blur-effect-off .menu,
 body:not(.is-mobile).blur-effect-off .suggestion-container {
-  background-color: var(--background-secondary);
   backdrop-filter: none;
+  background-color: var(--background-secondary);
 }
 
 body:not(.is-mobile) .menu,
 body:not(.is-mobile) .suggestion-container {
+  backdrop-filter: blur(32px);
   outline: var(--prompt-border-width) solid var(--prompt-border-color);
   border: none;
   border-radius: var(--radius-m);
   background-color: var(--modal-background);
-  backdrop-filter: blur(32px);
   padding: 0;
 
   > div {
@@ -2195,8 +2195,8 @@ body.is-tablet {
   }
 
   .menu {
-    background-color: rgb(from var(--background-secondary) r g b / 90%);
     box-shadow: 0 0 0 10000px rgba(0, 0, 0, 0.2);
+    background-color: rgb(from var(--background-secondary) r g b / 90%);
     min-width: 240px;
   }
   .menu-item {
@@ -2641,10 +2641,10 @@ body.is-mobile {
     }
 
     .setting-item-heading .setting-item-name {
-      font-size: var(--font-ui-small);
       color: var(--text-faint);
-      text-transform: uppercase;
       font-weight: normal;
+      font-size: var(--font-ui-small);
+      text-transform: uppercase;
     }
   }
 }
@@ -3166,9 +3166,9 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
       .modal-button-container {
         position: absolute;
-        left: 0;
         right: 0;
         bottom: 0;
+        left: 0;
       }
     }
   }
