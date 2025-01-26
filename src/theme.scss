@@ -2805,10 +2805,6 @@ body.is-tablet {
   color: var(--text-normal);
 }
 
-.status-bar:has(.status-bar-item-icon:empty) {
-  display: none;
-}
-
 body.hide-status-off:not(.is-mobile) {
   .status-bar:not(:hover) {
     opacity: 0.3;
