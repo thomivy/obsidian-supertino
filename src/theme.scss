@@ -909,7 +909,7 @@ body:not(.is-phone) {
     }
   }
 
-  .workspace .mod-root {
+  .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
     .workspace-tab-header-container-inner {
       justify-content: center;
       gap: 4px;
