@@ -2909,6 +2909,20 @@ body:not(.hide-status-off) .status-bar {
   white-space: nowrap;
 }
 
+.app-container.no-transition .status-bar {
+  max-width: 100% !important;
+  bottom: 4px;
+  border-color: var(--background-secondary);
+  background-color: rgba(var(--mono-rgb-0), 1);
+  height: 40px !important;
+
+  > div {
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
+
 /********** Desktop: Tooltip **********/
 .tooltip {
   color: var(--text-muted);
