@@ -1472,8 +1472,8 @@ body:not(.full-table-off) .table-wrapper {
   .el-table[dir="rtl"] {
     th:first-child,
     th:first-child .table-cell-wrapper {
-      border-top-left-radius: 0;
       border-top-right-radius: var(--radius-s);
+      border-top-left-radius: 0;
     }
     th:last-child,
     th:last-child .table-cell-wrapper {
@@ -1482,8 +1482,8 @@ body:not(.full-table-off) .table-wrapper {
     }
     tr:last-child td:first-child,
     tr:last-child td:first-child .table-cell-wrapper {
-      border-bottom-left-radius: 0;
       border-bottom-right-radius: var(--radius-s);
+      border-bottom-left-radius: 0;
     }
     tr:last-child td:last-child,
     tr:last-child td:last-child .table-cell-wrapper {
@@ -2929,10 +2929,10 @@ body:not(.hide-status-off) .status-bar {
 }
 
 .app-container.no-transition .status-bar {
-  max-width: 100% !important;
   bottom: 4px;
   border-color: var(--background-secondary);
   background-color: rgba(var(--mono-rgb-0), 1);
+  max-width: 100% !important;
   height: 40px !important;
 
   > div {
