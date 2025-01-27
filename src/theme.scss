@@ -2928,7 +2928,7 @@ body:not(.hide-status-off) .status-bar {
   white-space: nowrap;
 }
 
-.app-container.no-transition .status-bar {
+body:not(.hide-status-off) .app-container.no-transition .status-bar {
   bottom: 4px;
   border-color: var(--background-secondary);
   background-color: rgba(var(--mono-rgb-0), 1);
