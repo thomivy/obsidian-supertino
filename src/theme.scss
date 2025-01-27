@@ -1264,6 +1264,23 @@ svg.svg-icon {
   padding: 2px 4px;
 }
 
+.markdown-rendered pre,
+.HyperMD-codeblock {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 2px 8px -2px, rgba(0, 0, 0, 0.04) 0px 2px 4px -2px;
+  border: var(--border-width) solid var(--background-modifier-border);
+}
+
+.HyperMD-codeblock-begin {
+  border-bottom: none;
+}
+.HyperMD-codeblock:not(.HyperMD-codeblock-begin):not(.HyperMD-codeblock-end) {
+  border-top: none;
+  border-bottom: none;
+}
+.HyperMD-codeblock-end {
+  border-top: none;
+}
+
 .markdown-rendered button.copy-code-button,
 .markdown-source-view.mod-cm6 .edit-block-button,
 .code-block-flair {
