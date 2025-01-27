@@ -1396,7 +1396,6 @@ body:not(.full-table-off) .table-wrapper {
   table {
     position: relative;
     border-radius: var(--radius-s);
-    overflow: hidden;
   }
 
   table::before {
@@ -1434,17 +1433,54 @@ body:not(.full-table-off) .table-wrapper {
     border-left: var(--table-border-width) solid var(--table-border-color);
   }
 
-  .cm-table-widget[dir="rtl"] tr th:first-child,
-  .cm-table-widget[dir="rtl"] tr td:first-child,
-  .el-table[dir="rtl"] tr th:first-child,
-  .el-table[dir="rtl"] tr td:first-child {
-    border-right-width: 0 !important;
+  th:first-child,
+  th:first-child .table-cell-wrapper {
+    border-top-left-radius: var(--radius-s);
   }
-  .cm-table-widget[dir="rtl"] tr th:last-child,
-  .cm-table-widget[dir="rtl"] tr td:last-child,
-  .el-table[dir="rtl"] tr th:last-child,
-  .el-table[dir="rtl"] tr td:last-child {
-    border-left-width: 0 !important;
+  th:last-child,
+  th:last-child .table-cell-wrapper {
+    border-top-right-radius: var(--radius-s);
+  }
+  tr:last-child td:first-child,
+  tr:last-child td:first-child .table-cell-wrapper {
+    border-bottom-left-radius: var(--radius-s);
+  }
+  tr:last-child td:last-child,
+  tr:last-child td:last-child .table-cell-wrapper {
+    border-bottom-right-radius: var(--radius-s);
+  }
+
+  .cm-table-widget[dir="rtl"],
+  .el-table[dir="rtl"] {
+    th:first-child,
+    th:first-child .table-cell-wrapper {
+      border-top-left-radius: 0;
+      border-top-right-radius: var(--radius-s);
+    }
+    th:last-child,
+    th:last-child .table-cell-wrapper {
+      border-top-right-radius: 0;
+      border-top-left-radius: var(--radius-s);
+    }
+    tr:last-child td:first-child,
+    tr:last-child td:first-child .table-cell-wrapper {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: var(--radius-s);
+    }
+    tr:last-child td:last-child,
+    tr:last-child td:last-child .table-cell-wrapper {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: var(--radius-s);
+    }
+
+    tr th:first-child,
+    tr td:first-child {
+      border-right-width: 0 !important;
+    }
+    tr th:last-child,
+    tr td:last-child {
+      border-left-width: 0 !important;
+    }
   }
 
   .markdown-embed,
