@@ -1913,7 +1913,9 @@ body:not(.is-mobile) {
   .modal {
     backdrop-filter: blur(32px);
     border: none;
+  }
 
+  .modal:not(.mod-settings):not(.mod-community-modal) {
     .modal-title,
     h1,
     h2,
