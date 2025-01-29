@@ -50,6 +50,11 @@ settings:
         description: Turn off Fluent styling on Windows.
         type: class-toggle
     -
+        id: tablet-menu-fix
+        title: Disable custom tablet menu
+        description: Turn off theming on context menu. Enable if you're having issues with context menu touch target. 
+        type: class-toggle
+    -
         id: blur-effect-off
         title: Reduce transparency
         type: class-toggle
@@ -2139,7 +2144,8 @@ body:not(.is-mobile) .suggestion-container {
   }
 }
 
-body.is-mobile {
+body.is-phone,
+body.is-tablet:not(.tablet-menu-fix) {
   .menu {
     backdrop-filter: blur(32px);
     background-color: var(--modal-background);
@@ -2237,7 +2243,7 @@ body.is-phone {
   }
 }
 
-body.is-tablet {
+body.is-tablet:not(.tablet-menu-fix) {
   &.theme-light {
     .menu-item:not(.is-label[data-section="title"]) {
       background-color: rgb(from var(--background-primary) r g b / 50%);
