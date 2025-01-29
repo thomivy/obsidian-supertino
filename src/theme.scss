@@ -299,6 +299,11 @@ body {
   &.is-tablet {
     --dropdown-padding: 4px 32px 4px 16px;
     --prompt-input-height: 56px;
+    --ribbon-width: 52px;
+
+    .mod-root {
+      padding-top: var(--safe-area-inset-top);
+    }
   }
 
   &:not(.is-focused) {
@@ -413,8 +418,6 @@ body.is-phone {
     }
   }
 }
-
-/* Startup animation */
 
 body,
 body .app-container,
@@ -876,11 +879,16 @@ body.is-tablet {
   .workspace-drawer {
     &.is-pinned {
       border-color: var(--hr-color);
-      padding-top: var(--safe-area-inset-top);
+      padding-top: calc(var(--safe-area-inset-top) + 16px);
+      background-color: var(--background-primary);
     }
   }
 
   .side-dock-ribbon {
+    padding-left: 12px;
+  }
+
+  .side-dock-actions {
     padding: 0;
   }
 }
@@ -1616,6 +1624,9 @@ body.is-tablet {
   .mod-root .workspace-leaf {
     contain: none !important;
   }
+  .mod-root .workspace-tabs.mod-stacked .workspace-tab-header-container-inner {
+    display: none;
+  }
 
   .view-header {
     padding: 0 16px;
@@ -1624,9 +1635,14 @@ body.is-tablet {
       height: 100%;
     }
   }
+  .view-header-nav-buttons,
+  .view-actions {
+    gap: 0px;
+  }
 
   .document-search-container {
     bottom: 0;
+    padding-bottom: var(--safe-area-inset-bottom);
     background-color: transparent;
     border: none;
     position: fixed;
@@ -1721,6 +1737,10 @@ body.is-mobile {
   .metadata-property-key-input,
   .metadata-property-value {
     background-color: transparent;
+  }
+
+  .metadata-property-warning-icon {
+    height: auto;
   }
 }
 
@@ -3498,6 +3518,9 @@ body.is-tablet {
   &.theme-dark {
     .workspace-drawer .nav-header {
       background-color: rgb(from var(--background-primary-alt) r g b / 75%);
+    }
+    .workspace-drawer.is-pinned .nav-header {
+      background-color: rgb(from var(--background-primary) r g b / 75%);
     }
   }
   .nav-buttons-container {
