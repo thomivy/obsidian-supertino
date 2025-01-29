@@ -133,6 +133,7 @@ body {
   --metadata-property-radius-focus: var(--input-radius);
   --metadata-property-radius-hover: var(--input-radius);
   --metadata-property-radius: var(--input-radius);
+  --modal-border-color: rgba(255, 255, 255, 0.15) !important;
   --nav-item-color: var(--text-normal);
   --nav-item-padding: 8px 8px 8px 24px;
   --prompt-border-color: var(--modal-border-color);
@@ -227,12 +228,12 @@ body {
     --icon-xl: 24px;
 
     &.theme-light {
-      --shadow-s: 0px 0px 1px 1px rgba(255, 255, 255, 0.5) inset, 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
-      --shadow-l: 0px 0px 1px 0px rgba(255, 255, 255, 1) inset, rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+      --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
+      --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
     &.theme-dark {
-      --shadow-s: 0px 0px 1px 0px rgba(255, 255, 255, 0.8) inset, 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
-      --shadow-l: 0px 0px 1px 0px rgba(255, 255, 255, 0.8) inset, rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+      --shadow-s: 0px 1px 2px rgba(0, 0, 0, 0.028), 0px 3.4px 6.7px rgba(0, 0, 0, 0.042), 0px 15px 30px rgba(0, 0, 0, 0.07);
+      --shadow-l: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
     }
   }
 
@@ -1957,7 +1958,6 @@ body:not(.is-mobile) {
 
   .modal {
     backdrop-filter: blur(32px);
-    border: none;
   }
 
   .modal:not(.mod-settings):not(.mod-community-modal) {
