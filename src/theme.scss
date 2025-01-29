@@ -2828,7 +2828,7 @@ body.is-tablet {
   .modal:not(.mod-community-modal) {
     .setting-item-heading {
       border: none;
-      padding: 16px 16px 12px;
+      padding: 8px;
     }
     .setting-item:not(.setting-item-heading) {
       border-radius: 0;
@@ -2857,7 +2857,8 @@ body.is-tablet {
   .modal.mod-community-modal {
     textarea,
     input[type="text"],
-    input[type="search"] {
+    input[type="search"],
+    input[type="number"] {
       background-color: var(--background-modifier-border);
     }
     .vertical-tab-header-group-items {
