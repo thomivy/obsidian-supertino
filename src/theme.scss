@@ -51,8 +51,8 @@ settings:
         type: class-toggle
     -
         id: tablet-menu-fix
-        title: Disable custom tablet menu
-        description: Turn off theming on context menu. Enable if you're having issues with context menu touch target. 
+        title: Disable menu theming
+        description: Turn off context menu theming on tablet. Enable if you're having touch issues in menu. 
         type: class-toggle
     -
         id: blur-effect-off
@@ -916,8 +916,8 @@ body.is-tablet {
   .workspace-drawer {
     &.is-pinned {
       border-color: var(--hr-color);
-      padding-top: calc(var(--safe-area-inset-top) + 16px);
       background-color: var(--background-primary);
+      padding-top: calc(var(--safe-area-inset-top) + 16px);
     }
   }
 
@@ -947,8 +947,8 @@ body.center-tabs-off .mod-root .workspace-tab-header-container-inner {
 
 @container (max-width: 480px) {
   .mod-root .workspace-tab-header-container-inner {
-    padding: 0 !important;
     justify-content: flex-start !important;
+    padding: 0 !important;
   }
 }
 
@@ -1576,16 +1576,16 @@ body:not(.is-mobile) {
 
   .mod-root > .workspace-tabs:not(:only-of-type) .workspace-tab-header-container-inner,
   .mod-root .mod-horizontal > .workspace-tabs .workspace-tab-header-container-inner {
-    padding: 0 !important;
     justify-content: flex-start !important;
+    padding: 0 !important;
   }
 
   .mod-root {
     padding-bottom: 8px;
 
     .workspace-tab-container {
-      border-radius: var(--radius-l);
       box-shadow: rgba(244, 244, 244, 0.12) 0px 0px 0px 1px;
+      border-radius: var(--radius-l);
     }
 
     .workspace-tabs:not(:only-of-type) .workspace-tab-container {
@@ -1678,11 +1678,11 @@ body.is-tablet {
   }
 
   .document-search-container {
-    bottom: 0;
-    padding-bottom: var(--safe-area-inset-bottom);
-    background-color: transparent;
-    border: none;
     position: fixed;
+    bottom: 0;
+    border: none;
+    background-color: transparent;
+    padding-bottom: var(--safe-area-inset-bottom);
     width: 100%;
   }
   .document-search-container::before {
