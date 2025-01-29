@@ -327,6 +327,25 @@ body {
   }
 }
 
+@media (prefers-color-scheme: light) {
+  body.theme-dark {
+    --workspace-background-translucent: var(--background-primary);
+
+    .app-container {
+      background-color: var(--background-primary);
+    }
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body.theme-light {
+    --workspace-background-translucent: var(--background-primary);
+
+    .app-container {
+      background-color: var(--background-primary);
+    }
+  }
+}
+
 /********** Animation **********/
 
 @keyframes fadeInUp {
