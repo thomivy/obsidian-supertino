@@ -1748,10 +1748,13 @@ body:not(.is-mobile) {
     cursor: pointer;
   }
 
-  .markdown-reading-view .metadata-container:not(:hover) .metadata-add-button {
-    visibility: hidden;
-    opacity: 0;
-    height: 0;
+  .markdown-reading-view .metadata-container:not(:hover) {
+    .metadata-property[data-property-key="cssclasses"],
+    .metadata-add-button {
+      visibility: hidden;
+      opacity: 0;
+      height: 0;
+    }
   }
 
   .prompt.suggestion {
