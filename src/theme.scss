@@ -3009,6 +3009,14 @@ body:not(.hide-status-off):not(.is-grabbing) .app-container.no-transition .statu
   display: none;
 }
 
+/********** Desktop: Popover **********/
+.popover {
+  backdrop-filter: blur(16px);
+  animation: var(--anim-duration-slow) blurInScale;
+  border-radius: var(--radius-l);
+  background-color: var(--workspace-background-translucent);
+}
+
 /********** Desktop: Windows specific styling **********/
 
 body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
