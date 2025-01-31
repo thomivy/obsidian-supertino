@@ -4832,7 +4832,7 @@ body.is-tablet {
   }
 }
 
-/********** Community Theme: Obsidian-Notebook-Themes **********/
+/********** CSS Classes: Obsidian-Notebook-Themes **********/
 .page-white,
 .page-manila,
 .page-blueprint {
@@ -4842,4 +4842,9 @@ body.is-tablet {
   .metadata-property-key {
     padding-left: 0;
   }
+}
+
+/********** CSS Classes: Serif **********/
+.font-serif {
+  font-family: ui-serif, serif;
 }
