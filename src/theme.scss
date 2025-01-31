@@ -336,10 +336,13 @@ body {
   &.is-tablet {
     --dropdown-padding: 4px 32px 4px 16px;
     --prompt-input-height: 56px;
-    --ribbon-width: 52px;
 
     .mod-root {
       padding-top: var(--safe-area-inset-top);
+    }
+
+    &.show-ribbon {
+      --ribbon-width: 52px;
     }
   }
 
