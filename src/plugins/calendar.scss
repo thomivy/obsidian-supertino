@@ -1,0 +1,28 @@
+#calendar-container {
+  padding: 0;
+
+  .title {
+    font-size: unset;
+  }
+
+  .right-nav {
+    align-items: center;
+  }
+
+  .day {
+    border-radius: var(--radius-m);
+    padding: 8px;
+  }
+
+  .today {
+    background-color: transparent;
+    color: var(--color-text-today);
+    font-weight: bold;
+  }
+
+  .active {
+    background-color: var(--color-text-today);
+    color: var(--text-on-accent);
+    --color-dot: var(--text-on-accent);
+  }
+}
