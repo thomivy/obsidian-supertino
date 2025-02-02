@@ -1,0 +1,15 @@
+.reader-block-buttons {
+  flex-direction: column;
+  right: max(var(--safe-area-inset-right), 14px);
+  bottom: 16px;
+  left: unset;
+  transform: none;
+  margin-bottom: 136px;
+  backdrop-filter: blur(32px);
+  border: var(--border-width) solid var(--background-modifier-border);
+  background-color: rgb(from var(--background-secondary) r g b/50%);
+}
+
+.reader-block-buttons button {
+  width: 44px;
+}
