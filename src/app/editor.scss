@@ -149,12 +149,12 @@ body:not(.active-line-off) .markdown-source-view .cm-active:not(:has(.cm-fold-in
 }
 
 body:not(.alt-heading-off) {
-  --h1-size: 1.1875em;
-  --h2-size: 1.125em;
-  --h3-size: 1.0625em;
+  --h1-size: 1.5em;
+  --h2-size: 1.25em;
+  --h3-size: 1.125em;
   --h4-size: 1em;
-  --h5-size: 0.8125em;
-  --h6-size: 0.8125em;
+  --h5-size: 1em;
+  --h6-size: 0.875em;
 
   h4,
   .markdown-rendered h4,
@@ -168,14 +168,12 @@ body:not(.alt-heading-off) {
   .cm-header-5 {
     opacity: 0.5;
     letter-spacing: normal;
-    text-transform: uppercase;
   }
 
   h6,
   .markdown-rendered h6,
   .cm-header-6 {
     opacity: 0.5;
-    font-weight: normal;
     letter-spacing: normal;
     text-transform: uppercase;
   }
