@@ -403,7 +403,6 @@ body.is-phone .app-container,
 body.is-tablet .app-container {
   align-items: center;
   transition: all var(--anim-duration-moderate) !important;
-  overflow: hidden;
 }
 
 body:not(.is-mobile) {
