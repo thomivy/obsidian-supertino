@@ -1,0 +1,30 @@
+.reader-mode {
+  --h1-size: 1.5em;
+  --h2-size: 1.25em;
+  --h3-size: 1.125em;
+
+  font-family: "New York", "Georgia", ui-serif, serif;
+  color: var(--text-muted);
+  background-color: var(--color-base-20);
+
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+
+  p:not(:has(img)) {
+    text-indent: 20px;
+  }
+
+  .el-p p strong:only-child {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.sepia {
+  color: var(--text-normal);
+  filter: sepia(50%);
+}
