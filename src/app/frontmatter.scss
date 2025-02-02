@@ -4,7 +4,7 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
 
 .metadata-container {
   --icon-size: 16px;
-  transform: none;
+  transform: none !important;
 
   .metadata-properties-heading {
     padding: 16px 0 4px;
