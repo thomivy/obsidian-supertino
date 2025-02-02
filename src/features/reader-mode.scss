@@ -1,11 +1,14 @@
+body:not(.is-mobile) .reader-mode {
+  color: var(--text-muted);
+  background-color: var(--color-base-20);
+}
+
 .reader-mode {
   --h1-size: 1.5em;
   --h2-size: 1.25em;
   --h3-size: 1.125em;
 
   font-family: "New York", "Georgia", ui-serif, serif;
-  color: var(--text-muted);
-  background-color: var(--color-base-20);
 
   h1,
   h2,
@@ -15,6 +18,7 @@
 
   p:not(:has(img)) {
     text-indent: 20px;
+    letter-spacing: 0.25px;
   }
 
   .el-p p strong:only-child {
