@@ -75,7 +75,7 @@ body:not(.is-mobile) {
       transition: var(--anim-duration-fast) var(--anim-duration-fast) !important;
     }
 
-    &:not(:hover):not(:has(.is-active)):not(:has(.has-active-menu)) .nav-buttons-container {
+    &:not(:hover):not(:has(.has-active-menu)) .nav-buttons-container {
       gap: 4px;
       background-color: transparent;
       padding: 0;
@@ -107,7 +107,6 @@ body:not(.is-mobile) {
   }
   .nav-action-button.is-active,
   .nav-action-button.is-active:hover {
-    box-shadow: 0px 0.25px 0.25px 0px rgba(0, 0, 0, 0.15), 0px 1px 0.75px 0px rgba(0, 0, 0, 0.05);
     background-color: var(--background-primary);
     color: var(--icon-color);
   }
