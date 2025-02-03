@@ -19,37 +19,40 @@
   }
 }
 
+body {
+  --reader-mobile-nav-bg: rgb(from var(--background-secondary) r g b/50%);
+}
+
 body:not(.is-mobile) .reader-active {
   color: var(--text-muted);
 }
 
 body.is-mobile .reader-active {
-  .reader-block-buttons {
+  .reader-mobile-nav {
     right: max(var(--safe-area-inset-right), 14px);
     left: unset;
     flex-direction: column;
     transform: none;
     backdrop-filter: blur(32px);
     border: var(--border-width) solid var(--background-modifier-border);
-    background-color: rgb(from var(--background-secondary) r g b/50%);
     width: 44px;
   }
 
-  .reader-block-buttons button {
+  .reader-mobile-nav button {
     width: 100%;
     min-width: unset;
   }
 }
 
 body.is-phone .reader-active {
-  .reader-block-buttons {
+  .reader-mobile-nav {
     bottom: 0;
     margin-bottom: 148px;
   }
 }
 
 body.is-tablet .reader-active {
-  .reader-block-buttons {
+  .reader-mobile-nav {
     top: 50%;
     bottom: unset;
     transform: translateY(-50%);
