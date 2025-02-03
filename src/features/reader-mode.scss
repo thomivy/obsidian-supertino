@@ -1,6 +1,5 @@
 body:not(.is-mobile) .reader-mode {
   color: var(--text-muted);
-  background-color: var(--color-base-20);
 }
 
 .reader-mode {
@@ -22,9 +21,4 @@ body:not(.is-mobile) .reader-mode {
     width: 100%;
     text-align: center;
   }
-}
-
-.sepia {
-  color: var(--text-normal);
-  filter: sepia(50%);
 }
