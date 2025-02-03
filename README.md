@@ -59,6 +59,4 @@ Cupertino is developed as I use Obsidian, while I'm trying to focus on being con
 
 ## Credits
 
-- **@mgmeyers** — [California Coast Obsidian Theme](https://github.com/mgmeyers/obsidian-california-coast-theme)
-- **@colineckert** — [Things 2 (Quick Mode Switcher)](https://github.com/colineckert/obsidian-things)
-- **@krios2146** — [Obsidian GitHub Theme (Codeblock Styling)](https://github.com/krios2146/obsidian-theme-github)
+- **@kepano** — [Minimal](https://github.com/kepano/obsidian-minimal)
