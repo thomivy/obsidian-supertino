@@ -1,15 +1,32 @@
-.reader-block-buttons {
-  flex-direction: column;
-  right: max(var(--safe-area-inset-right), 14px);
-  bottom: 16px;
-  left: unset;
-  transform: none;
-  margin-bottom: 136px;
-  backdrop-filter: blur(32px);
-  border: var(--border-width) solid var(--background-modifier-border);
-  background-color: rgb(from var(--background-secondary) r g b/50%);
+body.is-mobile {
+  .reader-block-buttons {
+    right: max(var(--safe-area-inset-right), 14px);
+    left: unset;
+    flex-direction: column;
+    transform: none;
+    backdrop-filter: blur(32px);
+    border: var(--border-width) solid var(--background-modifier-border);
+    background-color: rgb(from var(--background-secondary) r g b/50%);
+    width: 44px;
+  }
+
+  .reader-block-buttons button {
+    width: 100%;
+    min-width: unset;
+  }
 }
 
-.reader-block-buttons button {
-  width: 44px;
+body.is-phone {
+  .reader-block-buttons {
+    bottom: 0;
+    margin-bottom: 148px;
+  }
+}
+
+body.is-tablet {
+  .reader-block-buttons {
+    top: 50%;
+    bottom: unset;
+    transform: translateY(-50%);
+  }
 }
