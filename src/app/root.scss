@@ -67,6 +67,10 @@ settings:
         title: Disable auto hiding panel actions
         type: class-toggle
     -
+        id: image-zoom-off
+        title: Disable image zoom
+        type: class-toggle
+    -
         id: hide-status-off
         title: Always show status bar
         type: class-toggle
@@ -121,6 +125,7 @@ body {
   --embed-block-shadow-hover: none;
   --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+  --highlight-mix-blend-mode: none !important;
   --hr-color: var(--background-modifier-hover);
   --icon-opacity: 1;
   --input-height: 24px;

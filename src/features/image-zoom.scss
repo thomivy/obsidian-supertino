@@ -1,0 +1,18 @@
+body:not(.is-mobile):not(.image-zoom-off) .workspace-leaf-content[data-type="markdown"] {
+  .image-embed:not(.canvas-node-content),
+  img[referrerpolicy="no-referrer"] {
+    cursor: zoom-in;
+  }
+
+  .image-embed:not(.canvas-node-content):active img,
+  img[referrerpolicy="no-referrer"]:active {
+    cursor: zoom-out;
+    background-color: var(--background-primary);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    object-fit: contain;
+  }
+}
