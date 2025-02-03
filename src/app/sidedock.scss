@@ -116,11 +116,6 @@ body:not(.is-mobile) {
     margin-bottom: 0;
     border-inline-start: none;
   }
-
-  /* Text positioning */
-  .tree-item-self:not(.mod-collapsible) {
-    gap: 4px;
-  }
 }
 
 body.is-mobile {
