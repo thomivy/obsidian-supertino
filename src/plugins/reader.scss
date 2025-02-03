@@ -1,6 +1,4 @@
 .reader-active {
-  font-family: "New York", "Georgia", ui-serif, serif;
-
   h1,
   h2,
   h3 {
@@ -29,7 +27,7 @@ body:not(.is-mobile) .reader-active {
 
 body.is-mobile .reader-active {
   .reader-mobile-nav {
-    right: max(var(--safe-area-inset-right), 14px);
+    right: max(var(--safe-area-inset-right), 16px);
     left: unset;
     flex-direction: column;
     transform: none;
