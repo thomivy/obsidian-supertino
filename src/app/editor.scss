@@ -355,6 +355,11 @@ body:not(.is-mobile) {
     padding: 4px 12px;
   }
 
+  &.show-inline-title .view-header:not(:hover) .view-header-title-container {
+    opacity: 0;
+    transition: opacity var(--anim-duration-fast);
+  }
+
   &:not(.show-ribbon) .workspace:not(.is-left-sidedock-open) .mod-root .workspace-tab-container {
     margin-left: 8px;
     border-radius: var(--radius-m);
