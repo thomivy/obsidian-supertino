@@ -43,21 +43,35 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
 }
 
 body:not(.is-mobile) {
-  .metadata-add-button {
-    display: flex;
-    transition: var(--anim-duration-fast) var(--anim-duration-moderate);
-    cursor: pointer;
+  .metadata-property {
+    max-height: 100vh;
   }
 
   .metadata-property input {
     border: none;
   }
 
+  .metadata-add-button {
+    display: flex;
+    transition: var(--anim-duration-moderate);
+    cursor: pointer;
+  }
+
+  .metadata-property[data-property-key="cssclasses"] {
+    transition: var(--anim-duration-moderate);
+  }
+
   .markdown-reading-view .metadata-container:not(:hover) {
-    .metadata-property[data-property-key="cssclasses"],
+    .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu),
     .metadata-add-button {
       visibility: hidden;
       opacity: 0;
+    }
+    .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu) {
+      max-height: 0px;
+      padding: 0;
+    }
+    .metadata-add-button {
       height: 0;
     }
   }
