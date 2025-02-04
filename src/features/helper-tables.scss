@@ -1,0 +1,16 @@
+.table-small {
+  --table-header-size: var(--font-smaller);
+  --table-text-size: var(--font-smaller);
+}
+.table-tiny {
+  --table-header-size: var(--font-smallest);
+  --table-text-size: var(--font-smallest);
+}
+.row-alt {
+  --table-row-alt-background: var(--background-primary);
+  --table-row-alt-background-hover: var(--background-primary);
+}
+.col-alt {
+  --table-column-alt-background: var(--background-primary);
+  --table-column-alt-background-hover: var(--background-primary);
+}

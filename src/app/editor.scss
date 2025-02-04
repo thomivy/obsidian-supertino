@@ -271,7 +271,7 @@ body:not(.full-table-off) .table-wrapper {
 
     tr th:first-child,
     tr td:first-child {
-      border-right-width: 0 !important;
+      border-left: var(--table-border-width) solid var(--table-border-color);
     }
     tr th:last-child,
     tr td:last-child {
