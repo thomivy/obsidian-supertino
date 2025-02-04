@@ -428,8 +428,8 @@ body.is-mobile {
 }
 
 body.is-phone {
-  div:not(.markdown-embed-content) > .markdown-reading-view > div:first-child,
-  div:not(.markdown-embed-content) > .markdown-source-view > div:first-child {
+  .view-content > .markdown-reading-view > div:first-child,
+  .view-content > .markdown-source-view > div:first-child {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
   }
 
