@@ -1,0 +1,12 @@
+.embed-strict {
+  --embed-background: transparent;
+  --embed-padding: 0;
+}
+
+.embed-underline .markdown-embed {
+  text-decoration-line: underline;
+  text-decoration-color: var(--text-faint);
+}
+.embed-hide-title .markdown-embed-title {
+  display: none;
+}

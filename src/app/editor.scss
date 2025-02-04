@@ -278,11 +278,6 @@ body:not(.full-table-off) .table-wrapper {
       border-left-width: 0 !important;
     }
   }
-
-  .markdown-embed,
-  .file-embed {
-    border-radius: var(--radius-m);
-  }
 }
 
 .cm-html-embed td,
@@ -291,6 +286,16 @@ body:not(.full-table-off) .table-wrapper {
 .markdown-rendered th,
 .markdown-source-view.mod-cm6 .cm-table-widget .table-cell-wrapper {
   padding: 8px;
+}
+
+/* Embed */
+.markdown-embed,
+.file-embed {
+  border-radius: var(--radius-m);
+}
+
+.markdown-embed-title {
+  font-size: var(--inline-title-size);
 }
 
 /* Blockquote */
