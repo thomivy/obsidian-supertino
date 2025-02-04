@@ -93,7 +93,7 @@ settings:
 /* General */
 
 body {
-  --anim-motion-cupertino: cubic-bezier(0, 0.5, 0.25, 1);
+  --anim-motion-cupertino: cubic-bezier(0.32, 0.72, 0, 1);
   --background-modifier-border: var(--divider-color);
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);
