@@ -29,7 +29,7 @@ body:not(.hide-status-off) .status-bar {
   justify-content: center;
   transition: var(--anim-duration-fast);
   border-color: transparent;
-  border-radius: 10000px;
+  border-radius: 100vh;
   background-color: rgba(var(--mono-rgb-100), 0.2);
   padding: 8px !important;
   max-width: 100%;
