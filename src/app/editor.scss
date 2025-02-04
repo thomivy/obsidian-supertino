@@ -182,13 +182,7 @@ body:not(.alt-heading-off) {
 :root table {
   border-collapse: separate;
   border-spacing: 0;
-}
-
-body {
-  --table-header-border-width: 0;
-  --table-row-last-border-width: 0;
-  --table-column-first-border-width: 0;
-  --table-column-last-border-width: 0;
+  table-layout: fixed;
 }
 
 body:not(.full-table-off) table,
@@ -232,10 +226,8 @@ body:not(.full-table-off) .table-wrapper {
 
   tr td,
   tr th {
-    border-top: var(--table-border-width) solid var(--table-border-color);
-    border-right: none !important;
-    border-bottom: none !important;
-    border-left: var(--table-border-width) solid var(--table-border-color);
+    border-right: none;
+    border-bottom: none;
   }
 
   th:first-child,

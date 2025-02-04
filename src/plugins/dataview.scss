@@ -1,8 +1,19 @@
-.table-view-th {
-  border-bottom: var(--table-border-width) solid var(--table-border-color) !important;
+.table-view-table > thead > tr > th {
+  font-size: var(--table-header-size);
+  font-weight: var(--table-header-weight);
+  opacity: 0.5;
 }
 
+// .table-view-th {
+//   border-bottom: var(--table-border-width) solid var(--table-border-color) !important;
+// }
+
+.table-view-tbody:not(:empty) > tr:first-child > td {
+  border-top: var(--table-border-width) solid var(--table-border-color);
+}
 .dataview-error-box {
   border-width: 2px !important;
-  border-radius: var(--radius-s);
+  border-radius: 0 0 var(--radius-s) var(--radius-s);
+  margin-top: -16px;
+  border-top: none !important;
 }

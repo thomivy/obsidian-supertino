@@ -98,6 +98,7 @@ body {
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
+  --bold-modifier: 300;
   --blockquote-background-color: var(--background-primary-alt);
   --blockquote-border-color: var(--text-muted);
   --blockquote-border-thickness: 6px;
@@ -165,6 +166,11 @@ body {
   --tab-outline-width: 0;
   --tab-radius-active: var(--radius-s);
   --tab-radius: var(--radius-s);
+  --table-column-first-border-width: 0;
+  --table-column-last-border-width: 0;
+  --table-header-border-width: 0;
+  --table-header-weight: var(--font-weight);
+  --table-row-last-border-width: 0;
   --tag-border-width: var(--border-width);
   --tag-size: var(--font-smallest);
   --text-highlight-bg: rgba(var(--color-orange-rgb), 0.25);
