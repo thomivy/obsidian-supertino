@@ -64,6 +64,7 @@ body.is-phone {
     .view-header-left,
     .view-header-title-container {
       flex-grow: 0;
+      animation: fadeIn var(--anim-duration-moderate);
     }
 
     .view-header-title-parent .view-header-breadcrumb {
@@ -71,7 +72,7 @@ body.is-phone {
     }
 
     .view-header-title-parent .view-header-breadcrumb-separator,
-    .view-header-title {
+    .view-header-title-parent .view-header-breadcrumb {
       opacity: 0.5;
       color: var(--text-normal);
     }
