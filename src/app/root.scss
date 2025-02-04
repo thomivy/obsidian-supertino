@@ -98,12 +98,15 @@ body {
   --background-modifier-border-focus: hsla(var(--interactive-accent-hsl), 0.5);
   --background-modifier-message: var(--background-secondary);
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
-  --blockquote-border-color: var(--color-base-50);
-  --blockquote-border-thickness: 4px;
+  --blockquote-background-color: var(--background-primary-alt);
+  --blockquote-border-color: var(--text-muted);
+  --blockquote-border-thickness: 6px;
+  --blockquote-color: var(--text-muted);
   --caret-color: var(--text-accent);
   --callout-padding: 16px;
   --callout-radius: var(--radius-s);
   --checkbox-radius: var(--radius-xl);
+  --code-border-width: var(--border-width);
   --code-white-space: pre-wrap;
   --code-size: var(--font-smaller);
   --code-background: var(--background-primary-alt);
@@ -121,8 +124,10 @@ body {
   --divider-color-hover: var(--text-normal);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
+  --embed-background: var(--background-secondary);
   --embed-border-start: none;
   --embed-block-shadow-hover: none;
+  --embed-padding: 16px;
   --font-text-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --font-interface-theme: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
   --highlight-mix-blend-mode: none !important;
