@@ -62,12 +62,12 @@ body:not(.is-mobile) {
   }
 
   .markdown-reading-view .metadata-container:not(:hover) {
-    .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu),
+    .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu):not(:focus-within),
     .metadata-add-button {
       visibility: hidden;
       opacity: 0;
     }
-    .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu) {
+    .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu):not(:focus-within) {
       max-height: 0px;
       padding: 0;
     }
