@@ -302,7 +302,7 @@ body:not(.full-table-off) .table-wrapper {
 .markdown-rendered blockquote {
   border-inline-start: none;
   border-radius: var(--callout-radius);
-  padding: 16px 16px 16px 32px;
+  padding: 12px 16px 12px 32px;
 }
 
 .el-blockquote {
@@ -323,8 +323,8 @@ body:not(.full-table-off) .table-wrapper {
   position: absolute;
 }
 
-.cm-quote:not(.cm-formatting-quote),
-.cm-quote .cm-indent {
+.cm-line > .cm-quote:not(.cm-formatting-quote):nth-child(2),
+.cm-line > .cm-quote .cm-indent:first-child {
   margin-left: 16px;
 }
 
