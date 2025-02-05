@@ -31,6 +31,10 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     min-height: 40px;
   }
 
+  .metadata-property-value input {
+    box-shadow: none !important;
+  }
+
   .metadata-add-button {
     gap: 8px;
     margin: 0;
