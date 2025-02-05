@@ -53,15 +53,15 @@ body:not(.is-mobile) {
 
   .metadata-add-button {
     display: flex;
-    transition: var(--anim-duration-moderate);
     cursor: pointer;
   }
 
+  .metadata-add-button,
   .metadata-property[data-property-key="cssclasses"] {
     transition: var(--anim-duration-moderate);
   }
 
-  .markdown-reading-view .metadata-container:not(:hover) {
+  &:not(.hide-frontmatter-off) .markdown-reading-view .metadata-container:not(:hover) {
     .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu):not(:focus-within),
     .metadata-add-button {
       visibility: hidden;

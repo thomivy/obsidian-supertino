@@ -9,25 +9,24 @@ settings:
         type: info-text
         markdown: true
     -
-        id: alt-heading-off
-        title: Disable alternative heading style
-        description: Turn off all caps and opacity adjustment for H4, H5 and H6.
-        type: class-toggle
-    -
         id: active-line-off
         title: Disable active editing line highlight
+        type: class-toggle
+    -
+        id: hide-frontmatter-off
+        title: Disable compact properties
         type: class-toggle
     -
         id: full-table-off
         title: Disable full width table
         type: class-toggle
     -
-        id: hide-frontmatter-off
-        title: Show frontmatter foldable heading
+        id: heading-off
+        title: Disable heading theming
         type: class-toggle
     -
         id: compact-mode
-        title: Compact view
+        title: Compact list view
         type: class-toggle
     -
         id: desktop-header
@@ -38,7 +37,7 @@ settings:
     -
         id: accented-frame-opacity
         title: Accented window
-        description: Higher value reduces overall interface contrast.
+        description: Higher value might impact contrast.
         type: variable-number-slider
         default: 0
         min: 0
@@ -46,33 +45,33 @@ settings:
         step: 5
     -
         id: windows-mode-off
-        title: Use macOS style
+        title: Disable Windows mode
         description: Turn off Fluent styling on Windows.
         type: class-toggle
     -
         id: tablet-menu-fix
-        title: Disable menu theming
-        description: Turn off context menu theming on tablet. Enable if you're having touch issues in menu. 
+        title: Disable tablet menu theming
+        description: Turn off custom context menu styling on tablet.
         type: class-toggle
     -
-        id: blur-effect-off
-        title: Reduce transparency
+        id: hide-nav-header-off
+        title: Disable compact panel actions
+        type: class-toggle
+    -
+        id: hide-status-off
+        title: Disable compact status bar
         type: class-toggle
     -
         id: center-tabs-off
         title: Disable centered tabs
         type: class-toggle
     -
-        id: hide-nav-header-off
-        title: Disable auto hiding panel actions
-        type: class-toggle
-    -
         id: image-zoom-off
         title: Disable image zoom
         type: class-toggle
     -
-        id: hide-status-off
-        title: Always show status bar
+        id: blur-effect-off
+        title: Reduce transparency
         type: class-toggle
     -
         id: mobile-header
@@ -82,7 +81,7 @@ settings:
         collapsed: true
     -
         id: quick-mode-switch-off
-        title: Disable Quick Mode Switcher
+        title: Disable quick mode switch
         type: class-toggle
     -
         id: hide-tabs-count-off
@@ -140,6 +139,7 @@ body {
   --link-decoration: none;
   --link-external-decoration: none;
   --list-spacing: 0.2em;
+  --metadata-gap: 0;
   --metadata-padding: 0;
   --metadata-property-radius-focus: var(--input-radius);
   --metadata-property-radius-hover: var(--input-radius);
