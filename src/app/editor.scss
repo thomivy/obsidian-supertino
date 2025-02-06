@@ -314,6 +314,11 @@ body:not(.full-table-off) .table-wrapper {
   font-size: var(--inline-title-size);
 }
 
+iframe.external-embed {
+  width: 100%;
+  border-radius: var(--radius-s);
+}
+
 /* Blockquote */
 .markdown-rendered blockquote {
   border-inline-start: none;
