@@ -42,6 +42,22 @@ img {
   border-radius: var(--radius-s);
 }
 
+.workspace-leaf-content[data-type="markdown"] {
+  .image-embed:not(.canvas-node-content) {
+    width: 100%;
+    display: block;
+    border-radius: var(--radius-s);
+    line-height: 0;
+  }
+  img:not([width]) {
+    text-align: center;
+    max-height: 400px;
+    width: 100%;
+    object-fit: contain;
+    background-color: var(--background-secondary);
+  }
+}
+
 /* Code */
 .markdown-rendered code,
 .cm-s-obsidian .cm-inline-code:not(.cm-formatting) {

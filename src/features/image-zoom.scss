@@ -1,18 +1,53 @@
 body:not(.is-mobile):not(.image-zoom-off) .workspace-leaf-content[data-type="markdown"] {
   .image-embed:not(.canvas-node-content),
-  img[referrerpolicy="no-referrer"] {
+  img[referrerpolicy="no-referrer"],
+  .cm-content > img {
     cursor: zoom-in;
   }
+}
 
+body:not(.is-mobile):not(.image-zoom-off) .markdown-preview-view {
   .image-embed:not(.canvas-node-content):active img,
   img[referrerpolicy="no-referrer"]:active {
     cursor: zoom-out;
     background-color: var(--background-primary);
+    max-height: unset;
     height: 100%;
     width: 100%;
     position: fixed;
     inset: 0;
     z-index: 1000;
+    object-fit: contain;
+  }
+}
+
+body:not(.is-mobile):not(.image-zoom-off) .markdown-source-view {
+  .image-embed:not(.canvas-node-content):active,
+  .cm-content > img:active {
+    cursor: zoom-out;
+    background-color: var(--background-primary);
+    position: fixed;
+    inset: var(--view-header-height) 0 0;
+    z-index: 1000;
+  }
+
+  .image-embed:not(.canvas-node-content):active {
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-height: unset;
+      background-color: transparent;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  .cm-content > img:active {
+    width: 100%;
+    height: calc(100% - var(--view-header-height));
+    max-height: unset;
     object-fit: contain;
   }
 }
