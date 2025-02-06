@@ -317,7 +317,9 @@ body:not(.full-table-off) .table-wrapper {
 
   iframe.external-embed {
     width: 100%;
+    height: auto;
     border-radius: var(--radius-s);
+    aspect-ratio: 16/9;
   }
 }
 
