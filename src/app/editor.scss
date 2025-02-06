@@ -305,18 +305,20 @@ body:not(.full-table-off) .table-wrapper {
 }
 
 /* Embed */
-.markdown-embed,
-.file-embed {
-  border-radius: var(--radius-m);
-}
+.workspace-leaf-content[data-type="markdown"] {
+  .markdown-embed,
+  .file-embed {
+    border-radius: var(--radius-m);
+  }
 
-.markdown-embed-title {
-  font-size: var(--inline-title-size);
-}
+  .markdown-embed-title {
+    font-size: var(--inline-title-size);
+  }
 
-iframe.external-embed {
-  width: 100%;
-  border-radius: var(--radius-s);
+  iframe.external-embed {
+    width: 100%;
+    border-radius: var(--radius-s);
+  }
 }
 
 /* Blockquote */
