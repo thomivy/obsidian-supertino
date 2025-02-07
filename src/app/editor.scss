@@ -144,6 +144,16 @@ img {
   }
 }
 
+.callout[data-callout="note"],
+.callout:not([data-callout]) {
+  --callout-color: var(--color-accent);
+  background-color: hsla(var(--color-accent-hsl), 0.15);
+
+  .callout-title {
+    color: var(--callout-color);
+  }
+}
+
 /* Active line */
 body:not(.active-line-off) .markdown-source-view .cm-active:not(:has(.cm-fold-indicator):hover) {
   &::after {

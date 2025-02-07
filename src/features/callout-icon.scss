@@ -2,7 +2,7 @@
   .lucide-pencil {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
-    background-color: rgb(var(--callout-color));
+    background-color: var(--callout-color);
     -webkit-mask-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIxOSIgZmlsbD0ibm9uZSIgdmlld0JveD0iMCAwIDIwIDE5Ij48ZyBjbGlwLXBhdGg9InVybCgjYSkiPjxwYXRoIGZpbGw9IiMwMDAiIGZpbGwtb3BhY2l0eT0iLjg1IiBkPSJNMy4yMDIgMTcuNTU2IDE1Ljk4NyA0Ljc4MiAxMy45MzYgMi43MiAxLjEzOSAxNS40OTMuMDI2IDE4LjEwNmMtLjExNy4yODIuMTg3LjYxLjQ2OS40OTNsMi43MDctMS4wNDNaTTE3LjAxOCAzLjc3NGwxLjE4My0xLjE2Yy41OTgtLjU5Ny42MzMtMS4yNDIuMDk0LTEuNzgxbC0uMzk4LS4zOThjLS41MjctLjUyOC0xLjE3Mi0uNDgtMS43Ny4xMDVsLTEuMTgzIDEuMTcyIDIuMDc0IDIuMDYyWiIvPjwvZz48ZGVmcz48Y2xpcFBhdGggaWQ9ImEiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik0wIDBoMTkuMDM2djE4LjYyM0gweiIvPjwvY2xpcFBhdGg+PC9kZWZzPjwvc3ZnPg==");
 
     path {
