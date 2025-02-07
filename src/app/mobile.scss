@@ -64,7 +64,7 @@ body.is-phone {
     .view-header-left,
     .view-header-title-container {
       flex-grow: 0;
-      animation: fadeIn var(--anim-duration-moderate);
+      animation: fadeIn var(--anim-duration-fast);
     }
 
     .view-header-title-parent .view-header-breadcrumb {
@@ -100,7 +100,7 @@ body.is-phone {
 
 .pull-action {
   backdrop-filter: blur(32px);
-  animation: fadeInDown var(--anim-duration-moderate);
+  animation: fadeInDown var(--anim-duration-fast);
   box-shadow: var(--shadow-s);
   border: var(--border-width) solid var(--background-modifier-border);
   background-color: var(--modal-background);
