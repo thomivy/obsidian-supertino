@@ -52,7 +52,9 @@
   }
 }
 
-.callout[data-callout="tip"] .callout-icon {
+.callout[data-callout="tip"] .callout-icon,
+.callout[data-callout="hint"] .callout-icon,
+.callout[data-callout="important"] .callout-icon {
   .lucide-flame {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
@@ -64,7 +66,9 @@
     }
   }
 }
-.callout[data-callout="success"] .callout-icon {
+.callout[data-callout="success"] .callout-icon,
+.callout[data-callout="check"] .callout-icon,
+.callout[data-callout="done"] .callout-icon {
   .lucide-check {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
@@ -76,7 +80,9 @@
     }
   }
 }
-.callout[data-callout="question"] .callout-icon {
+.callout[data-callout="question"] .callout-icon,
+.callout[data-callout="help"] .callout-icon,
+.callout[data-callout="faq"] .callout-icon {
   .lucide-help-circle {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
@@ -89,7 +95,9 @@
     }
   }
 }
-.callout[data-callout="warning"] .callout-icon {
+.callout[data-callout="warning"] .callout-icon,
+.callout[data-callout="caution"] .callout-icon,
+.callout[data-callout="attention"] .callout-icon {
   .lucide-alert-triangle {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
@@ -101,7 +109,9 @@
     }
   }
 }
-.callout[data-callout="failure"] .callout-icon {
+.callout[data-callout="failure"] .callout-icon,
+.callout[data-callout="fail"] .callout-icon,
+.callout[data-callout="missing"] .callout-icon {
   .lucide-x {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
@@ -113,7 +123,8 @@
     }
   }
 }
-.callout[data-callout="danger"] .callout-icon {
+.callout[data-callout="danger"] .callout-icon,
+.callout[data-callout="error"] .callout-icon {
   .lucide-zap {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
@@ -150,7 +161,8 @@
     }
   }
 }
-.callout[data-callout="quote"] .callout-icon {
+.callout[data-callout="quote"] .callout-icon,
+.callout[data-callout="cite"] .callout-icon {
   .lucide-quote {
     -webkit-mask-position: 50% 50%;
     -webkit-mask-size: 100% 100%;
