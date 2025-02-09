@@ -204,7 +204,6 @@ body.is-mobile:not(.transparent-nav-off) {
     bottom: 0;
     left: 0;
     z-index: var(--layer-status-bar);
-    border: none;
     background-color: transparent;
   }
   .mobile-navbar::before {
