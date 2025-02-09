@@ -462,7 +462,7 @@ body.is-mobile {
   }
 }
 
-body.is-phone {
+body.is-phone:not(.transparent-nav-off) {
   .view-content > .markdown-reading-view > div:first-child,
   .view-content > .markdown-source-view > div:first-child {
     padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);

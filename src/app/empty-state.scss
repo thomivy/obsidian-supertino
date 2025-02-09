@@ -133,6 +133,12 @@ body.is-mobile {
   }
 }
 
+body.is-phone.transparent-nav-off {
+  .empty-state-action:first-child {
+    padding-top: 12px;
+  }
+}
+
 body.is-tablet {
   .empty-state-container::before {
     margin-top: calc(-1 * var(--header-height));
