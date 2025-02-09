@@ -1,28 +1,5 @@
-.reader-active {
-  h1,
-  h2,
-  h3 {
-    text-align: center;
-  }
-
-  p:not(:has(img)) {
-    text-indent: 20px;
-    letter-spacing: 0.25px;
-  }
-
-  .el-p p strong:only-child {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-}
-
 body {
   --reader-mobile-nav-bg: rgb(from var(--background-secondary) r g b/50%);
-}
-
-body:not(.is-mobile) .reader-active {
-  color: var(--text-muted);
 }
 
 body.is-mobile .reader-active {
