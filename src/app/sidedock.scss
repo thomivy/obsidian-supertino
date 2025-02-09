@@ -41,7 +41,7 @@ body:not(.is-mobile) {
     padding: 0 16px;
   }
 
-  .workspace-split.mod-sidedock .workspace-leaf-content .nav-header {
+  .workspace-split.mod-sidedock .workspace-leaf-content > .nav-header {
     padding: 4px 16px;
   }
 
@@ -68,7 +68,7 @@ body:not(.is-mobile) {
 
   /* Auto hide panel actions */
   &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content > .nav-header,
-  &:not(.hide-nav-header-off) .mod-sidedock .view-content > .nav-header {
+  &:not(.hide-nav-header-off) .mod-sidedock .workspace-leaf-content:not([data-type="zotero-annotation-view"]) > .view-content > .nav-header {
     .nav-buttons-container,
     .nav-action-button,
     svg.svg-icon {
