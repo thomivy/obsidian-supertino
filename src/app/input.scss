@@ -26,7 +26,7 @@ body:not(.is-mobile) {
   input[type="text"]:not(.metadata-container input):not(.prompt input),
   input[type="number"],
   input[type="search"],
-  button:not(.clickable-icon),
+  button:not(.clickable-icon):not(.ant-btn),
   select,
   .dropdown {
     box-shadow: var(--input-shadow);
