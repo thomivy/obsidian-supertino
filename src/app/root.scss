@@ -104,7 +104,7 @@ body {
   --background-modifier-hover: rgba(var(--mono-rgb-100), 0.05);
   --bold-modifier: 300;
   --blockquote-background-color: var(--background-primary-alt);
-  --blockquote-border-color: var(--text-muted);
+  --blockquote-border-color: var(--text-faint);
   --blockquote-border-thickness: 6px;
   --blockquote-color: var(--text-muted);
   --caret-color: var(--text-accent);
@@ -126,7 +126,7 @@ body {
   --code-tag: var(--color-red);
   --code-value: var(--color-purple);
   --dialog-width: fit-content;
-  --divider-color-hover: var(--text-normal);
+  --divider-color-hover: var(--text-faint);
   --dropdown-background-size: var(--icon-s);
   --dropdown-padding: 4px 16px 4px 8px;
   --embed-background: var(--background-secondary);

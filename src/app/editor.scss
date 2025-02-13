@@ -393,11 +393,11 @@
       .workspace-tabs:not(:only-of-type) .workspace-tab-container {
         margin: 0 !important;
       }
-    }
 
-    .mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle,
-    .mod-horizontal > .mod-vertical > .workspace-leaf-resize-handle {
-      border-color: transparent;
+      .mod-horizontal > .workspace-tabs > .workspace-leaf-resize-handle,
+      .mod-horizontal > .mod-vertical > .workspace-leaf-resize-handle {
+        border-color: transparent;
+      }
     }
 
     .view-header button {
