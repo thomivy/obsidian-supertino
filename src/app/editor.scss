@@ -145,7 +145,6 @@
     }
   }
 
-  .callout[data-callout="note"],
   .callout:not([data-callout]) {
     --callout-color: var(--color-accent);
     background-color: hsla(var(--color-accent-hsl), 0.15);
