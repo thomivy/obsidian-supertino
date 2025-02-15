@@ -52,7 +52,7 @@
     }
     img:not([width]):not([class]) {
       text-align: center;
-      max-height: 400px;
+      max-height: 480px;
       width: 100%;
       object-fit: contain;
       background-color: var(--background-secondary);
