@@ -17,12 +17,8 @@ settings:
         title: Disable compact properties
         type: class-toggle
     -
-        id: full-table-off
-        title: Disable full width table
-        type: class-toggle
-    -
-        id: heading-off
-        title: Disable heading theming
+        id: full-width-off
+        title: Disable full width elements
         type: class-toggle
     -
         id: compact-mode
@@ -49,7 +45,7 @@ settings:
         description: Turn off Fluent styling on Windows.
         type: class-toggle
     -
-        id: tablet-menu-fix
+        id: tablet-menu-off
         title: Disable tablet menu theming
         description: Turn off custom context menu styling on tablet.
         type: class-toggle

@@ -49,11 +49,11 @@ body {
       grid-row-gap: 0;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
       > img {
-        object-fit: cover;
+        object-fit: cover !important;
         align-self: stretch;
       }
       > .internal-embed img {
-        object-fit: cover;
+        object-fit: cover !important;
         align-self: center;
       }
     }

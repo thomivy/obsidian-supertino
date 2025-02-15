@@ -50,7 +50,7 @@ body:not(.is-mobile) .suggestion-container {
 }
 
 body.is-phone,
-body.is-tablet:not(.tablet-menu-fix) {
+body.is-tablet:not(.tablet-menu-off) {
   .menu {
     backdrop-filter: blur(32px);
     background-color: var(--modal-background);
@@ -148,7 +148,7 @@ body.is-phone {
   }
 }
 
-body.is-tablet:not(.tablet-menu-fix) {
+body.is-tablet:not(.tablet-menu-off) {
   &.theme-light {
     .menu-item:not(.is-label[data-section="title"]) {
       background-color: rgb(from var(--background-primary) r g b / 50%);
