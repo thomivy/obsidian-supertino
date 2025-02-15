@@ -109,7 +109,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   
     .mod-root .workspace-tab-container {
       box-shadow: none !important;
-      border: var(--border-width) solid var(--background-modifier-hover);
+      outline: var(--border-width) solid var(--background-modifier-hover);
     }
   
     /********** Sidebar **********/
