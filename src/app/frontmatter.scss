@@ -72,8 +72,8 @@ body:not(.is-mobile) {
       opacity: 0;
     }
     .metadata-property[data-property-key="cssclasses"]:not(.has-active-menu):not(:focus-within) {
-      max-height: 0px;
       padding: 0;
+      max-height: 0px;
     }
     .metadata-add-button {
       height: 0;
