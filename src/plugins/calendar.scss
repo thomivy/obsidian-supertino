@@ -1,28 +1,71 @@
 #calendar-container {
+  --color-dot: var(--text-normal);
+  --color-text-today: var(--text-on-accent);
+
   padding: 0;
 
   .title {
-    font-size: unset;
+    font-size: var(--font-ui-large);
+  }
+
+  .title .month {
+    font-weight: bold;
+  }
+
+  .title .year {
+    color: var(--text-accent);
+    font-weight: normal;
+  }
+
+  .reset-button {
+    font-weight: normal;
+    font-size: var(--font-ui-small);
+    letter-spacing: normal;
+    text-transform: unset;
   }
 
   .right-nav {
     align-items: center;
   }
 
+  table {
+    table-layout: fixed;
+  }
+
   .day {
-    border-radius: var(--radius-m);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 100vh;
     padding: 8px;
+    font-weight: 500;
   }
 
   .today {
-    background-color: transparent;
-    color: var(--color-text-today);
-    font-weight: bold;
+    background-color: var(--interactive-accent) !important;
   }
 
   .active {
-    background-color: var(--color-text-today);
-    color: var(--text-on-accent);
-    --color-dot: var(--text-on-accent);
+    border: var(--border-width) solid var(--text-faint);
+    background-color: transparent;
+  }
+
+  .dot-container {
+    position: absolute;
+    bottom: 4px;
+    flex-wrap: nowrap;
+    border-radius: 100vh;
+    background-color: var(--color-dot);
+    width: fit-content;
+    max-width: 12px;
+    min-height: 4px;
+  }
+
+  .dot,
+  .hollow {
+    visibility: hidden;
+    margin: 0;
+    width: 4px;
+    height: 4px;
   }
 }
