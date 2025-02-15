@@ -13,6 +13,10 @@ settings:
         title: Disable active editing line highlight
         type: class-toggle
     -
+        id: center-tabs-off
+        title: Disable centered tabs
+        type: class-toggle
+    -
         id: hide-frontmatter-off
         title: Disable compact properties
         type: class-toggle
@@ -26,10 +30,9 @@ settings:
         type: class-toggle
     -
         id: desktop-header
-        title: Desktop & Tablet
+        title: Desktop
         type: heading
         level: 1
-        collapsed: true
     -
         id: accented-frame-opacity
         title: Accented window
@@ -45,21 +48,12 @@ settings:
         description: Turn off Fluent styling on Windows.
         type: class-toggle
     -
-        id: tablet-menu-off
-        title: Disable tablet menu theming
-        description: Turn off custom context menu styling on tablet.
-        type: class-toggle
-    -
         id: hide-nav-header-off
         title: Disable compact panel actions
         type: class-toggle
     -
         id: hide-status-off
         title: Disable compact status bar
-        type: class-toggle
-    -
-        id: center-tabs-off
-        title: Disable centered tabs
         type: class-toggle
     -
         id: image-zoom-off
@@ -70,11 +64,20 @@ settings:
         title: Reduce transparency
         type: class-toggle
     -
+        id: tablet-header
+        title: Tablet
+        type: heading
+        level: 1
+    -
+        id: tablet-menu-off
+        title: Disable tablet menu theming
+        description: Turn off custom context menu styling on tablet.
+        type: class-toggle
+    -
         id: mobile-header
         title: Mobile
         type: heading
         level: 1
-        collapsed: true
     -
         id: transparent-nav-off
         title: Prioritize editor stability
@@ -89,8 +92,6 @@ settings:
         title: Show tabs count
         type: class-toggle
 */
-
-/* General */
 
 body {
   --anim-motion-cupertino: cubic-bezier(0.32, 0.72, 0, 1);
