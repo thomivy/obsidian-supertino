@@ -76,13 +76,13 @@ body:not(.is-mobile) {
 }
 
 body.is-mobile {
-  .mod-confirmation .modal:not(.mod-lg) {
-    --interactive-normal: unset;
-    backdrop-filter: blur(32px);
-    background-color: var(--modal-background);
-  }
-
   .modal {
+    --interactive-normal: unset !important;
+    background-color: var(--modal-background) !important;
+    backdrop-filter: blur(32px);
+    box-shadow: none;
+    border-radius: var(--radius-xl);
+
     .modal-header {
       border: none !important;
     }
@@ -105,14 +105,9 @@ body.is-mobile {
 
   .modal:not([class*="mod-"]:not(.mod-file-rename)) {
     bottom: var(--safe-area-inset-bottom);
-    backdrop-filter: blur(32px);
-    box-shadow: none;
-    border-radius: var(--radius-xl);
     padding: 0;
-    width: 95%;
 
     .modal-header {
-      border: none;
       padding: 24px 0 8px;
       color: var(--text-muted);
     }
@@ -170,10 +165,6 @@ body.is-phone {
 body.is-tablet {
   .modal {
     outline: var(--prompt-border-width) solid var(--background-modifier-hover);
-  }
-
-  .modal:not([class*="mod-"]:not(.mod-file-rename)) {
-    width: 35%;
   }
 
   .modal-title {
