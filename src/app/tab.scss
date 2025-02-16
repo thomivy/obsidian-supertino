@@ -29,12 +29,6 @@ body:not(.is-phone) {
       border-radius: var(--tab-radius);
       padding: 0;
     }
-
-    .sidebar-toggle-button {
-      align-items: center;
-      padding: 0;
-      height: var(--header-height);
-    }
   }
 
   .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
