@@ -151,21 +151,6 @@ body.is-mobile {
     padding: 0;
   }
 
-  .mobile-navbar-tabs-action {
-    border-width: var(--icon-l-stroke-width);
-    border-radius: 30%;
-    width: calc(var(--icon-size) - 2px);
-    height: calc(var(--icon-size) - 2px);
-  }
-
-  .mobile-tab-switcher {
-    backdrop-filter: blur(32px);
-  }
-
-  .mobile-tab-switcher-menubar {
-    padding: 4px max(var(--safe-area-inset-right), 16px) max(4px, var(--safe-area-inset-bottom)) max(var(--safe-area-inset-left), 16px);
-  }
-
   .nav-buttons-container {
     justify-content: space-between;
     padding: 0;
@@ -262,5 +247,61 @@ body.is-mobile {
   }
   .mobile-image-viewer img {
     border-radius: 0;
+  }
+}
+
+/********** Tab Switcher **********/
+
+body.is-phone {
+  .mobile-navbar-tabs-action {
+    border-width: var(--icon-l-stroke-width);
+    border-radius: 30%;
+    width: calc(var(--icon-size) - 2px);
+    height: calc(var(--icon-size) - 2px);
+  }
+
+  .mobile-tab-switcher {
+    justify-content: flex-end;
+    animation: none !important;
+  }
+  .mobile-tab-switcher::before {
+    position: fixed;
+    opacity: 0.85;
+    z-index: -1;
+    inset: 0;
+    background-color: var(--background-modifier-cover);
+    content: "";
+  }
+
+  .mobile-tab-switcher-scroll {
+    padding-top: 0;
+    height: unset;
+    max-height: 80vh;
+  }
+  .mobile-tab-switcher-scroll::before {
+    position: absolute;
+    z-index: -1;
+    backdrop-filter: blur(32px);
+    border-radius: var(--radius-l) var(--radius-l) 0 0;
+    background-color: var(--modal-background);
+    width: 100%;
+    height: 100%;
+    content: "";
+  }
+  .mobile-tab-wrapper {
+    z-index: 2;
+  }
+
+  .mobile-tab-switcher-menubar {
+    padding: 4px max(var(--safe-area-inset-right), 16px) max(4px, var(--safe-area-inset-bottom)) max(var(--safe-area-inset-left), 16px);
+  }
+  .mobile-tab-switcher-menubar > div:not(:last-child) {
+    z-index: 2;
+  }
+  .mobile-tab-switcher-menubar .mobile-tab-switcher-menu-spacer:last-child .clickable-icon::before {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    content: "";
   }
 }

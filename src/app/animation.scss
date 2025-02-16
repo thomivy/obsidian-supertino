@@ -45,14 +45,16 @@ body.is-mobile {
 
   .workspace-drawer.mod-left,
   .workspace-drawer.mod-right,
-  .menu {
+  .menu,
+  .mobile-tab-switcher {
     transition-duration: var(--anim-duration-moderate) !important;
     transition-timing-function: var(--anim-motion-cupertino) !important;
   }
 }
 
 body.is-phone {
-  .menu {
+  .menu,
+  .mobile-tab-switcher {
     @starting-style {
       transform: translateY(100%);
     }
