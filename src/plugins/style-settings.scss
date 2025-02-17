@@ -33,6 +33,12 @@ body:not(.is-mobile) .style-settings-heading[data-id="cupertino"] + .style-setti
   }
 }
 
+body:not(.mod-ios) .style-settings-heading[data-id="cupertino"] + .style-settings-container {
+  .setting-item[data-id="ios-style-header"] {
+    display: none;
+  }
+}
+
 body.is-phone .style-settings-heading[data-id="cupertino"] + .style-settings-container {
   .style-settings-heading[data-id="desktop-header"],
   .style-settings-heading[data-id="desktop-header"] + .style-settings-container,

@@ -84,6 +84,10 @@ settings:
         description: Turn off transparency effect on editor header and bottom bar.
         type: class-toggle
     -
+        id: ios-style-header
+        title: iOS style header (Experimental)
+        type: class-toggle
+    -
         id: quick-mode-switch-off
         title: Disable quick mode switch
         type: class-toggle
