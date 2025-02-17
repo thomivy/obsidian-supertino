@@ -1,4 +1,4 @@
-body.is-mobile.mod-ios {
+body.is-mobile.is-ios {
   --font-ui-smaller: calc(var(--font-text-size) * 0.8 + 1px);
   --font-ui-small: calc(var(--font-text-size) * 0.937 + 1px);
   --font-ui-medium: calc(var(--font-text-size) + 1px);
@@ -321,7 +321,7 @@ body.is-phone {
 
 /********** New iOS Header **********/
 
-body.is-phone.mod-ios.ios-style-header {
+body.is-phone.is-ios.ios-style-header {
   &.show-inline-title .view-header-title,
   &.show-inline-title .view-header-title-parent .view-header-breadcrumb-separator:last-child {
     visibility: hidden;
