@@ -385,6 +385,7 @@
       .workspace-tab-container {
         box-shadow: var(--shadow-s);
         border-radius: var(--radius-l);
+        background-color: var(--background-primary);
       }
 
       .workspace-tabs:not(:only-of-type) .workspace-tab-container {
@@ -395,10 +396,18 @@
       .workspace-leaf-resize-handle {
         border-color: transparent;
       }
-    }
 
-    .view-header button {
-      padding: 4px 12px;
+      .view-header {
+        background-color: transparent !important;
+
+        button {
+          padding: 4px 12px;
+        }
+      }
+
+      .view-content {
+        overflow: visible;
+      }
     }
 
     &.show-inline-title .view-header:not(:hover) .view-header-title-container {
