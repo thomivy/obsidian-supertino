@@ -23,10 +23,10 @@
 
 body:not(.is-mobile) {
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input),
-  input[type="number"],
-  input[type="search"],
-  button:not(.clickable-icon):not(.ant-btn),
+  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
+  input[type="number"]:not(.ant-input),
+  input[type="search"]:not(.ant-input),
+  button:not(.clickable-icon):not(.ant-btn):not(.ant-switch),
   select,
   .dropdown {
     box-shadow: var(--input-shadow);
@@ -38,9 +38,9 @@ body:not(.is-mobile) {
     letter-spacing: -0.015em;
   }
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input),
-  input[type="number"],
-  input[type="search"] {
+  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
+  input[type="number"]:not(.ant-input),
+  input[type="search"]:not(.ant-input) {
     box-shadow: none;
     border: var(--border-width) solid var(--background-modifier-border);
 
@@ -59,7 +59,7 @@ body:not(.is-mobile) {
     }
   }
 
-  button {
+  button:not(.ant-btn):not(.ant-switch) {
     padding: 4px 10px;
   }
   button[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary) {
