@@ -108,6 +108,9 @@ body:not(.is-phone) {
 }
 
 body:not(.is-mobile) {
+  .mod-root .workspace-tab-header-container {
+    overflow: hidden;
+  }
   .workspace-tab-header-container .clickable-icon {
     padding: 4px;
     width: 32px;
