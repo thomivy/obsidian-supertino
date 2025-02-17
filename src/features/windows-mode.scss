@@ -206,7 +206,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   .menu,
   .suggestion-container {
     outline: none;
-    border: var(--border-width) solid var(--background-modifier-border-hover);
     border-radius: calc(var(--radius-m) + 6px);
 
     > div {
@@ -214,8 +213,8 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     }
 
     .menu-separator {
-      margin: 6px 0;
-      background-color: var(--background-modifier-border-hover);
+      margin: 4px 0;
+      background-color: var(--divider-color);
     }
 
     .menu-item,
@@ -230,7 +229,8 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       background-color: var(--background-modifier-hover);
       color: var(--text-normal);
 
-      .menu-item-icon {
+      .menu-item-icon,
+      .suggestion-flair {
         color: var(--text-normal);
       }
     }
