@@ -1,3 +1,15 @@
+body.is-mobile.mod-ios {
+  --font-ui-smaller: calc(var(--font-text-size) * 0.8 + 1px);
+  --font-ui-small: calc(var(--font-text-size) * 0.937 + 1px);
+  --font-ui-medium: calc(var(--font-text-size) + 1px);
+  --font-ui-large: calc(var(--font-text-size) * 1.2 + 1px);
+
+  .markdown-preview-view,
+  .markdown-source-view {
+    font-size: calc(var(--font-text-size) + 1px);
+  }
+}
+
 /********** Top Bar **********/
 
 body.is-mobile {
