@@ -367,9 +367,8 @@
     content: "";
   }
 
-  .cm-line > .cm-quote:not(.cm-formatting-quote):nth-child(2),
-  .cm-line > .cm-quote .cm-indent:first-child {
-    margin-left: 16px;
+  .cm-line.HyperMD-quote > span:first-child {
+    margin-right: 16px;
   }
 
   body:not(.is-mobile) {
