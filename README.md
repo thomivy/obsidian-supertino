@@ -57,6 +57,14 @@ I’ve spent way too much time on customizing Obsidian, thousands of themes with
 
 Cupertino supports most filter and helper classes from [Minimal](https://github.com/kepano/obsidian-minimal).
 
+### Editor filters
+
+| Class          | Description                                                               |
+| :------------- | :------------------------------------------------------------------------ |
+| `story`        | Centered headings, indented text and wider letter spacing for reading     |
+| `sepia`        | Low contrast with sepia hue from [Flexoki](https://stephango.com/flexoki) |
+| `low-contrast` | Low background and text contrast                                          |
+
 ### [Image filters](https://minimal.guide/images#Image+filters)
 
 | Filter       | Description                                                                        |
