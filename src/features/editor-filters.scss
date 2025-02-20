@@ -18,40 +18,13 @@
 .theme-light .sepia {
   background-color: rgb(242, 240, 229);
   color: rgb(64, 62, 60);
-
-  &::before {
-    position: absolute;
-    transform: translateY(-100%);
-    background-color: rgb(242, 240, 229);
-    width: 100%;
-    height: var(--view-header-height);
-    content: "";
-  }
 }
 
 .theme-dark .sepia {
   background-color: rgb(40, 39, 38);
   color: rgb(206, 205, 195);
-
-  &::before {
-    position: absolute;
-    transform: translateY(-100%);
-    background-color: rgb(40, 39, 38);
-    width: 100%;
-    height: var(--view-header-height);
-    content: "";
-  }
 }
 
 .low-contrast {
   background-color: var(--background-secondary);
-
-  &::before {
-    position: absolute;
-    transform: translateY(-100%);
-    background-color: var(--background-secondary);
-    width: 100%;
-    height: var(--view-header-height);
-    content: "";
-  }
 }

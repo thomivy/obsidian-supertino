@@ -397,16 +397,8 @@
         border-color: transparent;
       }
 
-      .view-header {
-        background-color: transparent !important;
-
-        button {
-          padding: 4px 12px;
-        }
-      }
-
-      .view-content {
-        overflow: visible;
+      .view-header button {
+        padding: 4px 12px;
       }
     }
 
