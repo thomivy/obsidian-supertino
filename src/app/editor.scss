@@ -432,7 +432,8 @@
 
         .workspace-tab-container {
           margin: 0 !important;
-          box-shadow: none !important;
+          outline: 1px solid transparent;
+          box-shadow: none;
           border: 0px solid transparent !important;
           border-radius: 0;
         }
