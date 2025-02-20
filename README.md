@@ -12,11 +12,11 @@ Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Br
 
 - **Native & minimal** — Clean, native look and feel on all of your devices, so you can focus on your content.
 
-  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases built-in auto focus mode.](img/native.png)
+  ![Two screenshots showcasing Cupertino on macOS. The first shows how Cupertino utilizes background blur. The second showcases the stylized text editor.](img/native.png)
 
 - **Optimized for mobile** — Redesigned modals, menu, editor, search, and more, with comfortable spacing for usability.
 
-  ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights "Quick Mode Switcher" within the editor. The third displays a redesigned search interface.](img/mobile.png)
+  ![Three screenshots showcasing Cupertino on mobile. The first shows file navigation sidebar with comfortable spacing. The second highlights the mode switcher within the editor. The third displays a redesigned search interface.](img/mobile.png)
 
 - **Windows Mode** — Fluent Design UI for native feeling on Windows (Enabled by default, can be disabled with [Style Settings](https://github.com/mgmeyers/obsidian-style-settings))
 
