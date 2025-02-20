@@ -31,8 +31,9 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
     min-height: 40px;
   }
 
-  .metadata-property-value input {
+  .metadata-property-value input:not([type="checkbox"]) {
     box-shadow: none !important;
+    border: none !important;
   }
 
   .metadata-add-button {
@@ -49,10 +50,6 @@ body:not(.hide-frontmatter-off) .metadata-properties-heading {
 body:not(.is-mobile) {
   .metadata-property {
     max-height: 100vh;
-  }
-
-  .metadata-property input {
-    border: none;
   }
 
   .metadata-add-button {
