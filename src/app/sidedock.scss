@@ -27,9 +27,10 @@
 }
 
 body:not(.is-mobile) {
-  &.show-ribbon .mod-sidedock.mod-left-split {
+  &.show-ribbon .mod-sidedock.mod-left-split .workspace-tabs {
     margin-left: -8px;
   }
+
   .workspace .workspace-ribbon,
   .workspace .workspace-ribbon.mod-left:before,
   .workspace .mod-sidedock > .workspace-leaf-resize-handle {
