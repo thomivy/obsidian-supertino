@@ -68,16 +68,13 @@ body.is-mobile .excalidraw.theme--dark {
     padding: 0;
 
     .App-toolbar-content,
-    > .Stack {
-      padding: 8px;
+    > .Stack,
+    > .Stack > .Stack {
+      padding: 0;
     }
 
     .Stack .ToolIcon__icon {
       border-radius: var(--radius-s);
-    }
-
-    > .Stack > .Stack {
-      padding: 0;
     }
   }
 
