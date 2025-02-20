@@ -102,12 +102,16 @@
   }
 
   /* Highlight */
-  .markdown-rendered mark,
-  .cm-s-obsidian span.cm-formatting-highlight,
-  .cm-s-obsidian span.cm-highlight {
+  .markdown-rendered mark {
+    box-decoration-break: clone;
     border-radius: var(--radius-s);
     padding: 1px 4px;
     color: var(--color-orange);
+  }
+
+  .cm-s-obsidian span.cm-highlight {
+    color: var(--color-orange);
+    padding: 1px 0;
   }
 
   /* Callout */
