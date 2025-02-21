@@ -31,29 +31,31 @@ body:not(.is-phone) {
     }
   }
 
-  .workspace .mod-root .workspace-tabs:not(.mod-stacked) {
+  .workspace .mod-root .workspace-tabs {
+    &:not(.mod-stacked) {
+      .workspace-tab-header {
+        opacity: 0.5;
+        border: none;
+        background-color: var(--background-modifier-hover);
+        padding: 0;
+
+        &::before,
+        &::after {
+          display: none;
+        }
+      }
+
+      .workspace-tab-header.is-active {
+        opacity: 1;
+        box-shadow: none;
+        min-width: 200px;
+      }
+    }
+
     .workspace-tab-header-container-inner {
       flex-grow: 1;
       justify-content: center;
       gap: 4px;
-    }
-
-    .workspace-tab-header {
-      opacity: 0.5;
-      border: none;
-      background-color: var(--background-modifier-hover);
-      padding: 0;
-
-      &::before,
-      &::after {
-        display: none;
-      }
-    }
-
-    .workspace-tab-header.is-active {
-      opacity: 1;
-      box-shadow: none;
-      min-width: 200px;
     }
 
     .workspace-tab-header-inner {
