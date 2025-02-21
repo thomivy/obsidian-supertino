@@ -221,6 +221,9 @@ body.is-mobile {
       border-radius: 0;
       padding-inline-end: var(--nav-item-parent-padding);
     }
+    .tree-item-self:focus-within {
+      color: var(--nav-item-color);
+    }
     .tree-item-children {
       position: relative;
       margin-bottom: 0;
