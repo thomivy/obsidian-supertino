@@ -1,7 +1,4 @@
 #calendar-container {
-  --color-dot: var(--text-normal);
-  --color-text-today: var(--text-on-accent);
-
   padding: 0;
 
   .title {
@@ -32,30 +29,44 @@
     table-layout: fixed;
   }
 
-  .day {
+  .day,
+  .week-num {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 100vh;
     padding: 8px;
     font-weight: 500;
+    position: relative;
+    justify-content: center;
+    min-height: 40px;
   }
 
   .today {
-    background-color: var(--interactive-accent) !important;
+    color: var(--text-on-accent);
+    background-color: var(--interactive-accent);
+
+    .dot-container {
+      background-color: var(--text-on-accent);
+    }
+  }
+
+  .today.active .dot-container {
+    background-color: var(--color-base-50);
   }
 
   .active {
-    border: var(--border-width) solid var(--text-faint);
-    background-color: transparent;
+    font-weight: bold;
+    color: var(--color-base-00);
+    background-color: var(--color-base-100);
   }
 
   .dot-container {
+    background-color: var(--color-base-50);
     position: absolute;
-    bottom: 4px;
+    bottom: 6px;
     flex-wrap: nowrap;
     border-radius: 100vh;
-    background-color: var(--color-dot);
     width: fit-content;
     max-width: 12px;
     min-height: 4px;
