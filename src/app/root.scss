@@ -387,7 +387,7 @@ body {
 
 @media (prefers-color-scheme: light) {
   body.theme-dark {
-    --workspace-background-translucent: var(--background-primary);
+    --workspace-background-translucent: var(--background-secondary);
 
     .app-container {
       background-color: var(--background-primary);
@@ -396,7 +396,7 @@ body {
 }
 @media (prefers-color-scheme: dark) {
   body.theme-light {
-    --workspace-background-translucent: var(--background-primary);
+    --workspace-background-translucent: var(--background-secondary);
 
     .app-container {
       background-color: var(--background-primary);
