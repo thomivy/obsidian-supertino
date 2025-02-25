@@ -63,6 +63,7 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
 
   button[class*="mod-"]:not(.view-action) {
     box-shadow: var(--input-shadow) !important;
+    background-image: none !important;
 
     &::before {
       display: none;
