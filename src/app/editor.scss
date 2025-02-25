@@ -83,15 +83,16 @@
     border-top: none;
   }
 
+  .HyperMD-codeblock {
+    padding-right: 16px !important;
+  }
+
   .markdown-rendered button.copy-code-button,
   .markdown-source-view.mod-cm6 .edit-block-button,
   .code-block-flair {
-    top: 4px;
-    margin: 0;
     box-shadow: none !important;
     padding: 8px !important;
-    min-width: 32px !important;
-    height: 32px !important;
+    line-height: 100%;
   }
 
   .markdown-reading-view .markdown-rendered button.copy-code-button {
@@ -369,6 +370,10 @@
     width: var(--blockquote-border-thickness);
     height: 100%;
     content: "";
+  }
+
+  .HyperMD-quote {
+    padding-right: 16px !important;
   }
 
   .cm-line.HyperMD-quote > span:first-child {
