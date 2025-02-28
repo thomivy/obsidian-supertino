@@ -5,11 +5,13 @@
   border-bottom: none;
 }
 
-.table-view-table > tbody > tr > td {
+.table-view-table > tbody > tr:not(:only-child) > td {
   max-width: 20em;
+  text-wrap: nowrap;
 
   &:hover {
     word-break: break-word;
+    text-wrap: wrap;
   }
 }
 

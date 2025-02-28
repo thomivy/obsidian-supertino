@@ -190,6 +190,11 @@ body {
       border: none;
       font-size: var(--font-ui-small);
     }
+
+    th,
+    td {
+      border: none !important;
+    }
   }
 }
 
