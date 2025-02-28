@@ -414,7 +414,7 @@
       }
     }
 
-    &.show-inline-title .view-header:not(:hover) .view-header-title-container {
+    &.show-inline-title .view-header:not(:hover):not(:focus-within) .view-header-title-container {
       opacity: 0;
       transition: opacity var(--anim-duration-fast);
     }
