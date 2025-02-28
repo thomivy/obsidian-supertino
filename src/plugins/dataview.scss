@@ -22,3 +22,30 @@
   margin-top: -16px;
   border-top: none !important;
 }
+
+body.seamless-dataview .dataview {
+  &.table-view-table {
+    &::before {
+      border: none;
+    }
+
+    thead,
+    tbody {
+      background-color: transparent;
+    }
+
+    th,
+    td {
+      padding: 8px 0;
+    }
+
+    tr:first-child > td {
+      border-top: none;
+    }
+  }
+
+  &.dataview-error-box {
+    border: none;
+    min-height: 80px;
+  }
+}
