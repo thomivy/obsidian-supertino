@@ -25,16 +25,20 @@ settings:
         title: Disable editing mode indicator
         type: class-toggle
     -
+        id: hide-embed-title-off
+        title: Disable hiding embed titles
+        type: class-toggle
+    -
         id: full-width-off
         title: Disable full width elements
         type: class-toggle
     -
-        id: seamless-dataview
-        title: Seamless Dataview table (Experimental)
-        type: class-toggle
-    -
         id: compact-mode
         title: Compact list view
+        type: class-toggle
+    -
+        id: seamless-dataview
+        title: Seamless Dataview table (Experimental)
         type: class-toggle
     -
         id: desktop-header

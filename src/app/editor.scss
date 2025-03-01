@@ -31,8 +31,9 @@
     color: var(--text-on-accent) !important;
   }
 
-  /* Inline Title */
-  .inline-title {
+  /* Title */
+  .inline-title,
+  .embed-title {
     margin-bottom: 24px;
     border-bottom: var(--hr-thickness) solid var(--hr-color);
     padding-bottom: 16px;
@@ -324,6 +325,10 @@
   }
 
   /* Embed */
+  body:not(.hide-embed-title-off) .embed-title {
+    display: none;
+  }
+
   .workspace-leaf-content[data-type="markdown"] {
     .markdown-embed,
     .file-embed {
