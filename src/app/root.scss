@@ -238,14 +238,11 @@ body {
     --code-tag: #e45749;
     --code-value: #a626a4;
 
-    &:not(.mod-windows):not(.is-mobile),
-    &.windows-mode-off:not(.is-mobile) {
-      .menu,
-      .suggestion-container,
-      .prompt,
-      .modal {
-        outline: var(--prompt-border-width) solid rgba(0, 0, 0, 0.05);
-      }
+    .menu,
+    .suggestion-container,
+    .prompt,
+    .modal {
+      outline: var(--prompt-border-width) solid rgba(0, 0, 0, 0.05);
     }
   }
 
@@ -283,14 +280,11 @@ body {
     --code-tag: #e16d76;
     --code-value: #c678de;
 
-    &:not(.mod-windows):not(.is-mobile),
-    &.windows-mode-off:not(.is-mobile) {
-      .menu,
-      .suggestion-container,
-      .prompt,
-      .modal {
-        outline: var(--prompt-border-width) solid black;
-      }
+    .menu,
+    .suggestion-container,
+    .prompt,
+    .modal {
+      outline: var(--prompt-border-width) solid black;
     }
   }
 

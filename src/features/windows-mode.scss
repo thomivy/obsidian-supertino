@@ -55,6 +55,13 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
     background-color: var(--color-base-05);
   }
 
+  .menu,
+  .suggestion-container,
+  .prompt,
+  .modal {
+    outline: none;
+  }
+
   /********** Components **********/
   select,
   .dropdown {
@@ -210,7 +217,6 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
   /********** Menu and Suggestions **********/
   .menu,
   .suggestion-container {
-    outline: none;
     border-radius: calc(var(--radius-m) + 6px);
 
     > div {
