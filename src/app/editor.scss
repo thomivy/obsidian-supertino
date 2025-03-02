@@ -123,6 +123,12 @@
     padding: 1px 0;
   }
 
+  /* Link */
+  body:not(.clean-link-off) {
+    --link-decoration: none;
+    --link-external-decoration: none;
+  }
+
   /* Callout */
   .callout {
     background-color: rgba(var(--callout-color), 0.15);
