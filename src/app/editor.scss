@@ -17,6 +17,10 @@
     fill: none;
   }
 
+  .markdown-rendered p {
+    letter-spacing: 0.1px;
+  }
+
   /* Animation */
   .workspace-leaf-content[data-mode="source"] .markdown-reading-view {
     transform: scale(0.99);
