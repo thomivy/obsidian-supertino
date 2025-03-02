@@ -35,7 +35,6 @@ body:not(.is-mobile) {
     min-height: var(--input-height);
     font-weight: normal;
     line-height: unset;
-    letter-spacing: -0.015em;
   }
   textarea,
   input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
