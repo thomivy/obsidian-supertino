@@ -98,6 +98,7 @@ body.is-phone {
     .view-header-title-parent .view-header-breadcrumb {
       opacity: 0.5;
       color: var(--text-normal);
+      padding: 0;
     }
 
     .view-header-title-parent:not(:empty) {
@@ -313,14 +314,8 @@ body.is-phone.is-ios.ios-style-header {
     visibility: hidden;
   }
 
-  .mod-root .view-header-title-parent:empty {
-    display: flex;
-    pointer-events: visible;
-
-    &::before {
-      content: "Obsidian";
-      color: var(--interactive-accent);
-    }
+  .mod-root .view-header-title-parent:empty ~ .view-header-title {
+    visibility: visible;
   }
 
   .mod-root .view-header {
