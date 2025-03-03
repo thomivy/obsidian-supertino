@@ -314,10 +314,6 @@ body.is-phone.is-ios.ios-style-header {
     visibility: hidden;
   }
 
-  .mod-root .view-header-title-parent:empty ~ .view-header-title {
-    visibility: visible;
-  }
-
   .mod-root .view-header {
     padding: 0 8px;
   }
