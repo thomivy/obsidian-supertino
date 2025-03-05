@@ -486,17 +486,6 @@
     }
   }
 
-  body.is-phone:not(.transparent-nav-off) {
-    .view-content > .markdown-reading-view > div:first-child,
-    .view-content .cm-sizer > div:first-child {
-      padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 16px);
-    }
-
-    .mod-root .view-content > div:not(.markdown-source-view):not(.markdown-reading-view):not(.canvas-wrapper):not(.empty-state) {
-      padding-top: calc(var(--safe-area-inset-top) + var(--view-header-height));
-    }
-  }
-
   body.is-tablet {
     .mod-root .workspace-leaf {
       contain: none !important;
