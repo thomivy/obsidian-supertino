@@ -279,6 +279,10 @@ body.mod-windows:not(.windows-mode-off):not(.is-mobile) {
       padding: 24px;
     }
 
+    .modal-content > .modal-button-container {
+      margin: 0 -24px -16px;
+    }
+
     &.mod-narrow .modal-content {
       padding: 4px 24px 88px;
 
