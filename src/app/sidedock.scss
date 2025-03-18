@@ -116,11 +116,6 @@ body:not(.is-mobile) {
     margin-bottom: 0;
     border-inline-start: none;
   }
-
-  .tree-item-children {
-    transition-duration: var(--anim-duration-moderate) !important;
-    transition-timing-function: var(--anim-motion-cupertino) !important;
-  }
 }
 
 body.is-mobile {
