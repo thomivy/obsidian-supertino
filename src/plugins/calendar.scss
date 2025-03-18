@@ -1,6 +1,7 @@
 #calendar-container {
   --color-text-today: var(--color-accent);
   padding: 0;
+  background-color: transparent;
 
   .title {
     font-size: var(--font-ui-large);
