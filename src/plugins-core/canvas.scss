@@ -53,4 +53,9 @@ body.is-phone:not(.transparent-nav-off) {
   .canvas-controls {
     top: calc(var(--safe-area-inset-top) + var(--view-header-height) + 8px);
   }
+
+  .canvas-control-item {
+    width: 44px;
+    height: 44px;
+  }
 }
