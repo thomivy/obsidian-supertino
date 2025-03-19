@@ -4,7 +4,7 @@ body {
 
 body.is-mobile .reader-active {
   .reader-mobile-nav {
-    right: max(var(--safe-area-inset-right), 16px);
+    right: max(var(--safe-area-inset-right), 8px);
     left: unset;
     flex-direction: column;
     transform: none;
