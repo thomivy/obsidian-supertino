@@ -4,7 +4,7 @@
 
 Cupertino is an Obsidian theme, optimized for **desktop and mobile devices**. Bringing **clean, focused, comfortable** reading and writing experience to your vault.
 
-[Support me and my work](https://www.buymeacoffee.com/sevenaxis) so I can keep regular updates and fixes. You’re also welcomed to submit pull requests.
+[Support the original creator of Cupertino and his work](https://www.buymeacoffee.com/sevenaxis) so he can keep regular updates and fixes. You’re also welcomed to submit pull requests.
 
 <a href="https://www.buymeacoffee.com/sevenaxis"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=☕&slug=sevenaxis&button_colour=BD5FFF&font_colour=ffffff&font_family=Inter&outline_colour=000000&coffee_colour=FFDD00" /></a>
 
