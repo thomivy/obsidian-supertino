@@ -1,3 +1,5 @@
+@use "app/root.scss" as *;
+
 @media screen, print {
   .markdown-reading-view,
   .markdown-source-view {
@@ -523,5 +525,893 @@
       pointer-events: none;
       content: "";
     }
+  }
+}
+
+// Superhuman-style Editor Experience
+.markdown-source-view,
+.markdown-preview-view {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-16);
+  letter-spacing: -0.011em;
+  
+  // Premium Editor Typography
+  font-feature-settings: "kern", "liga", "calt";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  // Advanced Paragraph Styling
+  p {
+    margin-bottom: 1.5em;
+    line-height: 1.6;
+    font-weight: 400;
+    
+    // Premium paragraph spacing
+    & + p {
+      margin-top: -0.5em;
+    }
+  }
+  
+  // Editorial Typography Hierarchy
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    position: relative;
+    margin-top: 2em;
+    margin-bottom: 0.75em;
+    color: var(--text-primary);
+    
+    // Premium heading spacing
+    & + p {
+      margin-top: 0.25em;
+    }
+  }
+  
+  h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-top: 1em;
+  }
+  
+  h2 {
+    font-size: 1.875em;
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding-bottom: 0.3em;
+    
+    // Add subtle visual indicator for h2
+    &::before {
+      content: "";
+      position: absolute;
+      left: -16px;
+      top: 0.5em;
+      height: 0.75em;
+      width: 4px;
+      background: var(--text-accent);
+      border-radius: 4px;
+      opacity: 0.7;
+    }
+  }
+  
+  h3 {
+    font-size: 1.5em;
+  }
+  
+  h4 {
+    font-size: 1.25em;
+    opacity: 0.9;
+  }
+  
+  h5 {
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    opacity: 0.8;
+  }
+  
+  h6 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.7;
+  }
+  
+  // Premium Link Styling
+  a {
+    color: var(--text-accent);
+    text-decoration: none;
+    font-weight: 500;
+    padding-bottom: 1px;
+    transition: all var(--duration-fast) var(--ease-premium);
+    
+    &:hover {
+      color: var(--interactive-accent-hover);
+    }
+    
+    &.external-link::after {
+      content: "↗";
+      font-size: 0.8em;
+      display: inline-block;
+      margin-left: 0.15em;
+      opacity: 0.5;
+      vertical-align: text-top;
+    }
+  }
+  
+  // Premium List Styling
+  ul, ol {
+    padding-left: 1.5em;
+    margin-bottom: 1.5em;
+    
+    li {
+      margin: 0.5em 0;
+      padding-left: 0.5em;
+      line-height: 1.5;
+      
+      // Enable better hanging bullets
+      & > p {
+        margin: 0;
+      }
+      
+      &::marker {
+        color: var(--text-accent);
+      }
+    }
+    
+    // Nested lists should be more compact
+    ul, ol {
+      margin: 0.25em 0 0.5em;
+    }
+  }
+  
+  // Premium Blockquote Styling
+  blockquote {
+    margin: 1.5em 0;
+    padding: 0.75em 1.5em;
+    border-left: 4px solid var(--text-accent);
+    border-radius: 0 4px 4px 0;
+    background: var(--background-secondary);
+    font-style: italic;
+    
+    // Subtle quotation mark
+    &::before {
+      content: "\201C";
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      position: absolute;
+      left: -0.5rem;
+      top: -1rem;
+      color: var(--interactive-accent);
+      opacity: 0.15;
+    }
+    
+    // Citations/attributions
+    & > p:last-child {
+      margin-bottom: 0;
+      
+      // Detect attribution lines starting with "—" or "--"
+      &:only-child,
+      &:last-child {
+        &:first-line {
+          font-style: normal;
+        }
+      }
+    }
+  }
+  
+  // Premium Code Blocks
+  pre {
+    margin: 1.5em 0;
+    padding: 1em 1.25em;
+    border-radius: 6px;
+    background: var(--background-secondary);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+    line-height: 1.5;
+    overflow-x: auto;
+    
+    // Add subtle language indicator
+    position: relative;
+    
+    &::before {
+      content: attr(class);
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.25em 0.75em;
+      font-size: 0.75em;
+      color: var(--text-muted);
+      opacity: 0.5;
+      border-radius: 0 4px 0 4px;
+      background: var(--background-secondary-alt);
+    }
+    
+    code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.9em;
+    }
+  }
+  
+  // Premium Inline Code
+  code:not(pre code) {
+    font-family: 'SF Mono', 'Menlo', 'Monaco', monospace;
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    background: var(--background-secondary);
+    white-space: nowrap;
+  }
+  
+  // Premium Horizontal Rule
+  hr {
+    border: none;
+    margin: 2em 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--background-modifier-border) 20%, var(--background-modifier-border) 80%, transparent);
+    
+    // Fancy centered dot
+    &::after {
+      content: "";
+      display: block;
+      height: 3px;
+      width: 3px;
+      border-radius: 50%;
+      background: var(--background-modifier-border);
+      margin: -2px auto 0;
+    }
+  }
+  
+  // Premium Table Styling
+  table {
+    margin: 1.5em 0;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    
+    th {
+      background: var(--background-secondary);
+      padding: 0.75em 1em;
+      font-weight: 600;
+      text-align: left;
+      border-bottom: 1px solid var(--background-modifier-border);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+    
+    td {
+      padding: 0.75em 1em;
+      border-bottom: 1px solid var(--background-modifier-border);
+      transition: background var(--duration-fast) var(--ease-in-out);
+    }
+    
+    tr:last-child td {
+      border-bottom: none;
+    }
+    
+    tr:hover td {
+      background: var(--background-secondary);
+    }
+  }
+  
+  // Premium Image Styling
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 1.5em auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform var(--duration-normal) var(--ease-premium),
+                box-shadow var(--duration-normal) var(--ease-premium);
+    
+    &:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  // Premium Task List Styling
+  .task-list-item {
+    padding-left: 0;
+    
+    // Better task list alignment
+    input[type="checkbox"] {
+      margin-right: 0.5em;
+      vertical-align: -0.1em;
+    }
+  }
+  
+  // Premium Tag Styling
+  a.tag {
+    background: var(--background-secondary);
+    color: var(--text-accent);
+    border-radius: 12px;
+    padding: 0.2em 0.5em;
+    font-size: 0.85em;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--duration-fast) var(--ease-premium);
+    border: 1px solid transparent;
+    
+    &:hover {
+      background: var(--background-modifier-hover);
+      transform: translateY(-1px);
+      border-color: var(--background-modifier-border-hover);
+    }
+  }
+}
+
+// Premium Active Line Highlighting in Edit Mode
+.markdown-source-view.is-live-preview {
+  .cm-editor {
+    .cm-line {
+      padding: 4px 0;
+      transition: background var(--duration-fast) var(--ease-in-out),
+                  padding var(--duration-fast) var(--ease-in-out);
+      
+      &.cm-active {
+        background: linear-gradient(to right, var(--background-primary), var(--background-secondary-alt), var(--background-primary));
+        padding: 8px 0;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+// Premium Selection Styling
+::selection {
+  background: rgba(var(--interactive-accent-rgb), 0.2);
+  text-shadow: none;
+}
+
+// Premium Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 4px;
+  
+  &:hover {
+    background: var(--background-modifier-border-hover);
+  }
+}
+
+// Premium Editor Typography 
+.markdown-source-view.mod-cm6 .cm-content,
+.markdown-rendered {
+  // Create a premium reading container
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+  
+  // Heading enhancements with premium typography
+  h1 {
+    font-size: calc(var(--font-size-xxxl) * 1.1);
+    font-weight: 680; // Slightly heavier than semibold but not quite bold
+    color: var(--text-normal);
+    line-height: 1.1;
+    letter-spacing: -0.022em;
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    
+    // Subtle accent decoration
+    position: relative;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 3rem;
+      height: 0.2rem;
+      background: var(--interactive-accent);
+      border-radius: 2px;
+      opacity: 0.8;
+    }
+  }
+  
+  h2 {
+    font-size: var(--font-size-xxl);
+    font-weight: 590;
+    color: var(--text-normal);
+    line-height: 1.2;
+    letter-spacing: -0.017em;
+    margin: 2rem 0 1rem;
+    
+    // Subtle left indicator
+    position: relative;
+    padding-left: 0.8rem;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.2em;
+      bottom: 0.2em;
+      width: 0.25rem;
+      background: var(--interactive-accent);
+      border-radius: 2px;
+      opacity: 0.6;
+    }
+  }
+  
+  h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 560;
+    color: var(--text-normal);
+    margin: 1.5rem 0 0.75rem;
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+  
+  h4, h5, h6 {
+    margin: 1.25rem 0 0.5rem;
+  }
+  
+  // Premium paragraph treatment
+  p {
+    margin: 0 0 1.2rem;
+    line-height: 1.65;
+    font-size: 1.05rem;
+    letter-spacing: -0.011em;
+    color: var(--text-normal);
+    
+    // Tight paragraphs for coherent thoughts
+    & + p {
+      margin-top: -0.4rem;
+    }
+  }
+  
+  // Enhanced numbered lists
+  ol {
+    counter-reset: item;
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+    
+    li {
+      counter-increment: item;
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 0.75rem;
+      
+      &::before {
+        content: counter(item) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        color: var(--text-accent);
+        font-weight: 500;
+        text-align: right;
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  // Enhanced bullet lists
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+    
+    li {
+      position: relative;
+      padding-left: 1.75rem;
+      margin-bottom: 0.75rem;
+      
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0.5rem;
+        color: var(--text-accent);
+        font-weight: 700;
+        opacity: 0.7;
+      }
+      
+      // Nested lists
+      ul, ol {
+        margin: 0.5rem 0 0.75rem;
+      }
+    }
+  }
+  
+  // Premium blockquotes with subtle styling
+  blockquote {
+    margin: 1.5rem 0;
+    padding: 0.75rem 1.5rem;
+    border-left: 3px solid var(--interactive-accent);
+    border-radius: 0 4px 4px 0;
+    background-color: hsla(var(--interactive-accent-hsl), 0.05);
+    
+    p {
+      margin: 0.5rem 0;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    // Quotation mark styling
+    &::before {
+      content: "\201C";
+      font-family: Georgia, serif;
+      font-size: 3rem;
+      position: absolute;
+      left: -0.5rem;
+      top: -1rem;
+      color: var(--interactive-accent);
+      opacity: 0.15;
+    }
+  }
+}
+
+// Subtle cursor animation for a more premium feel
+@keyframes cursorPulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+// Enhanced cursor with subtle animation
+.markdown-source-view.mod-cm6 {
+  .cm-cursor {
+    border-left-width: 2px;
+    border-left-color: var(--interactive-accent);
+    animation: cursorPulse 2s ease-in-out infinite;
+  }
+  
+  // Premium active line highlight
+  .cm-line.cm-active {
+    background-color: hsla(var(--interactive-accent-hsl), 0.05);
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    margin: 0.25rem -0.5rem;
+    transition: all 180ms var(--ease-premium);
+  }
+  
+  // Selection styling
+  .cm-selectionBackground {
+    background-color: hsla(var(--interactive-accent-hsl), 0.15) !important;
+  }
+}
+
+// Premium inline elements
+.markdown-rendered {
+  // Enhanced links with animated underlines
+  a {
+    color: var(--text-accent);
+    text-decoration: none;
+    position: relative;
+    font-weight: 500;
+    transition: color 150ms var(--ease-premium);
+    
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: var(--text-accent);
+      opacity: 0.5;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 250ms var(--ease-premium);
+    }
+    
+    &:hover {
+      color: var(--interactive-accent);
+      
+      &::after {
+        transform: scaleX(1);
+        opacity: 0.8;
+      }
+    }
+  }
+  
+  // Premium code styling
+  code {
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+    color: var(--text-accent);
+    background-color: hsla(var(--interactive-accent-hsl), 0.05);
+    border-radius: 3px;
+    padding: 0.15em 0.4em;
+    border: 1px solid hsla(var(--interactive-accent-hsl), 0.1);
+  }
+  
+  // Premium tables with hover effects
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 1.5rem 0;
+    
+    th {
+      background-color: hsla(var(--interactive-accent-hsl), 0.04);
+      font-weight: 600;
+      text-align: left;
+      padding: 0.75rem 1rem;
+      border-bottom: 2px solid var(--interactive-accent);
+      border-top: 1px solid var(--background-modifier-border);
+      color: var(--text-accent);
+    }
+    
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--background-modifier-border);
+      transition: background-color 150ms var(--ease-premium);
+    }
+    
+    tr {
+      transition: background-color 150ms var(--ease-premium);
+      
+      &:hover {
+        background-color: hsla(var(--interactive-accent-hsl), 0.02);
+        
+        td {
+          border-bottom-color: hsla(var(--interactive-accent-hsl), 0.2);
+        }
+      }
+    }
+  }
+}
+
+// Minimalist Breadcrumb Treatment
+.view-header {
+  height: 40px;
+  opacity: 0.3;
+  transition: opacity 200ms var(--ease-premium);
+  padding: 0 var(--space-4);
+  
+  &:hover {
+    opacity: 1;
+  }
+  
+  .view-header-title-container {
+    background: transparent;
+    padding: var(--space-2) var(--space-3);
+    border-radius: 6px;
+    transition: all 200ms var(--ease-premium);
+    
+    &:hover {
+      background-color: hsla(var(--mono-rgb-100), 0.05);
+    }
+    
+    // Current file name styling
+    .view-header-title {
+      font-size: var(--font-size-sm);
+      font-weight: var(--font-weight-medium);
+      color: var(--text-normal);
+    }
+  }
+  
+  // Clean up nav buttons
+  .view-header-nav-buttons,
+  .view-actions {
+    gap: 6px;
+    
+    .clickable-icon {
+      opacity: 0.7;
+      transition: all 150ms var(--ease-premium);
+      border-radius: 4px;
+      
+      &:hover {
+        opacity: 1;
+        background-color: hsla(var(--interactive-accent-hsl), 0.1);
+        transform: translateY(-1px);
+      }
+    }
+  }
+}
+
+// Add more subtle background gradient
+.markdown-preview-view {
+  background: 
+    linear-gradient(to right, 
+      rgba(255,255,255,0.01) 0%, 
+      rgba(255,255,255,0) 15%, 
+      rgba(255,255,255,0) 85%, 
+      rgba(255,255,255,0.01) 100%);
+}
+
+// Enhance the file viewer button (purple icon in screenshot)
+.view-action[aria-label*="view"] {
+  background-color: hsla(var(--interactive-accent-hsl), 0.1);
+  border-radius: 6px;
+  transition: all 200ms var(--ease-premium);
+  
+  &:hover {
+    background-color: hsla(var(--interactive-accent-hsl), 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  }
+  
+  svg {
+    color: var(--interactive-accent);
+  }
+}
+
+// Refined Content Typography - Superhuman Inspired
+.markdown-reading-view {
+  .markdown-preview-view {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-12);
+    
+    // Premium Heading Treatment
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.75em;
+      margin-bottom: 0.85em;
+      color: var(--text-normal);
+      font-weight: var(--font-weight-semibold);
+      letter-spacing: var(--letter-spacing-tight);
+      line-height: 1.3;
+    }
+    
+    h1 {
+      font-size: var(--font-size-xxxl);
+      margin-top: 1.2em;
+      border-bottom: none;
+      color: var(--text-normal);
+      
+      &:first-child {
+        margin-top: 0.5em;
+      }
+    }
+    
+    h2 {
+      font-size: var(--font-size-xxl);
+      margin-top: 1.8em;
+      color: var(--text-normal);
+    }
+    
+    h3 {
+      font-size: var(--font-size-xl);
+      color: var(--text-normal);
+    }
+    
+    h4 {
+      font-size: var(--font-size-lg);
+      color: var(--text-normal);
+    }
+    
+    h5 {
+      font-size: var(--font-size-md);
+      color: var(--text-normal);
+    }
+    
+    h6 {
+      font-size: var(--font-size-base);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    
+    // Enhanced paragraph spacing
+    p {
+      margin: 0 0 1.35em;
+      line-height: 1.65;
+      color: var(--text-normal);
+    }
+    
+    // Premium list styling
+    ul, ol {
+      padding-left: 1.6em;
+      margin: 0 0 1.4em;
+      
+      li {
+        margin-bottom: 0.65em;
+        line-height: 1.5;
+        padding-left: 0.3em;
+        
+        p {
+          margin-bottom: 0.7em;
+        }
+        
+        &:last-child p {
+          margin-bottom: 0;
+        }
+      }
+    }
+    
+    // Horizontal rule - more subtle
+    hr {
+      height: 1px;
+      background-color: hsla(var(--mono-rgb-100), 0.08);
+      border: none;
+      margin: 2.5em 0;
+    }
+    
+    // Remove border from inline image
+    img {
+      border: none;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+    }
+  }
+}
+
+// Enhanced editing view
+.markdown-source-view {
+  .cm-content {
+    max-width: 48rem;
+    margin: 0 auto;
+    padding: var(--space-8) var(--space-12);
+    font-family: var(--font-text);
+    
+    // More spacious line padding
+    .cm-line {
+      padding: 0.4em 0;
+      line-height: 1.65;
+    }
+    
+    .cm-header {
+      font-weight: var(--font-weight-semibold);
+      color: var(--text-normal);
+      line-height: 1.3;
+      
+      &.cm-header-1 { font-size: var(--font-size-xxxl); }
+      &.cm-header-2 { font-size: var(--font-size-xxl); }
+      &.cm-header-3 { font-size: var(--font-size-xl); }
+      &.cm-header-4 { font-size: var(--font-size-lg); }
+      &.cm-header-5 { font-size: var(--font-size-md); }
+      &.cm-header-6 { font-size: var(--font-size-base); color: var(--text-muted); }
+    }
+    
+    .cm-quote {
+      color: var(--text-normal);
+      font-style: italic;
+      border-left: 3px solid var(--interactive-accent);
+      padding-left: 1.2em;
+      margin-left: 0.5em;
+    }
+    
+    .cm-link {
+      color: var(--text-accent);
+      text-decoration: none;
+    }
+    
+    .cm-strong {
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .cm-em {
+      font-style: italic;
+    }
+    
+    // Active line highlight
+    &.cm-focused .cm-active-line {
+      background-color: hsla(var(--interactive-accent-hsl), 0.05);
+    }
+  }
+}
+
+// File info at bottom of document
+.file-view-actions {
+  opacity: 0.5;
+  transition: opacity var(--duration-fast) var(--ease-premium);
+  
+  &:hover {
+    opacity: 1;
+  }
+  
+  .file-info {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
   }
 }

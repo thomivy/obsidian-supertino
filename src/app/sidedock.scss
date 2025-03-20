@@ -1,3 +1,5 @@
+@use "app/root.scss" as *;
+
 .side-dock-settings,
 .side-dock-actions {
   gap: 4px;
@@ -261,5 +263,415 @@ body.is-tablet {
 
   .side-dock-actions {
     padding: 0;
+  }
+}
+
+// Superhuman-inspired Sidebar Tabs
+.workspace-tab-header-container {
+  height: 36px;
+  background-color: var(--background-primary);
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding: 0 var(--space-2);
+  display: flex;
+  align-items: center;
+  
+  .workspace-tab-header {
+    height: 35px;
+    border-radius: 0;
+    padding: 0 var(--space-4);
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    display: flex;
+    align-items: center;
+    transition: all var(--duration-normal) var(--ease-premium);
+    margin: 0;
+    position: relative;
+    
+    &:hover {
+      background-color: transparent;
+      color: var(--text-normal);
+    }
+    
+    &.is-active {
+      color: var(--text-accent);
+      background-color: transparent;
+      
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: var(--space-2);
+        right: var(--space-2);
+        height: 2px;
+        background-color: var(--interactive-accent);
+        border-radius: 1px 1px 0 0;
+      }
+    }
+    
+    .workspace-tab-header-inner-title {
+      padding: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    .workspace-tab-header-inner-icon {
+      margin-right: var(--space-2);
+      color: inherit;
+    }
+    
+    .workspace-tab-header-status-container {
+      margin-left: var(--space-1);
+      font-size: 0.8em;
+      opacity: 0.7;
+      
+      .workspace-tab-header-status {
+        background-color: transparent;
+        color: inherit;
+        min-width: auto;
+        padding: 0;
+        font-size: 0.9em;
+        font-weight: var(--font-weight-normal);
+        
+        &::before {
+          content: " (";
+        }
+        
+        &::after {
+          content: ")";
+        }
+      }
+    }
+  }
+}
+
+// Premium File Explorer - Superhuman Inspired
+.workspace-tab-container {
+  // File browser refinements
+  .nav-files-container {
+    padding: var(--space-4) var(--space-2);
+    
+    // Folder titles
+    .nav-folder-title {
+      @include body-small;
+      font-weight: var(--font-weight-medium);
+      color: var(--text-secondary);
+      padding: var(--space-2) var(--space-3);
+      border-radius: 4px;
+      margin: 2px 0;
+      transition: all var(--duration-fast) var(--ease-premium);
+      
+      &:hover {
+        color: var(--text-primary);
+        background-color: hsla(var(--interactive-accent-hsl), 0.05);
+      }
+      
+      .nav-folder-title-content {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    }
+    
+    // Active folder
+    .nav-folder.is-active > .nav-folder-title {
+      color: var(--text-accent);
+      font-weight: var(--font-weight-semibold);
+      background-color: hsla(var(--interactive-accent-hsl), 0.08);
+    }
+    
+    // Files
+    .nav-file-title {
+      @include body-small;
+      color: var(--text-muted);
+      padding: var(--space-2) var(--space-3);
+      margin: 2px 0;
+      border-radius: 4px;
+      transition: all var(--duration-fast) var(--ease-premium);
+      
+      .nav-file-title-content {
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      
+      &:hover {
+        color: var(--text-normal);
+        background-color: hsla(var(--interactive-accent-hsl), 0.05);
+      }
+    }
+    
+    // Active file
+    .nav-file.is-active > .nav-file-title {
+      color: var(--text-accent);
+      background-color: hsla(var(--interactive-accent-hsl), 0.08);
+      font-weight: var(--font-weight-medium);
+      
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 3px;
+        height: 60%;
+        background-color: var(--interactive-accent);
+        border-radius: 0 2px 2px 0;
+      }
+    }
+    
+    // Collapse icon
+    .nav-folder-collapse-indicator {
+      color: var(--text-faint);
+      transition: transform var(--duration-fast) var(--ease-premium);
+      padding: 0;
+      
+      svg {
+        width: 10px;
+        height: 10px;
+      }
+    }
+    
+    // Nesting refinements
+    .nav-folder .nav-folder-children {
+      margin-left: 12px;
+      position: relative;
+      padding-left: 8px;
+      
+      // Use subtle indent line instead of border
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: hsla(var(--mono-rgb-100), 0.05);
+      }
+      
+      // Better hover states on children
+      .nav-file-title:hover,
+      .nav-folder-title:hover {
+        background-color: hsla(var(--interactive-accent-hsl), 0.05);
+      }
+    }
+  }
+}
+
+// Add a subtle search box styling
+.search-input-container {
+  margin: var(--space-4) var(--space-3);
+  
+  input {
+    @include body-small;
+    border-radius: 6px;
+    background-color: hsla(var(--mono-rgb-100), 0.05);
+    padding: var(--space-2) var(--space-3) var(--space-2) var(--space-6) !important;
+    transition: all var(--duration-fast) var(--ease-premium);
+    border: 1px solid transparent;
+    
+    &:focus {
+      border-color: var(--interactive-accent);
+      box-shadow: 0 0 0 2px hsla(var(--interactive-accent-hsl), 0.1);
+      background-color: hsla(var(--mono-rgb-100), 0.08);
+    }
+  }
+  
+  .search-input-clear-button {
+    color: var(--text-muted);
+    opacity: 0.6;
+    transition: opacity var(--duration-fast) var(--ease-premium);
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+// Make search results look premium
+.search-result-container {
+  .search-result {
+    padding: var(--space-2) var(--space-3);
+    margin: var(--space-1) 0;
+    border-radius: 4px;
+    transition: all var(--duration-fast) var(--ease-premium);
+    
+    &:hover {
+      background-color: var(--background-modifier-hover);
+    }
+    
+    .search-result-file-title {
+      @include body-small;
+      font-weight: var(--font-weight-medium);
+      color: var(--text-normal);
+    }
+    
+    .search-result-file-matches {
+      @include body-small;
+      color: var(--text-muted);
+    }
+  }
+}
+
+// Command palette - Superhuman style
+.suggestion-container {
+  border-radius: var(--radius-m);
+  background-color: var(--background-primary);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: var(--shadow-s);
+  
+  .suggestion-item {
+    padding: var(--space-2) var(--space-3);
+    margin: 2px;
+    border-radius: 4px;
+    transition: all var(--duration-fast) var(--ease-premium);
+    
+    &.is-selected {
+      background-color: hsla(var(--interactive-accent-hsl), 0.08);
+    }
+    
+    &:hover:not(.is-selected) {
+      background-color: var(--background-modifier-hover);
+    }
+    
+    .suggestion-content {
+      @include body-small;
+    }
+    
+    .suggestion-note {
+      @include body-small;
+      color: var(--text-faint);
+    }
+  }
+}
+
+// Premium Quick Switcher
+.quick-switch {
+  background: var(--background-primary);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: var(--space-4);
+  
+  .prompt {
+    @include body;
+    color: var(--text-primary);
+    margin-bottom: var(--space-4);
+  }
+  
+  .suggestion-item {
+    @include body;
+    padding: var(--space-3) var(--space-4);
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+    
+    &.is-selected {
+      background: var(--background-modifier-hover);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    &:hover {
+      background: var(--background-modifier-hover);
+    }
+  }
+}
+
+// Premium Command Palette
+.prompt {
+  background: var(--background-primary);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: var(--space-4);
+  max-width: 600px;
+  margin: 0 auto;
+  z-index: 100;
+  
+  .prompt-input {
+    @include body;
+    color: var(--text-primary);
+    background: var(--background-secondary);
+    border: none;
+    border-radius: 8px;
+    padding: var(--space-3) var(--space-4);
+    margin-bottom: var(--space-4);
+    width: 100%;
+    transition: all var(--transition-fast);
+    
+    &:focus {
+      background: var(--background-modifier-hover);
+      box-shadow: 0 0 0 2px var(--interactive-accent);
+    }
+  }
+  
+  .suggestion-container {
+    max-height: 400px;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+      background: var(--background-modifier-border);
+      border-radius: 3px;
+      
+      &:hover {
+        background: var(--background-modifier-border-hover);
+      }
+    }
+  }
+  
+  .suggestion-item {
+    @include body;
+    padding: var(--space-3) var(--space-4);
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    
+    &.is-selected {
+      background: var(--background-modifier-hover);
+      font-weight: var(--font-weight-medium);
+      transform: translateX(4px);
+    }
+    
+    &:hover {
+      background: var(--background-modifier-hover);
+    }
+  }
+}
+
+// Command palette overlay
+.modal-container {
+  z-index: 100;
+  position: fixed;
+}
+
+// Premium Mobile Sidebar
+.mobile-navbar {
+  background: var(--background-primary);
+  border-top: 1px solid var(--background-modifier-border);
+  padding: var(--space-2) var(--space-4);
+  
+  .mobile-navbar-item {
+    @include body-small;
+    color: var(--text-secondary);
+    padding: var(--space-2) var(--space-4);
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+    
+    &.is-active {
+      color: var(--text-accent);
+      font-weight: var(--font-weight-medium);
+    }
+    
+    &:hover {
+      background: var(--background-modifier-hover);
+      color: var(--text-primary);
+    }
   }
 }

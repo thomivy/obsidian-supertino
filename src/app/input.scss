@@ -1,3 +1,7 @@
+@use "app/root.scss" as *;
+
+@use "root.scss" as *;
+
 .clickable-icon {
   transition: all 0.1s ease-in-out !important;
   padding: 4px 8px;
@@ -23,21 +27,34 @@
 
 body:not(.is-mobile) {
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
+  input[type="text"]:not(.metadata-container input):not(.ant-input),
   input[type="number"]:not(.ant-input),
   input[type="search"]:not(.ant-input),
   button:not(.clickable-icon):not(.ant-btn):not(.excalidraw button),
   select,
   .dropdown {
-    box-shadow: var(--input-shadow);
-    border: none;
-    height: unset;
-    min-height: var(--input-height);
-    font-weight: normal;
-    line-height: unset;
+    @include body;
+    background: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: var(--space-3) var(--space-4);
+    transition: all var(--transition-fast);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    
+    &:hover {
+      border-color: var(--background-modifier-border-hover);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    &:focus,
+    &:focus-visible {
+      border-color: var(--interactive-accent);
+      box-shadow: 0 0 0 2px rgba(var(--interactive-accent-rgb), 0.1);
+    }
   }
+  
   textarea,
-  input[type="text"]:not(.metadata-container input):not(.prompt input):not(.ant-input),
+  input[type="text"]:not(.metadata-container input):not(.ant-input),
   input[type="number"]:not(.ant-input),
   input[type="search"]:not(.ant-input) {
     box-shadow: none;
@@ -58,11 +75,25 @@ body:not(.is-mobile) {
     }
   }
 
-  button:not(.ant-btn):not(.ant-switch):not(.excalidraw button) {
-    padding: 4px 10px;
-  }
-  button[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary) {
-    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 100%);
+  button:not(.clickable-icon):not(.ant-btn):not(.excalidraw button) {
+    @include body;
+    padding: var(--space-2) var(--space-4);
+    border-radius: 8px;
+    transition: all var(--transition-fast);
+    
+    &[class*="mod-"]:not(.mod-cancel):not(.mod-destructive):not(.mod-bookmark):not(.mod-secondary) {
+      background: linear-gradient(180deg, var(--interactive-accent) 0%, var(--interactive-accent-hover) 100%);
+      color: var(--text-on-accent);
+      
+      &:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(var(--interactive-accent-rgb), 0.2);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+    }
   }
   select,
   .dropdown {
@@ -70,16 +101,25 @@ body:not(.is-mobile) {
   }
 
   .checkbox-container {
-    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.02) inset, 0px 0.5px 1.5px 0px rgba(0, 0, 0, 0.12) inset;
-
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+    transition: all var(--transition-fast);
+    
     &.is-enabled {
-      box-shadow: 0px 0.5px 2.5px 0px rgba(102, 102, 102, 0.75) inset;
-      background-image: linear-gradient(180deg, rgba(102, 102, 102, 0.75) 0%, rgba(102, 102, 102, 0) 67.71%);
-      background-blend-mode: overlay, normal;
+      background: var(--interactive-accent);
+      border-color: var(--interactive-accent);
+      box-shadow: 0 2px 4px rgba(var(--interactive-accent-rgb), 0.2);
+      
+      &::after {
+        color: var(--text-on-accent);
+      }
     }
-
-    &::after {
-      box-shadow: 0px 0.2px 0.25px 0px rgba(0, 0, 0, 0.12);
+    
+    &:hover {
+      border-color: var(--interactive-accent);
+      box-shadow: 0 2px 4px rgba(var(--interactive-accent-rgb), 0.1);
     }
   }
 }
@@ -92,10 +132,17 @@ body.is-mobile {
   }
 
   .clickable-icon {
-    background-color: transparent;
-    padding: 10px;
-    min-width: var(--input-height);
-    height: var(--input-height);
+    @include hover-lift;
+    background: var(--background-secondary);
+    border-radius: 8px;
+    padding: var(--space-2);
+    transition: all var(--transition-fast);
+    
+    &.is-active {
+      background: var(--interactive-accent);
+      color: var(--text-on-accent);
+      transform: scale(1.05);
+    }
   }
 
   .clickable-icon.is-active {
@@ -113,8 +160,19 @@ body.is-mobile {
     }
   }
 
-  input[type="range"]::-webkit-slider-thumb {
-    box-shadow: 0px 0.5px 4px 0px rgba(0, 0, 0, 0.12), 0px 6px 13px 0px rgba(0, 0, 0, 0.12);
+  input[type="range"] {
+    &::-webkit-slider-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--interactive-accent);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: all var(--transition-fast);
+      
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 }
 
